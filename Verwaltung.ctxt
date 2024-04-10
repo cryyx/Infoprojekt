@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Verwaltung
+comment1.params=
+comment1.target=Verwaltung()
+comment2.params=
+comment2.target=void\ aktuelleFehlermeldung()
+comment3.params=sqlBefehl
+comment3.target=void\ sqlBefehlAusfuehren(java.lang.String)
+comment4.params=
+comment4.target=void\ alleAusgeben()
+comment5.params=
+comment5.target=void\ Einfuegen()
+comment5.text=\r\n\ Alle\ nicht\ implementierten\ Methoden\ m\u00FCssen\ geschrieben\ werden\!\r\n
+comment6.params=pN\ pV\ pG\ pP\ pPo\ pNa\ pSv\ pLv\ pGv\ pSp
+comment6.target=void\ SpielerEinfuegen(java.lang.String,\ java.lang.String,\ int,\ int,\ java.lang.String,\ java.lang.String,\ int,\ int,\ int,\ int)
+comment7.params=pN\ pB
+comment7.target=void\ vereinEinfuegen(java.lang.String,\ int)
+comment8.params=pN\ pP\ pB
+comment8.target=void\ sportartEinfuegen(java.lang.String,\ java.lang.String,\ int)
+comment9.params=pN\ pV\ pG\ pNa\ pVID\ pSPID
+comment9.target=void\ trainerEinfuegen(java.lang.String,\ java.lang.String,\ int,\ java.lang.String,\ int,\ int)
+numComments=10
