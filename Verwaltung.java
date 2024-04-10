@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Verwaltung {
-
+    //Test
     DatabaseConnector meinConnector;
     Scanner sc;
     public Verwaltung(){
