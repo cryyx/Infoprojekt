@@ -35,7 +35,7 @@ public class Verwaltung {
         }
     }
 
-    public void alleAusgeben(){        //Nur, um zu sehen, wie es geht...
+    public void Ausgeben(){        //Nur, um zu sehen, wie es geht...
         System.out.println("Bitte gebe die Tabelle an, die ausgegeben werden soll.");
         String x=sc.nextLine();
         String auftrag="select * from "+x;
@@ -49,7 +49,8 @@ public class Verwaltung {
     public void Einfuegen() {
         System.out.println("Was möchtest du einfügen?");
         String x=sc.nextLine();
-        if (x=="Spieler"){
+        System.out.println(x);
+        if (x.equals("Spieler")){
             System.out.println("Nachname des Spielers:");
             String pN=sc.nextLine();
             System.out.println("Vorname des Spielers:");
@@ -74,7 +75,7 @@ public class Verwaltung {
             meinConnector.executeStatement(auftrag);
             aktuelleFehlermeldung();
         }
-        else if (x=="Verein"){
+        else if (x.equals("Verein")){
             System.out.println("Name des Vereins:");
             String pN=sc.nextLine();
             System.out.println("Budget des Vereins:");
@@ -83,7 +84,7 @@ public class Verwaltung {
             meinConnector.executeStatement(auftrag);
             aktuelleFehlermeldung();
         }
-        else if (x=="Sportart"){
+        else if (x.equals("Sportart")){
             System.out.println("Name der Sportart:");
             String pN=sc.nextLine();
             System.out.println("Popularität der Sportart (niedrig, mittel, hoch, sehr hoch):");
@@ -94,7 +95,7 @@ public class Verwaltung {
             meinConnector.executeStatement(auftrag);
             aktuelleFehlermeldung();
         }
-        else if (x=="Trainer"){
+        else if (x.equals("Trainer")){
             System.out.println("Nachname des Trainers:");
             String pN=sc.nextLine();
             System.out.println("Vorname des Trainers:");
@@ -107,15 +108,19 @@ public class Verwaltung {
             String pVID=sc.nextLine();
             String verein="Select 'VID' FROM 'Verein' WHERE 'Name' LIKE '"+pVID+"'";
             meinConnector.executeStatement(verein);
+            aktuelleFehlermeldung();
             pVID=meinConnector.getCurrentQueryResult().toString();
             System.out.println("Sportart:");
             String pSPID=sc.nextLine();
             String sportart="Select 'SPID' FROM 'Sportart' WHERE 'Name' LIKE '"+pVID+"'";
-            meinConnector.executeStatement(verein);
+            meinConnector.executeStatement(sportart);
             pVID=meinConnector.getCurrentQueryResult().toString();
             String auftrag="INSERT INTO 'Trainer' ('TID' ,'Name', 'Vorname', 'Gehalt', 'Nationalität', 'VID', 'SpID') VALUES (NULL, '"+pN+"', '"+pV+"', '"+pG+"', '"+pNa+"', '"+pVID+"', '"+pSPID+"')";
             meinConnector.executeStatement(auftrag);
             aktuelleFehlermeldung();
+        }
+        else{
+            System.out.println("Es gibt diese Art von Objekt in der Datenbank nicht");
         }
     }
     
