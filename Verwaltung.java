@@ -41,6 +41,7 @@ public class Verwaltung {
 
             for (int j=0; j<meinConnector.getCurrentQueryResult().getColumnCount(); j=j+1) {
                 System.out.print(meinConnector.getCurrentQueryResult().getData()[i][j]+" ");
+                
 
             }
             System.out.println();
@@ -577,10 +578,12 @@ public class Verwaltung {
                     }
                     else {
                         auftrag=auftrag.concat("VID From hat Where ");
+                        boolean vid2=true;
                     }
                 }
                 else if (sportarten.equals("ja")) {
                     auftrag=auftrag.concat("SpID From hat Where ");
+                    boolean vid2=false;
                 }
                 System.out.println("Nach welchem Attribut willst du filtern, Verein oder Sportart?");
                 String filter=sc.nextLine();
