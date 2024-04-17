@@ -106,6 +106,20 @@ public class Verwaltung {
                         auftrag=auftrag.concat("0=5 AND ");
                 }
                 auftrag=auftrag.concat("VID>-1");
+                System.out.println("Möchtest du deine Ergebnisse nach einem bestimmten Attribut sortieren lassen?");
+                String sort=sc.nextLine();
+                if(sort.equals("ja")){
+                    System.out.println("Nach welchem Attribut soll sortiert werden?");
+                    String att=sc.nextLine();
+                    System.out.println("aufsteigend (auf) oder absteigend (ab)?");
+                    String auf_ab=sc.nextLine();
+                    if (auf_ab.equals("auf")) {
+                        auftrag=auftrag.concat(" Order By "+att+" Asc");
+                    }
+                    else if (auf_ab.equals("ab")) {
+                        auftrag=auftrag.concat(" Order By "+att+" Desc");
+                    }
+                }
                 System.out.println(auftrag);
                 sqlBefehlAusfuehren(auftrag);
             }
@@ -176,6 +190,20 @@ public class Verwaltung {
                     auftrag=auftrag.concat(pop_in);
                 }
                 auftrag=auftrag.concat("SpID>-1");
+                System.out.println("Möchtest du deine Ergebnisse nach einem bestimmten Attribut sortieren lassen?");
+                String sort=sc.nextLine();
+                if(sort.equals("ja")){
+                    System.out.println("Nach welchem Attribut soll sortiert werden?");
+                    String att=sc.nextLine();
+                    System.out.println("aufsteigend (auf) oder absteigend (ab)?");
+                    String auf_ab=sc.nextLine();
+                    if (auf_ab.equals("auf")) {
+                        auftrag=auftrag.concat(" Order By "+att+" Asc");
+                    }
+                    else if (auf_ab.equals("ab")) {
+                        auftrag=auftrag.concat(" Order By "+att+" Desc");
+                    }
+                }
                 System.out.println(auftrag);
                 sqlBefehlAusfuehren(auftrag);
             }
@@ -323,6 +351,20 @@ public class Verwaltung {
                     auftrag=auftrag.concat(spo_in);
                 }
                 auftrag=auftrag.concat("TID>-1");
+                System.out.println("Möchtest du deine Ergebnisse nach einem bestimmten Attribut sortieren lassen?");
+                String sort=sc.nextLine();
+                if(sort.equals("ja")){
+                    System.out.println("Nach welchem Attribut soll sortiert werden?");
+                    String att=sc.nextLine();
+                    System.out.println("aufsteigend (auf) oder absteigend (ab)?");
+                    String auf_ab=sc.nextLine();
+                    if (auf_ab.equals("auf")) {
+                        auftrag=auftrag.concat(" Order By "+att+" Asc");
+                    }
+                    else if (auf_ab.equals("ab")) {
+                        auftrag=auftrag.concat(" Order By "+att+" Desc");
+                    }
+                }
                 System.out.println(auftrag);
                 sqlBefehlAusfuehren(auftrag);
             }
@@ -552,6 +594,20 @@ public class Verwaltung {
                     auftrag=auftrag.concat(spo_in);
                 }
                 auftrag=auftrag.concat("SID>-1");
+                System.out.println("Möchtest du deine Ergebnisse nach einem bestimmten Attribut sortieren lassen?");
+                String sort=sc.nextLine();
+                if(sort.equals("ja")){
+                    System.out.println("Nach welchem Attribut soll sortiert werden?");
+                    String att=sc.nextLine();
+                    System.out.println("aufsteigend (auf) oder absteigend (ab)?");
+                    String auf_ab=sc.nextLine();
+                    if (auf_ab.equals("auf")) {
+                        auftrag=auftrag.concat(" Order By "+att+" Asc");
+                    }
+                    else if (auf_ab.equals("ab")) {
+                        auftrag=auftrag.concat(" Order By "+att+" Desc");
+                    }
+                }
                 System.out.println(auftrag);
                 aktuelleFehlermeldung();
                 sqlBefehlAusfuehren(auftrag);
@@ -608,6 +664,20 @@ public class Verwaltung {
                     weiter=sc.nextLine();
                 }
                 auftrag=auftrag.concat("VID=-20");
+                System.out.println("Möchtest du deine Ergebnisse nach einem bestimmten Attribut sortieren lassen?");
+                String sort=sc.nextLine();
+                if(sort.equals("ja")){
+                    System.out.println("Nach welchem Attribut soll sortiert werden?");
+                    String att=sc.nextLine();
+                    System.out.println("aufsteigend (auf) oder absteigend (ab)?");
+                    String auf_ab=sc.nextLine();
+                    if (auf_ab.equals("auf")) {
+                        auftrag=auftrag.concat(" Order By "+att+" Asc");
+                    }
+                    else if (auf_ab.equals("ab")) {
+                        auftrag=auftrag.concat(" Order By "+att+" Desc");
+                    }
+                }
                 System.out.println(auftrag);
                 sqlBefehlAusfuehren(auftrag);
             }
@@ -623,6 +693,234 @@ public class Verwaltung {
             }
         }
     }
+    
+    public void aendern() {
+        System.out.println("Herzlich willkommen in dem Änderungs-Menü unserer Datenbank. Sobald ein Datensatz geändert wurde, lässt sich dies allerdings nicht mehr rückgängig machen!");
+        System.out.println("Bitte gebe erst die Art des Objekts ein, von dem du einen Datensatz ändern möchtest:");
+        String ändern1=sc.nextLine();
+        System.out.println("Bitte bestätige die Art des Objekts:");
+        String ändern2=sc.nextLine();
+        if(ändern1.equals(ändern2)){
+            if(ändern1.equals("Spieler")) {
+                System.out.println("Gebe aus Sicherheitsgründen bitte deine Spieler-ID ein:");
+                String SID=sc.nextLine();
+                String auftrag="Update Spieler Set ";
+                System.out.println("Möchtest du den Namen des Spielers ändern?");
+                String nam=sc.nextLine();
+                if (nam.equals("ja")){
+                    System.out.println("Wie soll der neue Name lauten?");
+                    String nam_neu=sc.nextLine();
+                    auftrag=auftrag.concat("Name='"+nam_neu+"', ");
+                }
+                System.out.println("Möchtest du den Vornamen des Spielers ändern?");
+                String vnam=sc.nextLine();
+                if (vnam.equals("ja")){
+                    System.out.println("Wie soll der neue Vorname lauten?");
+                    String vnam_neu=sc.nextLine();
+                    auftrag=auftrag.concat("Vorname='"+vnam_neu+"', ");
+                }
+                System.out.println("Möchtest du das Gehalt anpassen?");
+                String g=sc.nextLine();
+                if (g.equals("ja")){
+                    System.out.println("Wie soll das neue Gehalt lauten?");
+                    String g_neu=sc.nextLine();
+                    auftrag=auftrag.concat("Gehalt='"+g_neu+"', ");
+                }
+                System.out.println("Möchtest du den Preis anpassen?");
+                String p=sc.nextLine();
+                if (p.equals("ja")){
+                    System.out.println("Wie soll der neue Preis lauten?");
+                    String p_neu=sc.nextLine();
+                    auftrag=auftrag.concat("Preis='"+p_neu+"', ");
+                }
+                System.out.println("Möchtest du die Position des Spielers ändern?");
+                String pos=sc.nextLine();
+                if (pos.equals("ja")){
+                    System.out.println("Wie soll die neue Position lauten?");
+                    String pos_neu=sc.nextLine();
+                    auftrag=auftrag.concat("Position='"+pos_neu+"', ");
+                }
+                System.out.println("Möchtest du die Nationalität des Spielers ändern?");
+                String nat=sc.nextLine();
+                if (nat.equals("ja")){
+                    System.out.println("Wie soll die neue Nationalität lauten?");
+                    String nat_neu=sc.nextLine();
+                    auftrag=auftrag.concat("Nationalität='"+nat_neu+"', ");
+                }
+                System.out.println("Möchtest du den Verein des Spielers ändern?");
+                String ver=sc.nextLine();
+                if (ver.equals("ja")){
+                    System.out.println("Wie soll der neue Verein lauten?");
+                    String ver_neu=sc.nextLine();
+                    String verein_id="select VID from Verein where Name like '"+ver_neu+"'";
+                    meinConnector.executeStatement(verein_id);
+                    aktuelleFehlermeldung();
+                    ver_neu=meinConnector.getCurrentQueryResult().getData()[0][0];
+                    auftrag=auftrag.concat("SVID='"+ver_neu+"', ");
+                }
+                System.out.println("Möchtest du den Leihverein des Spielers ändern?");
+                String lver=sc.nextLine();
+                if (lver.equals("ja")){
+                    System.out.println("Wie soll der neue Leihverein lauten?");
+                    String lver_neu=sc.nextLine();
+                    String lverein_id="select VID from Verein where Name like '"+lver_neu+"'";
+                    meinConnector.executeStatement(lverein_id);
+                    aktuelleFehlermeldung();
+                    lver_neu=meinConnector.getCurrentQueryResult().getData()[0][0];
+                    auftrag=auftrag.concat("LVID='"+lver_neu+"', ");
+                }
+                System.out.println("Möchtest du den Gerüchtsverein des Spielers ändern?");
+                String gver=sc.nextLine();
+                if (gver.equals("ja")){
+                    System.out.println("Wie soll der neue Gerüchtsverein lauten?");
+                    String gver_neu=sc.nextLine();
+                    String gverein_id="select VID from Verein where Name like '"+gver_neu+"'";
+                    meinConnector.executeStatement(gverein_id);
+                    aktuelleFehlermeldung();
+                    gver_neu=meinConnector.getCurrentQueryResult().getData()[0][0];
+                    auftrag=auftrag.concat("GVID='"+gver_neu+"', ");
+                }
+                System.out.println("Möchtest du die Sportart des Spielers ändern?");
+                String spo=sc.nextLine();
+                if (spo.equals("ja")){
+                    System.out.println("Wie soll die neue Sportart lauten?");
+                    String spo_neu=sc.nextLine();
+                    String sportart_id="select SpID from Sportart where Name like '"+spo_neu+"'";
+                    meinConnector.executeStatement(sportart_id);
+                    aktuelleFehlermeldung();
+                    spo_neu=meinConnector.getCurrentQueryResult().getData()[0][0];
+                    auftrag=auftrag.concat("SpID='"+spo_neu+"', ");
+                }
+                auftrag=auftrag.concat("SID="+SID+" Where SID="+SID);
+                System.out.println("Bitte gebe zu deiner Sicherheit deine Spieler-ID erneut ein!");
+                String id_neu=sc.nextLine();
+                if (id_neu.equals(SID)){
+                    System.out.println(auftrag);
+                    aktuelleFehlermeldung();
+                    meinConnector.executeStatement(auftrag);
+                }
+            }
+            else if(ändern1.equals("Trainer")){
+                System.out.println("Gebe aus Sicherheitsgründen bitte deine Trainer-ID ein:");
+                String TID=sc.nextLine();
+                String auftrag="Update Trainer Set ";
+                System.out.println("Möchtest du den Namen des Trainers ändern?");
+                String nam=sc.nextLine();
+                if (nam.equals("ja")){
+                    System.out.println("Wie soll der neue Name lauten?");
+                    String nam_neu=sc.nextLine();
+                    auftrag=auftrag.concat("Name='"+nam_neu+"', ");
+                }
+                System.out.println("Möchtest du den Vornamen des Trainers ändern?");
+                String vnam=sc.nextLine();
+                if (vnam.equals("ja")){
+                    System.out.println("Wie soll der neue Vorname lauten?");
+                    String vnam_neu=sc.nextLine();
+                    auftrag=auftrag.concat("Vorname='"+vnam_neu+"', ");
+                }
+                System.out.println("Möchtest du das Gehalt anpassen?");
+                String g=sc.nextLine();
+                if (g.equals("ja")){
+                    System.out.println("Wie soll das neue Gehalt lauten?");
+                    String g_neu=sc.nextLine();
+                    auftrag=auftrag.concat("Gehalt='"+g_neu+"', ");
+                }
+                System.out.println("Möchtest du die Nationalität des Trainers ändern?");
+                String nat=sc.nextLine();
+                if (nat.equals("ja")){
+                    System.out.println("Wie soll die neue Nationalität lauten?");
+                    String nat_neu=sc.nextLine();
+                    auftrag=auftrag.concat("Nationalität='"+nat_neu+"', ");
+                }
+                System.out.println("Möchtest du den Verein des Trainers ändern?");
+                String ver=sc.nextLine();
+                if (ver.equals("ja")){
+                    System.out.println("Wie soll der neue Verein lauten?");
+                    String ver_neu=sc.nextLine();
+                    String verein_id="select VID from Verein where Name like '"+ver_neu+"'";
+                    meinConnector.executeStatement(verein_id);
+                    aktuelleFehlermeldung();
+                    ver_neu=meinConnector.getCurrentQueryResult().getData()[0][0];
+                    auftrag=auftrag.concat("VID='"+ver_neu+"', ");
+                }
+                System.out.println("Möchtest du die Sportart des Trainers ändern?");
+                String spo=sc.nextLine();
+                if (spo.equals("ja")){
+                    System.out.println("Wie soll die neue Sportart lauten?");
+                    String spo_neu=sc.nextLine();
+                    String sportart_id="select SpID from Sportart where Name like '"+spo_neu+"'";
+                    meinConnector.executeStatement(sportart_id);
+                    aktuelleFehlermeldung();
+                    spo_neu=meinConnector.getCurrentQueryResult().getData()[0][0];
+                    auftrag=auftrag.concat("VID='"+spo_neu+"', ");
+                }
+                auftrag=auftrag.concat("TID="+TID+" Where TID="+TID);
+                System.out.println("Bitte gebe zu deiner Sicherheit deine Trainer-ID erneut ein!");
+                String id_neu=sc.nextLine();
+                if (id_neu.equals(TID)){
+                    meinConnector.executeStatement(auftrag);
+                }
+            }
+            else if(ändern1.equals("Verein")){
+                System.out.println("Gebe aus Sicherheitsgründen bitte die ID deines Vereins ein:");
+                String VID=sc.nextLine();
+                String auftrag="Update Verein Set ";
+                System.out.println("Möchtest du den Namen des Vereins ändern?");
+                String nam=sc.nextLine();
+                if (nam.equals("ja")){
+                    System.out.println("Wie soll der neue Name lauten?");
+                    String nam_neu=sc.nextLine();
+                    auftrag=auftrag.concat("Name='"+nam_neu+"', ");
+                }
+                System.out.println("Möchtest du das Budget anpassen?");
+                String bg=sc.nextLine();
+                if (bg.equals("ja")){
+                    System.out.println("Wie soll die neue Budget lauten?");
+                    String bg_neu=sc.nextLine();
+                    auftrag=auftrag.concat("Budget='"+bg_neu+"', ");
+                }
+                auftrag=auftrag.concat("VID="+VID+" Where VID="+VID);
+                System.out.println("Bitte gebe zu deiner Sicherheit die ID des Vereins erneut ein!");
+                String id_neu=sc.nextLine();
+                if (id_neu.equals(VID)){
+                    meinConnector.executeStatement(auftrag);
+                }
+            }
+            else if(ändern1.equals("Sportart")){
+                System.out.println("Gebe aus Sicherheitsgründen bitte die ID deiner Sportart ein:");
+                String SpID=sc.nextLine();
+                String auftrag="Update Sportart Set ";
+                System.out.println("Den Namen kannst du grundlegend nicht anpassen! Möchtest du die Popularität anpassen?");
+                String pop=sc.nextLine();
+                if (pop.equals("ja")){
+                    System.out.println("Wie soll die neue Popularität lauten?");
+                    String pop_neu=sc.nextLine();
+                    auftrag=auftrag.concat("Popularität='"+pop_neu+"', ");
+                }
+                System.out.println("Möchtest du die Ballgröße anpassen?");
+                String bg=sc.nextLine();
+                if (bg.equals("ja")){
+                    System.out.println("Wie soll die neue Ballgröße lauten?");
+                    String bg_neu=sc.nextLine();
+                    auftrag=auftrag.concat("Ballgröße='"+bg_neu+"', ");
+                }
+                auftrag=auftrag.concat("SpID="+SpID+" Where SpID="+SpID);
+                System.out.println("Bitte gebe zu deiner Sicherheit die ID der Sportart erneut ein!");
+                String id_neu=sc.nextLine();
+                if (id_neu.equals(SpID)){
+                    meinConnector.executeStatement(auftrag);
+                }
+            }
+            else{
+                System.out.println("Bitte gebe eine gültige Objektart ein!");
+            }
+        }
+        else {
+            System.out.println("Die Bestätigung ist fehlgeschlagen!");
+        }
+    }
+    
+    
     
     public void loeschen(){
         System.out.println("Herzlich willkommen im Lösch-Menü unserer Datenbank. Ein Warnhinweis vorab: das Löschen deiner Daten ist permanent und Sie sind nicht wiederherstellbar, überlege es dir also gut! Bist du sicher, dass du fortfahren möchtest?");
