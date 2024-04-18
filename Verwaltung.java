@@ -1033,6 +1033,78 @@ public class Verwaltung {
      * Alle nicht implementierten Methoden müssen geschrieben werden!
      */
     
+    public void einfuegen_gui(String t, String pN, String pV, String pG, String pP, String pPo, String pNa, String pSv, String pSp, String pLv, String pGv) {
+        if (t.equals("Spieler")) {
+            String verein="select VID from Verein where Name like '"+pSv+"'";
+            meinConnector.executeStatement(verein);
+            aktuelleFehlermeldung();
+            pSv=meinConnector.getCurrentQueryResult().getData()[0][0];
+            if(!(pLv.equals(""))) {
+                String leih_verein="select VID from Verein where Name like '"+pLv+"'";
+                meinConnector.executeStatement(leih_verein);
+                aktuelleFehlermeldung();
+                pLv=meinConnector.getCurrentQueryResult().getData()[0][0];
+            }
+            else {
+                pLv="0";
+            }
+            if(!(pGv.equals(""))) {
+                String geruecht_verein="select VID from Verein where Name like '"+pGv+"'";
+                meinConnector.executeStatement(geruecht_verein);
+                aktuelleFehlermeldung();
+                pGv=meinConnector.getCurrentQueryResult().getData()[0][0];
+            }
+            else {
+                pGv="0";
+            }
+            String sportart="select SpID from Sportart where Name like '"+pSp+"'";
+            meinConnector.executeStatement(sportart);
+            aktuelleFehlermeldung();
+            pSp=meinConnector.getCurrentQueryResult().getData()[0][0];
+            String auftrag="INSERT INTO 'Spieler' ('SID', 'Name', 'Vorname', 'Gehalt', 'Preis','Position','Nationalität','SvID','LvID','GvID', 'SpID') VALUES (NULL, '"+pN+"', '"+pV+"', '"+pG+"', '"+pP+"', '"+pPo+"', '"+pNa+"', '"+pSv+"', '"+pLv+"', '"+pGv+"', '"+pSp+"')";
+            System.out.println(auftrag);
+            meinConnector.executeStatement(auftrag);
+            aktuelleFehlermeldung();
+        }
+        else if (t.equals("Verein")) {
+            String auftrag="INSERT INTO 'Verein' ('VID' ,'Name', 'Budget') VALUES (NULL, '"+pN+"', '"+pV+"')";
+            meinConnector.executeStatement(auftrag);
+            aktuelleFehlermeldung();
+        }
+        else if (t.equals("hat")) {
+            String VID="select VID from Verein where Name like '"+pN+"'";
+            meinConnector.executeStatement(VID);
+            aktuelleFehlermeldung();
+            VID=meinConnector.getCurrentQueryResult().getData()[0][0];
+            String sportart="select SpID from Sportart where name like '"+pV+"'";
+            meinConnector.executeStatement(sportart);
+            sportart=meinConnector.getCurrentQueryResult().getData()[0][0];
+            aktuelleFehlermeldung();
+            String SpID=meinConnector.getCurrentQueryResult().getData()[0][0];
+            String auftrag2="Insert Into 'hat' ('VID','SpID') VALUES ('"+VID+"', '"+sportart+"')";
+            meinConnector.executeStatement(auftrag2);
+            aktuelleFehlermeldung();
+        }
+        else if (t.equals("Sportart")) {
+            String auftrag="INSERT INTO 'Sportart' ('SpID' ,'Name', 'Popularität', 'Ballgröße') VALUES (NULL, '"+pN+"', '"+pV+"', '"+pG+"')";
+            meinConnector.executeStatement(auftrag);
+            aktuelleFehlermeldung();
+        }
+        else if (t.equals("Trainer")) {
+            String verein="select VID from Verein where Name like '"+pPo+"'";
+            meinConnector.executeStatement(verein);
+            aktuelleFehlermeldung();
+            pPo=meinConnector.getCurrentQueryResult().getData()[0][0];
+            String sportart="select SpID from Sportart where Name like '"+pNa+"'";
+            meinConnector.executeStatement(verein);
+            aktuelleFehlermeldung();
+            pNa=meinConnector.getCurrentQueryResult().getData()[0][0];
+            String auftrag="INSERT INTO 'Trainer' ('TID' ,'Name', 'Vorname', 'Gehalt', 'Nationalität', 'VID', 'SpID') VALUES (NULL, '"+pN+"', '"+pV+"', '"+pG+"', '"+pP+"', '"+pPo+"', '"+pNa+"')";
+            meinConnector.executeStatement(auftrag);
+            aktuelleFehlermeldung();
+        }
+    }
+    
     public void Einfuegen() {
         System.out.println("Was möchtest du einfügen?");
         String x=sc.nextLine();
@@ -1058,16 +1130,20 @@ public class Verwaltung {
             pSv=meinConnector.getCurrentQueryResult().getData()[0][0];
             System.out.println("An welchen Verein ist er geliehen (falls keinen, dann 0)?");
             String pLv=sc.nextLine();
-            String leih_verein="select VID from Verein where Name like '"+pLv+"'";
-            meinConnector.executeStatement(leih_verein);
-            aktuelleFehlermeldung();
-            pLv=meinConnector.getCurrentQueryResult().getData()[0][0];
+            if(!(pLv.equals("0"))) {
+                String leih_verein="select VID from Verein where Name like '"+pLv+"'";
+                meinConnector.executeStatement(leih_verein);
+                aktuelleFehlermeldung();
+                pLv=meinConnector.getCurrentQueryResult().getData()[0][0];
+            }
             System.out.println("An welchen Verein gibt es Transfergerüchte (falls keinen dann 0)?");
             String pGv=sc.nextLine();
-            String geruecht_verein="select VID from Verein where Name like '"+pGv+"'";
-            meinConnector.executeStatement(geruecht_verein);
-            aktuelleFehlermeldung();
-            pGv=meinConnector.getCurrentQueryResult().getData()[0][0];
+            if(!(pGv.equals("0"))) {
+                String geruecht_verein="select VID from Verein where Name like '"+pGv+"'";
+                meinConnector.executeStatement(geruecht_verein);
+                aktuelleFehlermeldung();
+                pGv=meinConnector.getCurrentQueryResult().getData()[0][0];
+            }
             System.out.println("Sportart des Spielers:");
             String pSp=sc.nextLine();
             String sportart="select SpID from Sportart where Name like '"+pSp+"'";

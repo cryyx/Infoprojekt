@@ -6,6 +6,7 @@ import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 
 /**
  * Eine GUI fuer die Schulverwaltung
@@ -23,10 +24,33 @@ public class GUIVorlage extends JFrame {
     private JLabel l_suchen1 = new JLabel();
     private JLabel l_suchen2 = new JLabel();
     private JLabel l_su_all = new JLabel();
+    private JLabel l_einfuegen = new JLabel();
+    private JLabel l_einfuegen2 = new JLabel();
+    private JLabel l_ein_spieler1 = new JLabel();
+    private JLabel l_ein_spieler2 = new JLabel();
+    private JLabel l_ein_spieler3 = new JLabel();
+    private JLabel l_ein_spieler4 = new JLabel();
+    private JLabel l_ein_spieler5 = new JLabel();
+    private JLabel l_ein_spieler6 = new JLabel();
+    private JLabel l_ein_spieler7 = new JLabel();
+    private JLabel l_ein_spieler8 = new JLabel();
+    private JLabel l_ein_spieler9 = new JLabel();
+    private JLabel l_ein_spieler10 = new JLabel();
+    
     
     
     
     private JTextField t_name = new JTextField();
+    private JTextField t_ein_spieler1 = new JTextField();
+    private JTextField t_ein_spieler2 = new JTextField();
+    private JTextField t_ein_spieler3 = new JTextField();
+    private JTextField t_ein_spieler4 = new JTextField();
+    private JTextField t_ein_spieler5 = new JTextField();
+    private JTextField t_ein_spieler6 = new JTextField();
+    private JTextField t_ein_spieler7 = new JTextField();
+    private JTextField t_ein_spieler8 = new JTextField();
+    private JTextField t_ein_spieler9 = new JTextField();
+    private JTextField t_ein_spieler10 = new JTextField();
     
     
     private JButton b_start = new JButton();
@@ -42,21 +66,39 @@ public class GUIVorlage extends JFrame {
     private JButton b_su_all2 = new JButton();
     private JButton b_su_all3 = new JButton();
     private JButton b_su_all4 = new JButton();
+    private JButton b_ein_spieler = new JButton();
+    private JButton b_ein_verein = new JButton();
+    private JButton b_ein_sportart = new JButton();
+    private JButton b_ein_trainer = new JButton();
+    private JButton b_ver_verein = new JButton();
+    private JButton b_ver_vereinges = new JButton();
+    private JButton b_ein_spieler9 = new JButton();
+    private JButton b_ein_spieler10 = new JButton();
+    private JButton b_ein_spielerges = new JButton();
+    private JButton b_ein_vereinges = new JButton();
+    private JButton b_ein_verein_sportart = new JButton();
+    private JButton b_ein_sportartges = new JButton();
+    private JButton b_ein_trainerges = new JButton();
     
     
     private JButton bMaskeLeeren = new JButton();
     private JTextArea textfeld;
     // Ende Attribute
         
+    private boolean ein_spieler9=true;
+    private boolean ein_spieler10=true;
+    
     Container cp;
+    
+    private Verwaltung v1 = new Verwaltung();
     
     public GUIVorlage() {
 
         // Frame-Initialisierung
         super("Schulverwaltung");
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        int frameWidth = 900; 
-        int frameHeight = 590;
+        int frameWidth = 1000; 
+        int frameHeight = 700;
         setSize(frameWidth, frameHeight);
         Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (d.width - getSize().width) / 2;
@@ -122,34 +164,125 @@ public class GUIVorlage extends JFrame {
         
         
         
-        l_start.setBounds(90, 10, 800, 23);
+        l_start.setBounds(200, 10, 800, 23);
         l_start.setText("Willkommen in unserer Transfermarkt-Datenbank");
         l_start.setFont(new Font("Arial", Font.PLAIN, 17));
         cp.add(l_start);
         
-        l_optionen.setBounds(90, 10, 800, 23);
+        l_optionen.setBounds(150, 10, 800, 23);
         l_optionen.setFont(new Font("Arial", Font.PLAIN, 17));
         
         
         
-        l_suchen1.setBounds(90, 10, 800, 23);
+        l_suchen1.setBounds(200, 10, 800, 23);
         l_suchen1.setText("Wir bieten in unserer Datenbank verschiedene Such-Optionen an!");
         l_suchen1.setFont(new Font("Arial", Font.PLAIN, 17));
         
-        l_suchen2.setBounds(90, 25, 800, 23);
+        l_suchen2.setBounds(200, 25, 800, 23);
         l_suchen2.setText("Bitte entscheide dich für eine der drei unten stehenden Arten:");
         l_suchen2.setFont(new Font("Arial", Font.PLAIN, 17));
         
-        l_su_all.setBounds(90, 17, 800, 23);
+        l_su_all.setBounds(200, 17, 800, 23);
         l_su_all.setText("Wähle die Tabelle aus, die du ausgeben lassen möchtest");
         l_su_all.setFont(new Font("Arial", Font.PLAIN, 17));
         
-        t_name.setBounds(100, 40, 230, 30);
+        l_einfuegen.setBounds(50, 17, 1000, 23);
+        l_einfuegen.setText("Du möchtest also etwas neues einfügen bzw. registrieren? Wähle bitte die Art des Objekts aus!");
+        l_einfuegen.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_einfuegen2.setBounds(50, 40, 800, 23);
+        l_einfuegen2.setText("Wenn du fertig bist, klicke bitte auf den Knopf 'Einfügen'!");
+        l_einfuegen2.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_ein_spieler1.setBounds(50, 80, 800, 23);
+        l_ein_spieler1.setText("Nachname:");
+        l_ein_spieler1.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_ein_spieler2.setBounds(50, 130, 800, 23);
+        l_ein_spieler2.setText("Vorname:");
+        l_ein_spieler2.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_ein_spieler3.setBounds(50, 180, 800, 23);
+        l_ein_spieler3.setText("Gehalt:");
+        l_ein_spieler3.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_ein_spieler4.setBounds(50, 230, 800, 23);
+        l_ein_spieler4.setText("Preis:");
+        l_ein_spieler4.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_ein_spieler5.setBounds(50, 280, 800, 23);
+        l_ein_spieler5.setText("Position:");
+        l_ein_spieler5.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_ein_spieler6.setBounds(50, 330, 800, 23);
+        l_ein_spieler6.setText("Nationalität:");
+        l_ein_spieler6.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_ein_spieler7.setBounds(50, 380, 800, 23);
+        l_ein_spieler7.setText("Verein:");
+        l_ein_spieler7.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_ein_spieler8.setBounds(50, 430, 800, 23);
+        l_ein_spieler8.setText("Sportart:");
+        l_ein_spieler8.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_ein_spieler9.setBounds(300, 480, 800, 23);
+        l_ein_spieler9.setText("Leihverein:");
+        l_ein_spieler9.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_ein_spieler10.setBounds(300, 530, 800, 23);
+        l_ein_spieler10.setText("Gerüchtsverein:");
+        l_ein_spieler10.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        
+        t_name.setBounds(300, 40, 230, 30);
         t_name.setText("");
         t_name.setFont(new Font("Arial", Font.PLAIN, 17));
         
+        t_ein_spieler1.setBounds(170, 80, 230, 30);
+        t_ein_spieler1.setText("");
+        t_ein_spieler1.setFont(new Font("Arial", Font.PLAIN, 17));
         
-        b_name.setBounds(100, 90, 115, 33);
+        t_ein_spieler2.setBounds(170, 130, 230, 30);
+        t_ein_spieler2.setText("");
+        t_ein_spieler2.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_ein_spieler3.setBounds(170, 180, 230, 30);
+        t_ein_spieler3.setText("");
+        t_ein_spieler3.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_ein_spieler4.setBounds(170, 230, 230, 30);
+        t_ein_spieler4.setText("");
+        t_ein_spieler4.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_ein_spieler5.setBounds(170, 280, 230, 30);
+        t_ein_spieler5.setText("");
+        t_ein_spieler5.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_ein_spieler6.setBounds(170, 330, 230, 30);
+        t_ein_spieler6.setText("");
+        t_ein_spieler6.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_ein_spieler7.setBounds(170, 380, 230, 30);
+        t_ein_spieler7.setText("");
+        t_ein_spieler7.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_ein_spieler8.setBounds(170, 430, 230, 30);
+        t_ein_spieler8.setText("");
+        t_ein_spieler8.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_ein_spieler9.setBounds(430, 480, 230, 30);
+        t_ein_spieler9.setText("");
+        t_ein_spieler9.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_ein_spieler10.setBounds(430, 530, 230, 30);
+        t_ein_spieler10.setText("");
+        t_ein_spieler10.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        
+        
+        
+        b_name.setBounds(350, 90, 115, 33);
         b_name.setText("Los geht's!");
         b_name.setMargin(new Insets(2, 2, 2, 2));
         b_name.addActionListener(new ActionListener() {
@@ -174,7 +307,7 @@ public class GUIVorlage extends JFrame {
         b_einfuegen.setMargin(new Insets(2, 2, 2, 2));
         b_einfuegen.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
-                    menue1_ActionPerformed(evt);
+                    b_einfuegen_ActionPerformed(evt);
                 }
             });
         b_einfuegen.setFont(new Font("Dialog", Font.PLAIN, 13));
@@ -269,7 +402,148 @@ public class GUIVorlage extends JFrame {
             });
         b_su_all4.setFont(new Font("Dialog", Font.PLAIN, 13));
         
-        b_start.setBounds(230, 50, 115, 33);
+        b_ein_spieler.setBounds(730, 180, 150, 33);
+        b_ein_spieler.setText("Spieler registrieren");
+        b_ein_spieler.setMargin(new Insets(2, 2, 2, 2));
+        b_ein_spieler.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_ein_spieler_ActionPerformed(evt);
+                }
+            });
+        b_ein_spieler.setFont(new Font("Dialog", Font.PLAIN, 13));
+
+        
+        b_ein_trainer.setBounds(496, 180, 150, 33);
+        b_ein_trainer.setText("Trainer registrieren");
+        b_ein_trainer.setMargin(new Insets(2, 2, 2, 2));
+        b_ein_trainer.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_ein_trainer_ActionPerformed(evt);
+                }
+            });
+        b_ein_trainer.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_ein_verein.setBounds(263, 180, 150, 33);
+        b_ein_verein.setText("Verein registrieren");
+        b_ein_verein.setMargin(new Insets(2, 2, 2, 2));
+        b_ein_verein.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_ein_verein_ActionPerformed(evt);
+                }
+            });
+        b_ein_verein.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_ein_sportart.setBounds(30, 180, 150, 33);
+        b_ein_sportart.setText("Sportart hinzufügen");
+        b_ein_sportart.setMargin(new Insets(2, 2, 2, 2));
+        b_ein_sportart.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_ein_sportart_ActionPerformed(evt);
+                }
+            });
+        b_ein_sportart.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_ver_verein.setBounds(340, 250, 225, 33);
+        b_ver_verein.setText("Sportart mit Verein verknüpfen");
+        b_ver_verein.setMargin(new Insets(2, 2, 2, 2));
+        b_ver_verein.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_ver_verein_ActionPerformed(evt);
+                }
+            });
+        b_ver_verein.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_ein_spieler9.setBounds(50, 480, 150, 33);
+        b_ein_spieler9.setText("Leihverein");
+        b_ein_spieler9.setMargin(new Insets(2, 2, 2, 2));
+        b_ein_spieler9.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_ein_spieler9_ActionPerformed(evt);
+                }
+            });
+        b_ein_spieler9.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_ein_spieler10.setBounds(50, 530, 150, 33);
+        b_ein_spieler10.setText("Gerüchtsverein");
+        b_ein_spieler10.setMargin(new Insets(2, 2, 2, 2));
+        b_ein_spieler10.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_ein_spieler10_ActionPerformed(evt);
+                }
+            });
+        b_ein_spieler10.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_ein_spielerges.setBounds(300, 600, 150, 33);
+        b_ein_spielerges.setText("Einfügen");
+        b_ein_spielerges.setMargin(new Insets(2, 2, 2, 2));
+        b_ein_spielerges.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_ein_spielerges_ActionPerformed(evt);
+                }
+            });
+        b_ein_spielerges.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_ein_vereinges.setBounds(300, 600, 150, 33);
+        b_ein_vereinges.setText("Einfügen");
+        b_ein_vereinges.setMargin(new Insets(2, 2, 2, 2));
+        b_ein_vereinges.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_ein_vereinges_ActionPerformed(evt);
+                }
+            });
+        b_ein_vereinges.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_ein_verein_sportart.setBounds(300, 600, 150, 33);
+        b_ein_verein_sportart.setText("Einfügen");
+        b_ein_verein_sportart.setMargin(new Insets(2, 2, 2, 2));
+        b_ein_verein_sportart.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_ein_verein_sportart_ActionPerformed(evt);
+                }
+            });
+        b_ein_verein_sportart.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_ver_vereinges.setBounds(300, 600, 150, 33);
+        b_ver_vereinges.setText("Einfügen");
+        b_ver_vereinges.setMargin(new Insets(2, 2, 2, 2));
+        b_ver_vereinges.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_ver_vereinges_ActionPerformed(evt);
+                }
+            });
+        b_ver_vereinges.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_ein_spielerges.setBounds(300, 600, 150, 33);
+        b_ein_spielerges.setText("Einfügen");
+        b_ein_spielerges.setMargin(new Insets(2, 2, 2, 2));
+        b_ein_spielerges.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_ein_spielerges_ActionPerformed(evt);
+                }
+            });
+        b_ein_spielerges.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_ein_sportartges.setBounds(300, 600, 150, 33);
+        b_ein_sportartges.setText("Einfügen");
+        b_ein_sportartges.setMargin(new Insets(2, 2, 2, 2));
+        b_ein_sportartges.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_ein_sportartges_ActionPerformed(evt);
+                }
+            });
+        b_ein_sportartges.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_ein_trainerges.setBounds(300, 600, 150, 33);
+        b_ein_trainerges.setText("Einfügen");
+        b_ein_trainerges.setMargin(new Insets(2, 2, 2, 2));
+        b_ein_trainerges.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_ein_trainerges_ActionPerformed(evt);
+                }
+            });
+        b_ein_trainerges.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_start.setBounds(350, 50, 115, 33);
         b_start.setText("Los geht's!");
         b_start.setMargin(new Insets(2, 2, 2, 2));
         b_start.addActionListener(new ActionListener() {
@@ -422,6 +696,233 @@ public class GUIVorlage extends JFrame {
         cp.add(b_einfuegen);
         cp.add(b_loeschen);
         cp.add(b_aendern);
+    }
+    
+    public void b_einfuegen_ActionPerformed(ActionEvent evt) {
+        cp.remove(l_optionen);
+        cp.remove(b_suchen);
+        cp.remove(b_einfuegen);
+        cp.remove(b_loeschen);
+        cp.remove(b_aendern);
+        cp.revalidate();
+        cp.repaint();
+        cp.add(l_einfuegen);
+        cp.add(b_ein_spieler);
+        cp.add(b_ein_trainer);
+        cp.add(b_ein_sportart);
+        cp.add(b_ein_verein);
+        cp.add(b_ver_verein);
+    }
+    
+    public void b_ein_spieler_ActionPerformed(ActionEvent evt) {
+        l_einfuegen.setText("Bitte fülle alle Felder aus! Die Felder, die sich mit einem Knopf anzeigen lassen, sind optional.");
+        cp.remove(b_ein_spieler);
+        cp.remove(b_ein_trainer);
+        cp.remove(b_ein_sportart);
+        cp.remove(b_ein_verein);
+        cp.remove(b_ver_verein);
+        cp.revalidate();
+        cp.repaint();
+        cp.add(l_einfuegen2);
+        l_ein_spieler1.setText("Nachname:");
+        cp.add(l_ein_spieler1);
+        l_ein_spieler2.setText("Vorname:");
+        cp.add(l_ein_spieler2);
+        l_ein_spieler3.setText("Gehalt:");
+        cp.add(l_ein_spieler3);
+        l_ein_spieler4.setText("Preis:");
+        cp.add(l_ein_spieler4);
+        l_ein_spieler5.setText("Position:");
+        cp.add(l_ein_spieler5);
+        l_ein_spieler6.setText("Nationalität:");
+        cp.add(l_ein_spieler6);
+        l_ein_spieler7.setText("Verein:");
+        cp.add(l_ein_spieler7);
+        l_ein_spieler8.setText("Sportart:");
+        cp.add(l_ein_spieler8);
+        cp.add(t_ein_spieler1);
+        cp.add(t_ein_spieler2);
+        cp.add(t_ein_spieler3);
+        cp.add(t_ein_spieler4);
+        cp.add(t_ein_spieler5);
+        cp.add(t_ein_spieler6);
+        cp.add(t_ein_spieler7);
+        cp.add(t_ein_spieler8);
+        cp.add(b_ein_spieler9);
+        cp.add(b_ein_spieler10);
+        cp.add(b_ein_spielerges);
+    }
+    
+    public void b_ein_spieler9_ActionPerformed(ActionEvent evt) {
+        if (ein_spieler9) {
+            cp.revalidate();
+            cp.repaint();
+            l_ein_spieler9.setText("Leihverein:");
+            cp.add(l_ein_spieler9);
+            cp.add(t_ein_spieler9);
+            cp.revalidate();
+            cp.repaint();
+            ein_spieler9=false;
+        }
+        else {
+            cp.revalidate();
+            cp.repaint();            
+            cp.remove(l_ein_spieler9);
+            cp.remove(t_ein_spieler9);
+            cp.revalidate();
+            cp.repaint();
+            ein_spieler9=true;
+        }
+    }
+    
+    public void b_ein_spieler10_ActionPerformed(ActionEvent evt) {
+        if (ein_spieler10) {
+            cp.revalidate();
+            cp.repaint();
+            l_ein_spieler10.setText("Gerüchtsverein:");
+            cp.add(l_ein_spieler10);
+            cp.add(t_ein_spieler10);
+            cp.revalidate();
+            cp.repaint();
+            ein_spieler10=false;
+        }
+        else {
+            cp.revalidate();
+            cp.repaint();
+            cp.remove(l_ein_spieler10);
+            cp.remove(t_ein_spieler10);
+            cp.revalidate();
+            cp.repaint();
+            ein_spieler10=true;
+        }
+    }
+    
+    public void b_ein_verein_ActionPerformed(ActionEvent evt) {
+        l_einfuegen.setText("Bitte fülle alle Felder aus!");
+        cp.remove(b_ein_spieler);
+        cp.remove(b_ein_trainer);
+        cp.remove(b_ein_sportart);
+        cp.remove(b_ein_verein);
+        cp.remove(b_ver_verein);
+        cp.revalidate();
+        cp.repaint();
+        cp.add(l_einfuegen2);
+        l_ein_spieler1.setText("Name:");
+        cp.add(l_ein_spieler1);
+        l_ein_spieler2.setText("Budget:");
+        cp.add(l_ein_spieler2);
+        cp.add(t_ein_spieler1);
+        cp.add(t_ein_spieler2);
+        cp.add(b_ein_vereinges);
+    }
+    
+    public void b_ein_sportart_ActionPerformed(ActionEvent evt) {
+        l_einfuegen.setText("Bitte fülle alle Felder aus!");
+        cp.remove(b_ein_spieler);
+        cp.remove(b_ein_trainer);
+        cp.remove(b_ein_sportart);
+        cp.remove(b_ein_verein);
+        cp.remove(b_ver_verein);
+        cp.revalidate();
+        cp.repaint();
+        cp.add(l_einfuegen2);
+        l_ein_spieler1.setText("Name:");
+        cp.add(l_ein_spieler1);
+        l_ein_spieler2.setText("Popularität:");
+        cp.add(l_ein_spieler2);
+        l_ein_spieler3.setText("Ballgröße:");
+        cp.add(l_ein_spieler3);
+        cp.add(t_ein_spieler1);
+        cp.add(t_ein_spieler2);
+        cp.add(t_ein_spieler3);
+        cp.add(b_ein_sportartges);
+    }
+    
+    public void b_ein_trainer_ActionPerformed(ActionEvent evt) {
+        l_einfuegen.setText("Bitte fülle alle Felder aus!");
+        cp.remove(b_ein_spieler);
+        cp.remove(b_ein_trainer);
+        cp.remove(b_ein_sportart);
+        cp.remove(b_ein_verein);
+        cp.remove(b_ver_verein);
+        cp.revalidate();
+        cp.repaint();
+        cp.add(l_einfuegen2);
+        l_ein_spieler1.setText("Nachname:");
+        cp.add(l_ein_spieler1);
+        l_ein_spieler2.setText("Vorname:");
+        cp.add(l_ein_spieler2);
+        l_ein_spieler3.setText("Gehalt:");
+        cp.add(l_ein_spieler3);
+        l_ein_spieler4.setText("Nationalität:");
+        cp.add(l_ein_spieler4);
+        l_ein_spieler5.setText("Verein:");
+        cp.add(l_ein_spieler5);
+        l_ein_spieler6.setText("Sportart:");
+        cp.add(l_ein_spieler6);
+        cp.add(t_ein_spieler1);
+        cp.add(t_ein_spieler2);
+        cp.add(t_ein_spieler3);
+        cp.add(t_ein_spieler4);
+        cp.add(t_ein_spieler5);
+        cp.add(t_ein_spieler6);
+        cp.add(b_ein_trainerges);
+    }
+    
+    public void b_ein_trainerges_ActionPerformed(ActionEvent evt) {
+        v1.einfuegen_gui("Trainer", t_ein_spieler1.getText(), t_ein_spieler2.getText(), t_ein_spieler3.getText(), t_ein_spieler4.getText(), t_ein_spieler5.getText(), t_ein_spieler6.getText(), t_ein_spieler7.getText(), t_ein_spieler8.getText(), t_ein_spieler9.getText(), t_ein_spieler10.getText());
+    }
+    
+    public void b_ein_sportartges_ActionPerformed(ActionEvent evt) {
+        v1.einfuegen_gui("Sportart", t_ein_spieler1.getText(), t_ein_spieler2.getText(), t_ein_spieler3.getText(), t_ein_spieler4.getText(), t_ein_spieler5.getText(), t_ein_spieler6.getText(), t_ein_spieler7.getText(), t_ein_spieler8.getText(), t_ein_spieler9.getText(), t_ein_spieler10.getText());
+    }
+    
+    public void b_ein_spielerges_ActionPerformed(ActionEvent evt) {
+        v1.einfuegen_gui("Spieler", t_ein_spieler1.getText(), t_ein_spieler2.getText(), t_ein_spieler3.getText(), t_ein_spieler4.getText(), t_ein_spieler5.getText(), t_ein_spieler6.getText(), t_ein_spieler7.getText(), t_ein_spieler8.getText(), t_ein_spieler9.getText(), t_ein_spieler10.getText());
+    }
+    
+    public void b_ein_vereinges_ActionPerformed(ActionEvent evt) {
+        l_einfuegen.setText("Wenn du dem Verein noch eine Sportart hinzufügen möchtest, fülle das Feld aus und bestätige deine Eingabe!");
+        l_ein_spieler2.setText("Sportart:");
+        cp.remove(b_ein_vereinges);
+        cp.revalidate();
+        cp.repaint();
+        cp.add(b_ein_verein_sportart);
+        v1.einfuegen_gui("Verein", t_ein_spieler1.getText(), t_ein_spieler2.getText(), t_ein_spieler3.getText(), t_ein_spieler4.getText(), t_ein_spieler5.getText(), t_ein_spieler6.getText(), t_ein_spieler7.getText(), t_ein_spieler8.getText(), t_ein_spieler9.getText(), t_ein_spieler10.getText());
+        t_ein_spieler2.setText("");
+    }
+    
+    public void b_ein_verein_sportart_ActionPerformed(ActionEvent evt) {
+        l_einfuegen.setText("Wenn du dem Verein noch eine Sportart hinzufügen möchtest, fülle das Feld aus und bestätige deine Eingabe!");
+        l_ein_spieler2.setText("Sportart:");
+        cp.revalidate();
+        cp.repaint();
+        v1.einfuegen_gui("hat", t_ein_spieler1.getText(), t_ein_spieler2.getText(), t_ein_spieler3.getText(), t_ein_spieler4.getText(), t_ein_spieler5.getText(), t_ein_spieler6.getText(), t_ein_spieler7.getText(), t_ein_spieler8.getText(), t_ein_spieler9.getText(), t_ein_spieler10.getText());
+        t_ein_spieler2.setText("");
+    }
+    
+    public void b_ver_verein_ActionPerformed(ActionEvent evt) {
+        cp.remove(b_ein_spieler);
+        cp.remove(b_ein_trainer);
+        cp.remove(b_ein_sportart);
+        cp.remove(b_ein_verein);
+        cp.remove(b_ver_verein);
+        t_ein_spieler1.setBounds(250, 80, 230, 30);
+        t_ein_spieler2.setBounds(250, 130, 230, 30);
+        cp.revalidate();
+        cp.repaint();
+        l_einfuegen.setText("Fülle alle Felder aus und bestätige deine Eingabe!");
+        l_ein_spieler1.setText("Name des Vereins:");
+        cp.add(l_ein_spieler1);
+        l_ein_spieler2.setText("Sportart:");
+        cp.add(l_ein_spieler2);
+        cp.add(t_ein_spieler1);
+        cp.add(t_ein_spieler2);
+        cp.add(b_ver_vereinges);
+    }
+    
+    public void b_ver_vereinges_ActionPerformed(ActionEvent evt) {
+        v1.einfuegen_gui("hat", t_ein_spieler1.getText(), t_ein_spieler2.getText(), t_ein_spieler3.getText(), t_ein_spieler4.getText(), t_ein_spieler5.getText(), t_ein_spieler6.getText(), t_ein_spieler7.getText(), t_ein_spieler8.getText(), t_ein_spieler9.getText(), t_ein_spieler10.getText());
     }
     
     public void bMaskeLeeren_ActionPerformed(ActionEvent evt) {
