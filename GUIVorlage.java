@@ -38,6 +38,10 @@ public class GUIVorlage extends JFrame {
     private JLabel l_ein_spieler10 = new JLabel();
     private JLabel l_loeschen = new JLabel();
     private JLabel l_loeschen2 = new JLabel();
+    private JLabel l_loeschen3 = new JLabel();
+    private JLabel l_loeschen4 = new JLabel();
+    private JLabel l_loeschen5 = new JLabel();
+    private JLabel l_loeschen6 = new JLabel();
     
     
     
@@ -53,6 +57,8 @@ public class GUIVorlage extends JFrame {
     private JTextField t_ein_spieler8 = new JTextField();
     private JTextField t_ein_spieler9 = new JTextField();
     private JTextField t_ein_spieler10 = new JTextField();
+    private JTextField t_loeschen1 = new JTextField();
+    private JTextField t_loeschen2 = new JTextField();
     
     
     private JButton b_start = new JButton();
@@ -91,6 +97,7 @@ public class GUIVorlage extends JFrame {
     private boolean ein_spieler9=true;
     private boolean ein_spieler10=true;
     private int l=1;
+    private String art;
     
     Container cp;
     
@@ -246,6 +253,21 @@ public class GUIVorlage extends JFrame {
         l_loeschen2.setText("und Sie sind nicht wiederherstellbar, überlege es dir also gut! Bist du sicher, dass du fortfahren möchtest?");
         l_loeschen2.setFont(new Font("Arial", Font.PLAIN, 17));
         
+        l_loeschen3.setBounds(30, 83, 1000, 23);
+        l_loeschen3.setText("");
+        l_loeschen3.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_loeschen4.setBounds(30, 160, 1000, 23);
+        l_loeschen4.setText("");
+        l_loeschen4.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_loeschen5.setBounds(30, 280, 1000, 23);
+        l_loeschen5.setText("");
+        l_loeschen5.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_loeschen6.setBounds(30, 320, 1000, 23);
+        l_loeschen6.setText("");
+        l_loeschen6.setFont(new Font("Arial", Font.PLAIN, 17));
         
         t_name.setBounds(300, 40, 230, 30);
         t_name.setText("");
@@ -290,6 +312,14 @@ public class GUIVorlage extends JFrame {
         t_ein_spieler10.setBounds(430, 530, 230, 30);
         t_ein_spieler10.setText("");
         t_ein_spieler10.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_loeschen1.setBounds(350, 90, 230, 30);
+        t_loeschen1.setText("");
+        t_loeschen1.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_loeschen2.setBounds(430, 530, 230, 30);
+        t_loeschen2.setText("");
+        t_loeschen2.setFont(new Font("Arial", Font.PLAIN, 17));
         
         
         
@@ -556,7 +586,7 @@ public class GUIVorlage extends JFrame {
         b_ein_trainerges.setFont(new Font("Dialog", Font.PLAIN, 13));
         
         b_loeschen_bestaetigen.setBounds(350, 90, 115, 33);
-        b_loeschen_bestaetigen.setText("Los geht's!");
+        b_loeschen_bestaetigen.setText("Ich bin sicher!");
         b_loeschen_bestaetigen.setMargin(new Insets(2, 2, 2, 2));
         b_loeschen_bestaetigen.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
@@ -957,6 +987,10 @@ public class GUIVorlage extends JFrame {
         cp.repaint();
         cp.add(l_loeschen);
         cp.add(l_loeschen2);
+        cp.add(l_loeschen3);
+        cp.add(l_loeschen4);
+        cp.add(l_loeschen5);
+        cp.add(l_loeschen6);
         cp.add(b_loeschen_bestaetigen);
     }
     
@@ -972,7 +1006,88 @@ public class GUIVorlage extends JFrame {
             l++;
         }
         else if (l==3) {
+            l_loeschen.setText("Da du dir sehr sicher zu sein scheinst, kannst du nun deine Daten löschen!");
+            l_loeschen2.setText("Zu deiner Sicherheit und zu der, der anderen Datenbanknutzer kannst du deine Daten nur über deine persönliche ID löschen.");
+            l_loeschen3.setText("Nenne bitte zu erst deine Art des Objektes, welches du löschen möchtest:");
+            cp.add(t_loeschen1);
+            t_loeschen1.setBounds(350, 120, 115, 33);
+            b_loeschen_bestaetigen.setBounds(350, 160, 115, 33);
+            b_loeschen_bestaetigen.setText("Bestätigen!");
+            l++;
+        }
+        else if (l==4) {
+            l_loeschen4.setText("Bitte bestätige die Art des zu löschenden Objektes:");
+            cp.add(t_loeschen2);
+            t_loeschen2.setBounds(350, 200, 115, 33);
+            b_loeschen_bestaetigen.setBounds(350, 240, 115, 33);
+            l++;
+        }
+        else if (l==5) {
+            if(t_loeschen1.getText().equals(t_loeschen2.getText())) {
+                l_loeschen5.setText("");
+                l_loeschen6.setText("");
+                if (t_loeschen1.getText().equals("Spieler")) {
+                    art=t_loeschen1.getText();
+                    t_loeschen1.setText("");
+                    t_loeschen2.setText("");
+                    b_loeschen_bestaetigen.setBounds(350, 160, 115, 33);
+                    b_loeschen_bestaetigen.setText("Bestätigen!");
+                    cp.remove(t_loeschen2);
+                    l_loeschen4.setText("");
+                    l_loeschen3.setText("Gebe die ID des zu löschenden Spielers an:");
+                    l=6;
+                }
+                else if (t_loeschen1.getText().equals("Trainer")) {
+                    art=t_loeschen1.getText();
+                    t_loeschen1.setText("");
+                    t_loeschen2.setText("");
+                    b_loeschen_bestaetigen.setBounds(350, 160, 115, 33);
+                    b_loeschen_bestaetigen.setText("Bestätigen!");
+                    cp.remove(t_loeschen2);
+                    l_loeschen4.setText("");
+                    l_loeschen3.setText("Gebe die ID des zu löschenden Trainers an:");
+                    l=6;
+                }
+                else if (t_loeschen1.getText().equals("Verein")) {
+                    art=t_loeschen1.getText();
+                    t_loeschen1.setText("");
+                    t_loeschen2.setText("");
+                    b_loeschen_bestaetigen.setBounds(350, 160, 115, 33);
+                    b_loeschen_bestaetigen.setText("Bestätigen!");
+                    cp.remove(t_loeschen2);
+                    l_loeschen4.setText("");
+                    l_loeschen3.setText("Gebe die ID des zu löschenden Vereins an:");
+                    l=6;
+                }
+                else {
+                    l_loeschen5.setText("Leider gibt es diese Art von Objekt nicht oder du hast versucht eine Sportart zu löschen,");
+                    l_loeschen6.setText("was in dieser Datenbank grundsätzlich untersagt ist!");
+                }
+            }
             
+            else {
+                l_loeschen5.setText("Deine beiden angegebenen Objektarten stimmen nicht überein! Bitte versuche es erneut.");
+            }
+        }
+        else if(l==6) {
+                l_loeschen4.setText("Bitte gebe den Bestätigungscode ein, den wir dir per E-Mail geschickt haben");
+                l_loeschen5.setBounds(30, 200, 1000, 23);
+                l_loeschen5.setText("(da die Datenbank keine E-Mails unterstützt ist der Bestätigungscode deine ID)");
+                cp.add(t_loeschen2);
+                t_loeschen2.setBounds(350, 240, 115, 33);
+                b_loeschen_bestaetigen.setBounds(350, 280, 115, 33);
+                l=7;
+            }
+        else if(l==7) {
+            if (t_loeschen1.getText().equals(t_loeschen2.getText())) {
+                v1.loeschen_gui(art, t_loeschen1.getText());
+                l_loeschen6.setBounds(30, 320, 1000, 23);
+                l_loeschen6.setText("Das Löschen des Objekts war erfolgreich!");
+            }
+            else {
+                l_loeschen6.setBounds(30, 320, 1000, 23);
+                l_loeschen6.setText("Der eingegebene Code ist falsch, bitte versuche es erneut!");
+            }
         }
     }
     

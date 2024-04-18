@@ -1028,6 +1028,41 @@ public class Verwaltung {
         }
     }
     
+    public void loeschen_gui(String a, String i) {
+        if(a.equals("Spieler")) {
+            String auftrag="Delete from Spieler where SID ="+i;
+            meinConnector.executeStatement(auftrag);
+            aktuelleFehlermeldung();
+        }
+        else if (a.equals("Trainer")) {
+            String auftrag="Delete from Trainer where TID ="+i;
+            meinConnector.executeStatement(auftrag);
+            aktuelleFehlermeldung();
+        }
+        else if (a.equals("Verein")) {
+            String auftrag="Delete from hat where VID ="+i;
+            meinConnector.executeStatement(auftrag);
+            aktuelleFehlermeldung();
+            auftrag="Update Spieler Set SVID=0 Where SVID="+i;
+            meinConnector.executeStatement(auftrag);
+            aktuelleFehlermeldung();
+            auftrag="Update Spieler Set LVID=0 Where LVID="+i;
+            meinConnector.executeStatement(auftrag);
+            aktuelleFehlermeldung();
+            auftrag="Update Spieler Set GVID=0 Where GVID="+i;
+            meinConnector.executeStatement(auftrag);
+            aktuelleFehlermeldung();
+            auftrag="Update Trainer Set VID=0 Where VID="+i;
+            meinConnector.executeStatement(auftrag);
+            aktuelleFehlermeldung();
+            auftrag="Delete from hat where VID ="+i;
+            meinConnector.executeStatement(auftrag);
+            aktuelleFehlermeldung();
+            auftrag="Delete from Verein where VID ="+i;
+            meinConnector.executeStatement(auftrag);
+            aktuelleFehlermeldung();
+        }
+    }
     
     /**
      * Alle nicht implementierten Methoden müssen geschrieben werden!
