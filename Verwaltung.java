@@ -932,7 +932,7 @@ public class Verwaltung {
             System.out.println("Bist du wirklich ganz sicher?");
             String zwei=sc.nextLine();
             if (zwei.equals("ja")){
-                System.out.println("Also wirklich sehr sicher, deine Daten gehen sonst für immer verloren (oder werden von uns ins Darknet gestellt)");
+                System.out.println("Also wirklich sehr sicher? Deine Daten gehen sonst für immer verloren (oder werden von uns ins Darknet gestellt");
                 String drei=sc.nextLine();
                 if (drei.equals("ja")) {
                     System.out.println("Da du dir sehr sicher zu sein scheinst, kannst du nun deine Daten löschen!");

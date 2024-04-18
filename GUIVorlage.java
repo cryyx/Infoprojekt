@@ -36,6 +36,8 @@ public class GUIVorlage extends JFrame {
     private JLabel l_ein_spieler8 = new JLabel();
     private JLabel l_ein_spieler9 = new JLabel();
     private JLabel l_ein_spieler10 = new JLabel();
+    private JLabel l_loeschen = new JLabel();
+    private JLabel l_loeschen2 = new JLabel();
     
     
     
@@ -79,6 +81,7 @@ public class GUIVorlage extends JFrame {
     private JButton b_ein_verein_sportart = new JButton();
     private JButton b_ein_sportartges = new JButton();
     private JButton b_ein_trainerges = new JButton();
+    private JButton b_loeschen_bestaetigen = new JButton();
     
     
     private JButton bMaskeLeeren = new JButton();
@@ -87,6 +90,7 @@ public class GUIVorlage extends JFrame {
         
     private boolean ein_spieler9=true;
     private boolean ein_spieler10=true;
+    private int l=1;
     
     Container cp;
     
@@ -95,7 +99,7 @@ public class GUIVorlage extends JFrame {
     public GUIVorlage() {
 
         // Frame-Initialisierung
-        super("Schulverwaltung");
+        super("Transfermarkt deines Vertrauens");
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         int frameWidth = 1000; 
         int frameHeight = 700;
@@ -234,6 +238,14 @@ public class GUIVorlage extends JFrame {
         l_ein_spieler10.setText("Gerüchtsverein:");
         l_ein_spieler10.setFont(new Font("Arial", Font.PLAIN, 17));
         
+        l_loeschen.setBounds(30, 17, 1000, 23);
+        l_loeschen.setText("Herzlich willkommen im Lösch-Menü unserer Datenbank. Ein Warnhinweis vorab: das Löschen deiner Daten ist permanent");
+        l_loeschen.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_loeschen2.setBounds(30, 50, 1000, 23);
+        l_loeschen2.setText("und Sie sind nicht wiederherstellbar, überlege es dir also gut! Bist du sicher, dass du fortfahren möchtest?");
+        l_loeschen2.setFont(new Font("Arial", Font.PLAIN, 17));
+        
         
         t_name.setBounds(300, 40, 230, 30);
         t_name.setText("");
@@ -317,7 +329,7 @@ public class GUIVorlage extends JFrame {
         b_loeschen.setMargin(new Insets(2, 2, 2, 2));
         b_loeschen.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
-                    menue1_ActionPerformed(evt);
+                    b_loeschen_ActionPerformed(evt);
                 }
             });
         b_loeschen.setFont(new Font("Dialog", Font.PLAIN, 13));
@@ -542,6 +554,16 @@ public class GUIVorlage extends JFrame {
                 }
             });
         b_ein_trainerges.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_loeschen_bestaetigen.setBounds(350, 90, 115, 33);
+        b_loeschen_bestaetigen.setText("Los geht's!");
+        b_loeschen_bestaetigen.setMargin(new Insets(2, 2, 2, 2));
+        b_loeschen_bestaetigen.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_loeschen_bestaetigen_ActionPerformed(evt);
+                }
+            });
+        b_loeschen_bestaetigen.setFont(new Font("Dialog", Font.PLAIN, 13));
         
         b_start.setBounds(350, 50, 115, 33);
         b_start.setText("Los geht's!");
@@ -924,6 +946,36 @@ public class GUIVorlage extends JFrame {
     public void b_ver_vereinges_ActionPerformed(ActionEvent evt) {
         v1.einfuegen_gui("hat", t_ein_spieler1.getText(), t_ein_spieler2.getText(), t_ein_spieler3.getText(), t_ein_spieler4.getText(), t_ein_spieler5.getText(), t_ein_spieler6.getText(), t_ein_spieler7.getText(), t_ein_spieler8.getText(), t_ein_spieler9.getText(), t_ein_spieler10.getText());
     }
+    
+    public void b_loeschen_ActionPerformed(ActionEvent evt) {
+        cp.remove(l_optionen);
+        cp.remove(b_suchen);
+        cp.remove(b_einfuegen);
+        cp.remove(b_loeschen);
+        cp.remove(b_aendern);
+        cp.revalidate();
+        cp.repaint();
+        cp.add(l_loeschen);
+        cp.add(l_loeschen2);
+        cp.add(b_loeschen_bestaetigen);
+    }
+    
+    public void b_loeschen_bestaetigen_ActionPerformed(ActionEvent evt) {
+        if (l==1) {
+            l_loeschen.setText("Bist du wirklich ganz sicher?");
+            l_loeschen2.setText("");
+            l++;
+        }
+        else if (l==2) {
+            l_loeschen.setText("Also wirklich sehr sicher?");
+            l_loeschen2.setText("Deine Daten gehen sonst für immer verloren (oder werden von uns ins Darknet gestellt)");
+            l++;
+        }
+        else if (l==3) {
+            
+        }
+    }
+    
     
     public void bMaskeLeeren_ActionPerformed(ActionEvent evt) {
         maskeLeeren();
