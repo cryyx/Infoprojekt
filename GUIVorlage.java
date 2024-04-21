@@ -43,7 +43,21 @@ public class GUIVorlage extends JFrame {
     private JLabel l_loeschen4 = new JLabel();
     private JLabel l_loeschen5 = new JLabel();
     private JLabel l_loeschen6 = new JLabel();
-    
+    private JLabel l_aendern1 = new JLabel();
+    private JLabel l_aendern2 = new JLabel();
+    private JLabel l_aendern3 = new JLabel();
+    private JLabel l_aendern4 = new JLabel();
+    private JLabel l_aendern5 = new JLabel();
+    private JLabel l_aendern6 = new JLabel();
+    private JLabel l_aendern7 = new JLabel();
+    private JLabel l_aendern8 = new JLabel();
+    private JLabel l_aendern9 = new JLabel();
+    private JLabel l_aendern10 = new JLabel();
+    private JLabel l_aendern11 = new JLabel();
+    private JLabel l_aendern12 = new JLabel();
+    private JLabel l_aendern13 = new JLabel();
+    private JLabel l_aendern14 = new JLabel();
+    private JLabel l_aendern15 = new JLabel();
     
     
     
@@ -60,11 +74,23 @@ public class GUIVorlage extends JFrame {
     private JTextField t_ein_spieler10 = new JTextField();
     private JTextField t_loeschen1 = new JTextField();
     private JTextField t_loeschen2 = new JTextField();
+    private JTextField t_aendern1 = new JTextField();
+    private JTextField t_aendern2 = new JTextField();
+    private JTextField t_aendern3 = new JTextField();
+    private JTextField t_aendern4 = new JTextField();
+    private JTextField t_aendern5 = new JTextField();
+    private JTextField t_aendern6 = new JTextField();
+    private JTextField t_aendern7 = new JTextField();
+    private JTextField t_aendern8 = new JTextField();
+    private JTextField t_aendern9 = new JTextField();
+    private JTextField t_aendern10 = new JTextField();
+    private JTextField t_aendern11 = new JTextField();
+    private JTextField t_aendern12 = new JTextField();
     
     
     private JButton b_start = new JButton();
     private JButton b_name = new JButton();
-    private JButton b_suchen = new JButton();    //Schüler
+    private JButton b_suchen = new JButton();   
     private JButton b_einfuegen = new JButton();
     private JButton b_loeschen = new JButton();
     private JButton b_aendern = new JButton();
@@ -89,7 +115,17 @@ public class GUIVorlage extends JFrame {
     private JButton b_ein_sportartges = new JButton();
     private JButton b_ein_trainerges = new JButton();
     private JButton b_loeschen_bestaetigen = new JButton();
-    
+    private JButton b_aendern_bestaetigen = new JButton();
+    private JButton b_aendern1 = new JButton();
+    private JButton b_aendern2 = new JButton();
+    private JButton b_aendern3 = new JButton();
+    private JButton b_aendern4 = new JButton();
+    private JButton b_aendern5 = new JButton();
+    private JButton b_aendern6 = new JButton();
+    private JButton b_aendern7 = new JButton();
+    private JButton b_aendern8 = new JButton();
+    private JButton b_aendern9 = new JButton();
+    private JButton b_aendern10 = new JButton();
     
     private JButton bMaskeLeeren = new JButton();
     private JTextArea textfeld;
@@ -97,8 +133,20 @@ public class GUIVorlage extends JFrame {
         
     private boolean ein_spieler9=true;
     private boolean ein_spieler10=true;
+    private boolean aendern1=true;
+    private boolean aendern2=true;
+    private boolean aendern3=true;
+    private boolean aendern4=true;
+    private boolean aendern5=true;
+    private boolean aendern6=true;
+    private boolean aendern7=true;
+    private boolean aendern8=true;
+    private boolean aendern9=true;
+    private boolean aendern10=true;
     private int l=1;
+    private int a=1;
     private int z=0;
+    private String id;
     private String art;
     
     Container cp;
@@ -113,7 +161,7 @@ public class GUIVorlage extends JFrame {
         super("Transfermarkt deines Vertrauens");
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         int frameWidth = 1000; 
-        int frameHeight = 700;
+        int frameHeight = 800;
         setSize(frameWidth, frameHeight);
         Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (d.width - getSize().width) / 2;
@@ -290,6 +338,71 @@ public class GUIVorlage extends JFrame {
         l_loeschen6.setText("");
         l_loeschen6.setFont(new Font("Arial", Font.PLAIN, 17));
         
+        l_aendern1.setBounds(30, 17, 1000, 23);
+        l_aendern1.setText("Herzlich willkommen in dem Änderungs-Menü unserer Datenbank.");
+        l_aendern1.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_aendern2.setBounds(30, 50, 1000, 23);
+        l_aendern2.setText("Sobald ein Datensatz geändert wurde, lässt sich dies allerdings nicht mehr rückgängig machen!");
+        l_aendern2.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_aendern3.setBounds(30, 83, 1000, 23);
+        l_aendern3.setText("Bitte gebe erst die Art des Objekts ein, von dem du einen Datensatz ändern möchtest:");
+        l_aendern3.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_aendern4.setBounds(30, 160, 1000, 23);
+        l_aendern4.setText("Bitte bestätige die Art des Objekts:");
+        l_aendern4.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_aendern5.setBounds(30, 280, 1000, 23);
+        l_aendern5.setText("Deine beiden angegebenen Objektarten stimmen nicht überein! Bitte versuche es erneut.");
+        l_aendern5.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_aendern6.setBounds(300, 120, 800, 23);
+        l_aendern6.setText("Nachname:");
+        l_aendern6.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_aendern7.setBounds(300, 170, 800, 23);
+        l_aendern7.setText("Vorname:");
+        l_aendern7.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_aendern8.setBounds(300, 220, 800, 23);
+        l_aendern8.setText("Gehalt:");
+        l_aendern8.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_aendern9.setBounds(300, 270, 800, 23);
+        l_aendern9.setText("Preis:");
+        l_aendern9.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_aendern10.setBounds(300, 320, 800, 23);
+        l_aendern10.setText("Position:");
+        l_aendern10.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_aendern11.setBounds(300, 370, 800, 23);
+        l_aendern11.setText("Nationalität:");
+        l_aendern11.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_aendern12.setBounds(300, 420, 800, 23);
+        l_aendern12.setText("Verein:");
+        l_aendern12.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_aendern13.setBounds(300, 470, 800, 23);
+        l_aendern13.setText("Leihverein:");
+        l_aendern13.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_aendern14.setBounds(300, 520, 800, 23);
+        l_aendern14.setText("Gerüchtsverein:");
+        l_aendern14.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_aendern15.setBounds(300, 570, 800, 23);
+        l_aendern15.setText("Sportart:");
+        l_aendern15.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        
+        
+        
+        
+        
         t_name.setBounds(300, 40, 230, 30);
         t_name.setText("");
         t_name.setFont(new Font("Arial", Font.PLAIN, 17));
@@ -342,8 +455,53 @@ public class GUIVorlage extends JFrame {
         t_loeschen2.setText("");
         t_loeschen2.setFont(new Font("Arial", Font.PLAIN, 17));
         
+        t_aendern1.setBounds(350, 120, 230, 30);
+        t_aendern1.setText("");
+        t_aendern1.setFont(new Font("Arial", Font.PLAIN, 17));
         
+        t_aendern2.setBounds(350, 200, 230, 30);
+        t_aendern2.setText("");
+        t_aendern2.setFont(new Font("Arial", Font.PLAIN, 17));
         
+        t_aendern3.setBounds(430, 120, 230, 30);
+        t_aendern3.setText("");
+        t_aendern3.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_aendern4.setBounds(430, 170, 230, 30);
+        t_aendern4.setText("");
+        t_aendern4.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_aendern5.setBounds(430, 220, 230, 30);
+        t_aendern5.setText("");
+        t_aendern5.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_aendern6.setBounds(430, 270, 230, 30);
+        t_aendern6.setText("");
+        t_aendern6.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_aendern7.setBounds(430, 320, 230, 30);
+        t_aendern7.setText("");
+        t_aendern7.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_aendern8.setBounds(430, 370, 230, 30);
+        t_aendern8.setText("");
+        t_aendern8.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_aendern9.setBounds(430, 420, 230, 30);
+        t_aendern9.setText("");
+        t_aendern9.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_aendern10.setBounds(430, 470, 230, 30);
+        t_aendern10.setText("");
+        t_aendern10.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_aendern11.setBounds(430, 520, 230, 30);
+        t_aendern11.setText("");
+        t_aendern11.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_aendern12.setBounds(430, 570, 230, 30);
+        t_aendern12.setText("");
+        t_aendern12.setFont(new Font("Arial", Font.PLAIN, 17));
         
         b_name.setBounds(350, 90, 115, 33);
         b_name.setText("Los geht's!");
@@ -390,7 +548,7 @@ public class GUIVorlage extends JFrame {
         b_aendern.setMargin(new Insets(2, 2, 2, 2));
         b_aendern.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
-                    menue1_ActionPerformed(evt);
+                    b_aendern_ActionPerformed(evt);
                 }
             });
         b_aendern.setFont(new Font("Dialog", Font.PLAIN, 13));
@@ -615,6 +773,121 @@ public class GUIVorlage extends JFrame {
                 }
             });
         b_loeschen_bestaetigen.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_aendern_bestaetigen.setBounds(350, 90, 115, 33);
+        b_aendern_bestaetigen.setText("Weiter");
+        b_aendern_bestaetigen.setMargin(new Insets(2, 2, 2, 2));
+        b_aendern_bestaetigen.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_aendern_bestaetigen_ActionPerformed(evt);
+                }
+            });
+        b_loeschen_bestaetigen.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_aendern1.setBounds(50, 120, 150, 33);
+        b_aendern1.setText("Vorname");
+        b_aendern1.setMargin(new Insets(2, 2, 2, 2));
+        b_aendern1.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_aendern1_ActionPerformed(evt);
+                }
+            });
+        b_aendern1.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_aendern2.setBounds(50, 170, 150, 33);
+        b_aendern2.setText("Nachname");
+        b_aendern2.setMargin(new Insets(2, 2, 2, 2));
+        b_aendern2.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_aendern2_ActionPerformed(evt);
+                }
+            });
+        b_aendern2.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_aendern3.setBounds(50, 220, 150, 33);
+        b_aendern3.setText("Gehalt");
+        b_aendern3.setMargin(new Insets(2, 2, 2, 2));
+        b_aendern3.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_aendern3_ActionPerformed(evt);
+                }
+            });
+        b_aendern3.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_aendern4.setBounds(50, 270, 150, 33);
+        b_aendern4.setText("Preis");
+        b_aendern4.setMargin(new Insets(2, 2, 2, 2));
+        b_aendern4.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_aendern4_ActionPerformed(evt);
+                }
+            });
+        b_aendern4.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_aendern5.setBounds(50, 320, 150, 33);
+        b_aendern5.setText("Position");
+        b_aendern5.setMargin(new Insets(2, 2, 2, 2));
+        b_aendern5.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_aendern5_ActionPerformed(evt);
+                }
+            });
+        b_aendern5.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_aendern6.setBounds(50, 370, 150, 33);
+        b_aendern6.setText("Nationalität");
+        b_aendern6.setMargin(new Insets(2, 2, 2, 2));
+        b_aendern6.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_aendern6_ActionPerformed(evt);
+                }
+            });
+        b_aendern6.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_aendern7.setBounds(50, 420, 150, 33);
+        b_aendern7.setText("Verein");
+        b_aendern7.setMargin(new Insets(2, 2, 2, 2));
+        b_aendern7.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_aendern7_ActionPerformed(evt);
+                }
+            });
+        b_aendern7.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_aendern8.setBounds(50, 470, 150, 33);
+        b_aendern8.setText("Leihverein");
+        b_aendern8.setMargin(new Insets(2, 2, 2, 2));
+        b_aendern8.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_aendern8_ActionPerformed(evt);
+                }
+            });
+        b_aendern8.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_aendern9.setBounds(50, 520, 150, 33);
+        b_aendern9.setText("Gerüchtsverein");
+        b_aendern9.setMargin(new Insets(2, 2, 2, 2));
+        b_aendern9.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_aendern9_ActionPerformed(evt);
+                }
+            });
+        b_aendern9.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_aendern10.setBounds(50, 570, 150, 33);
+        b_aendern10.setText("Sportart");
+        b_aendern10.setMargin(new Insets(2, 2, 2, 2));
+        b_aendern10.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_aendern10_ActionPerformed(evt);
+                }
+            });
+        b_aendern10.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        
+        
+        
+        
         
         b_start.setBounds(350, 50, 115, 33);
         b_start.setText("Los geht's!");
@@ -1142,6 +1415,389 @@ public class GUIVorlage extends JFrame {
         }
     }
     
+    public void b_aendern_ActionPerformed(ActionEvent evt) {
+        cp.remove(l_optionen);
+        cp.remove(b_suchen);
+        cp.remove(b_einfuegen);
+        cp.remove(b_loeschen);
+        cp.remove(b_aendern);
+        cp.revalidate();
+        cp.repaint();
+        cp.add(l_aendern1);
+        cp.add(l_aendern2);
+        cp.add(b_aendern_bestaetigen);
+        a=1;
+        z=31;
+    }
+    
+    public void b_aendern_bestaetigen_ActionPerformed(ActionEvent evt) {
+        if (a==1) {
+            cp.add(l_aendern3);
+            cp.add(t_aendern1);
+            cp.revalidate();
+            cp.repaint();
+            b_aendern_bestaetigen.setBounds(350, 160, 115, 33);
+            a++;
+            z=32;
+        }
+        else if (a==2) {
+            cp.add(l_aendern4);
+            cp.add(t_aendern2);
+            cp.revalidate();
+            cp.repaint();
+            b_aendern_bestaetigen.setBounds(350, 240, 115, 33);
+            z=33;
+            a++;
+        }
+        else if (a==3) {
+            if (t_aendern1.getText().equals(t_aendern2.getText())) {
+                cp.remove(l_aendern5);
+                art=t_aendern1.getText();
+                if (t_aendern1.getText().equals("Spieler")) {
+                    t_aendern1.setText("");
+                    cp.remove(l_aendern4);
+                    cp.remove(t_aendern2);
+                    cp.revalidate();
+                    cp.repaint();
+                    b_aendern_bestaetigen.setBounds(350, 160, 115, 33);
+                    l_aendern3.setText("Gebe aus Sicherheitsgründen bitte deine Spieler-ID ein:");
+                    a=4;
+                    z=35;
+                }
+                else if (t_aendern1.getText().equals("Trainer")) {
+                    t_aendern1.setText("");
+                    cp.remove(l_aendern4);
+                    cp.remove(t_aendern2);
+                    cp.revalidate();
+                    cp.repaint();
+                    b_aendern_bestaetigen.setBounds(350, 160, 115, 33);
+                    l_aendern3.setText("Gebe aus Sicherheitsgründen bitte deine Trainer-ID ein:");
+                    a=5;
+                    z=36;
+                }
+                else if (t_aendern1.getText().equals("Verein")) {
+                    t_aendern1.setText("");
+                    cp.remove(l_aendern4);
+                    cp.remove(t_aendern2);
+                    cp.revalidate();
+                    cp.repaint();
+                    b_aendern_bestaetigen.setBounds(350, 160, 115, 33);
+                    l_aendern3.setText("Gebe aus Sicherheitsgründen bitte deine Vereins-ID ein:");
+                    a=6;
+                    z=37;
+                }
+                else if (t_aendern1.getText().equals("Sportart")) {
+                    t_aendern1.setText("");
+                    cp.remove(l_aendern4);
+                    cp.remove(t_aendern2);
+                    cp.revalidate();
+                    cp.repaint();
+                    b_aendern_bestaetigen.setBounds(350, 160, 115, 33);
+                    l_aendern3.setText("Gebe aus Sicherheitsgründen bitte die ID deiner Sportart ein:");
+                    a=7;
+                    z=38;
+                }
+                else {
+                    l_aendern5.setText("Bitte gebe ein gültiges Objekt ein!");
+                    z=39;
+                }
+            }
+            else {
+                cp.add(l_aendern5);
+                cp.revalidate();
+                cp.repaint();
+                z=34;
+            }
+        }
+        else if (a==4) {
+            id=t_aendern1.getText();
+            cp.remove(t_aendern1);
+            cp.revalidate();
+            cp.repaint();
+            l_aendern3.setText("Klicke auf jedes Attribut, das geändert werden soll und fülle die Felder aus!");
+            cp.add(b_aendern1);
+            cp.add(b_aendern2);
+            cp.add(b_aendern3);
+            cp.add(b_aendern4);
+            cp.add(b_aendern5);
+            cp.add(b_aendern6);
+            cp.add(b_aendern7);
+            cp.add(b_aendern8);
+            cp.add(b_aendern9);
+            cp.add(b_aendern10);
+            b_aendern_bestaetigen.setBounds(350, 610, 115, 33);
+            a=8;
+            z=40;
+        }
+        else if (a==5) {
+            id=t_aendern1.getText();
+            cp.remove(t_aendern1);
+            cp.revalidate();
+            cp.repaint();
+            l_aendern3.setText("Klicke auf jedes Attribut, das geändert werden soll und fülle die Felder aus!");
+            b_aendern4.setText("Nationalität");
+            b_aendern5.setText("Verein");
+            b_aendern6.setText("Sportart");
+            l_aendern9.setText("Nationalität:");
+            l_aendern10.setText("Verein:");
+            l_aendern11.setText("Sportart:");
+            cp.add(b_aendern1);
+            cp.add(b_aendern2);
+            cp.add(b_aendern3);
+            cp.add(b_aendern4);
+            cp.add(b_aendern5);
+            cp.add(b_aendern6);
+            b_aendern_bestaetigen.setBounds(350, 410, 115, 33);
+            a=8;
+            z=41;
+        }
+        else if(a==6) {
+            id=t_aendern1.getText();
+            cp.remove(t_aendern1);
+            cp.revalidate();
+            cp.repaint();
+            l_aendern3.setText("Klicke auf jedes Attribut, das geändert werden soll und fülle die Felder aus!");
+            b_aendern1.setText("Name");
+            b_aendern2.setText("Budget");
+            l_aendern6.setText("Name:");
+            l_aendern7.setText("Budget:");
+            cp.add(b_aendern1);
+            cp.add(b_aendern2);
+            b_aendern_bestaetigen.setBounds(350, 210, 115, 33);
+            a=8;
+            z=42;
+            }
+        else if(a==7) {
+            id=t_aendern1.getText();
+            cp.remove(t_aendern1);
+            cp.revalidate();
+            cp.repaint();
+            l_aendern3.setText("Klicke auf jedes Attribut, das geändert werden soll und fülle die Felder aus!");
+            b_aendern1.setText("Popularität");
+            b_aendern2.setText("Ballgröße");
+            l_aendern6.setText("Popularität:");
+            l_aendern7.setText("Ballgröße:");
+            cp.add(b_aendern1);
+            cp.add(b_aendern2);
+            b_aendern_bestaetigen.setBounds(350, 210, 115, 33);
+            a=8;
+            z=43;
+        }
+        else if(a==8) {
+            System.out.println("Hallo");
+            v1.aendern_gui(id, art, t_aendern3.getText(), t_aendern4.getText(), t_aendern5.getText(), t_aendern6.getText(), t_aendern7.getText(), t_aendern8.getText(), t_aendern9.getText(), t_aendern10.getText(), t_aendern11.getText(), t_aendern12.getText());
+        }
+    }
+    
+    public void b_aendern1_ActionPerformed(ActionEvent evt) {
+        if (aendern1) {
+            cp.revalidate();
+            cp.repaint();
+            cp.add(l_aendern6);
+            cp.add(t_aendern3);
+            cp.revalidate();
+            cp.repaint();
+            aendern1=false;
+        }
+        else {
+            cp.revalidate();
+            cp.repaint();            
+            cp.remove(l_aendern6);
+            cp.remove(t_aendern3);
+            cp.revalidate();
+            cp.repaint();
+            aendern1=true;
+        }
+    }
+    
+    public void b_aendern2_ActionPerformed(ActionEvent evt) {
+        if (aendern2) {
+            cp.revalidate();
+            cp.repaint();
+            cp.add(l_aendern7);
+            cp.add(t_aendern4);
+            cp.revalidate();
+            cp.repaint();
+            aendern2=false;
+        }
+        else {
+            cp.revalidate();
+            cp.repaint();            
+            cp.remove(l_aendern7);
+            cp.remove(t_aendern4);
+            cp.revalidate();
+            cp.repaint();
+            aendern2=true;
+        }
+    }
+    
+    public void b_aendern3_ActionPerformed(ActionEvent evt) {
+        if (aendern3) {
+            cp.revalidate();
+            cp.repaint();
+            cp.add(l_aendern8);
+            cp.add(t_aendern5);
+            cp.revalidate();
+            cp.repaint();
+            aendern3=false;
+        }
+        else {
+            cp.revalidate();
+            cp.repaint();            
+            cp.remove(l_aendern8);
+            cp.remove(t_aendern5);
+            cp.revalidate();
+            cp.repaint();
+            aendern3=true;
+        }
+    }
+    
+    public void b_aendern4_ActionPerformed(ActionEvent evt) {
+        if (aendern4) {
+            cp.revalidate();
+            cp.repaint();
+            cp.add(l_aendern9);
+            cp.add(t_aendern6);
+            cp.revalidate();
+            cp.repaint();
+            aendern4=false;
+        }
+        else {
+            cp.revalidate();
+            cp.repaint();            
+            cp.remove(l_aendern9);
+            cp.remove(t_aendern6);
+            cp.revalidate();
+            cp.repaint();
+            aendern4=true;
+        }
+    }
+    
+    public void b_aendern5_ActionPerformed(ActionEvent evt) {
+        if (aendern5) {
+            cp.revalidate();
+            cp.repaint();
+            cp.add(l_aendern10);
+            cp.add(t_aendern7);
+            cp.revalidate();
+            cp.repaint();
+            aendern5=false;
+        }
+        else {
+            cp.revalidate();
+            cp.repaint();            
+            cp.remove(l_aendern10);
+            cp.remove(t_aendern7);
+            cp.revalidate();
+            cp.repaint();
+            aendern5=true;
+        }
+    }
+    
+    public void b_aendern6_ActionPerformed(ActionEvent evt) {
+        if (aendern6) {
+            cp.revalidate();
+            cp.repaint();
+            cp.add(l_aendern11);
+            cp.add(t_aendern8);
+            cp.revalidate();
+            cp.repaint();
+            aendern6=false;
+        }
+        else {
+            cp.revalidate();
+            cp.repaint();            
+            cp.remove(l_aendern11);
+            cp.remove(t_aendern8);
+            cp.revalidate();
+            cp.repaint();
+            aendern6=true;
+        }
+    }
+    
+    public void b_aendern7_ActionPerformed(ActionEvent evt) {
+        if (aendern7) {
+            cp.revalidate();
+            cp.repaint();
+            cp.add(l_aendern12);
+            cp.add(t_aendern9);
+            cp.revalidate();
+            cp.repaint();
+            aendern7=false;
+        }
+        else {
+            cp.revalidate();
+            cp.repaint();            
+            cp.remove(l_aendern12);
+            cp.remove(t_aendern9);
+            cp.revalidate();
+            cp.repaint();
+            aendern7=true;
+        }
+    }
+    
+    public void b_aendern8_ActionPerformed(ActionEvent evt) {
+        if (aendern8) {
+            cp.revalidate();
+            cp.repaint();
+            cp.add(l_aendern13);
+            cp.add(t_aendern10);
+            cp.revalidate();
+            cp.repaint();
+            aendern8=false;
+        }
+        else {
+            cp.revalidate();
+            cp.repaint();            
+            cp.remove(l_aendern13);
+            cp.remove(t_aendern10);
+            cp.revalidate();
+            cp.repaint();
+            aendern8=true;
+        }
+    }
+    
+    public void b_aendern9_ActionPerformed(ActionEvent evt) {
+        if (aendern9) {
+            cp.revalidate();
+            cp.repaint();
+            cp.add(l_aendern14);
+            cp.add(t_aendern11);
+            cp.revalidate();
+            cp.repaint();
+            aendern9=false;
+        }
+        else {
+            cp.revalidate();
+            cp.repaint();            
+            cp.remove(l_aendern14);
+            cp.remove(t_aendern11);
+            cp.revalidate();
+            cp.repaint();
+            aendern9=true;
+        }
+    }
+    
+    public void b_aendern10_ActionPerformed(ActionEvent evt) {
+        if (aendern10) {
+            cp.revalidate();
+            cp.repaint();
+            cp.add(l_aendern15);
+            cp.add(t_aendern12);
+            cp.revalidate();
+            cp.repaint();
+            aendern10=false;
+        }
+        else {
+            cp.revalidate();
+            cp.repaint();            
+            cp.remove(l_aendern15);
+            cp.remove(t_aendern12);
+            cp.revalidate();
+            cp.repaint();
+            aendern10=true;
+        }
+    }
     
     public void bMaskeLeeren_ActionPerformed(ActionEvent evt) {
         maskeLeeren();
@@ -1156,9 +1812,6 @@ public class GUIVorlage extends JFrame {
 
     }
     
-    public void deine_mom() {
-        System.out.println("5");
-    }
     
     public void zurueck_ActionPerformed(ActionEvent evt) {
         if (z==1) {
@@ -1183,7 +1836,9 @@ public class GUIVorlage extends JFrame {
             cp.repaint();
             z=1;
         }
+        
     }
+    
     
     private void maskeLeeren() {
         t_name.setText("");

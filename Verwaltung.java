@@ -855,7 +855,7 @@ public class Verwaltung {
                     meinConnector.executeStatement(sportart_id);
                     aktuelleFehlermeldung();
                     spo_neu=meinConnector.getCurrentQueryResult().getData()[0][0];
-                    auftrag=auftrag.concat("VID='"+spo_neu+"', ");
+                    auftrag=auftrag.concat("SpID='"+spo_neu+"', ");
                 }
                 auftrag=auftrag.concat("TID="+TID+" Where TID="+TID);
                 System.out.println("Bitte gebe zu deiner Sicherheit deine Trainer-ID erneut ein!");
@@ -923,6 +923,120 @@ public class Verwaltung {
         }
     }
     
+    
+    public void aendern_gui(String id, String art, String p1, String p2, String p3, String p4, String p5, String p6, String p7, String p8, String p9, String p10) {
+        System.out.println("Test");
+        System.out.println(id);
+        System.out.println(art);
+        if (art.equals("Spieler")) {
+            String auftrag="Update Spieler Set ";
+            if (!(p1.equals(""))) {
+                auftrag=auftrag.concat("Name='"+p1+"', ");
+            }
+            if (!(p2.equals(""))) {
+                auftrag=auftrag.concat("Vorname='"+p2+"', ");
+            }
+            if (!(p3.equals(""))) {
+                auftrag=auftrag.concat("Gehalt='"+p3+"', ");
+            }
+            if (!(p4.equals(""))) {
+                auftrag=auftrag.concat("Preis='"+p4+"', ");
+            }
+            if (!(p5.equals(""))) {
+                auftrag=auftrag.concat("Position='"+p5+"', ");
+            }
+            if (!(p6.equals(""))) {
+                auftrag=auftrag.concat("Nationalität='"+p6+"', ");
+            }
+            if (!(p7.equals(""))) {
+                String verein_id="select VID from Verein where Name like '"+p7+"'";
+                meinConnector.executeStatement(verein_id);
+                aktuelleFehlermeldung();
+                p7=meinConnector.getCurrentQueryResult().getData()[0][0];
+                auftrag=auftrag.concat("VID='"+p7+"', ");
+            }
+            if (!(p8.equals(""))) {
+                String verein_id="select VID from Verein where Name like '"+p8+"'";
+                meinConnector.executeStatement(verein_id);
+                aktuelleFehlermeldung();
+                p7=meinConnector.getCurrentQueryResult().getData()[0][0];
+                auftrag=auftrag.concat("LVID='"+p8+"', ");
+            }
+            if (!(p9.equals(""))) {
+                String verein_id="select VID from Verein where Name like '"+p9+"'";
+                meinConnector.executeStatement(verein_id);
+                aktuelleFehlermeldung();
+                p9=meinConnector.getCurrentQueryResult().getData()[0][0];
+                auftrag=auftrag.concat("GVID='"+p9+"', ");
+            }
+            if (!(p10.equals(""))) {
+                String sportart_id="select SpID from Sportart where Name like '"+p10+"'";
+                meinConnector.executeStatement(sportart_id);
+                aktuelleFehlermeldung();
+                p10=meinConnector.getCurrentQueryResult().getData()[0][0];
+                auftrag=auftrag.concat("SpID='"+p10+"', ");
+            }
+            auftrag=auftrag.concat("SID="+id+" Where SID="+id);
+            System.out.println(auftrag);
+            meinConnector.executeStatement(auftrag);
+        }
+        else if (art.equals("Trainer")) {
+            String auftrag="Update Trainer Set ";
+            if (!(p1.equals(""))) {
+                auftrag=auftrag.concat("Name='"+p1+"', ");
+            }
+            if (!(p2.equals(""))) {
+                auftrag=auftrag.concat("Vorname='"+p2+"', ");
+            }
+            if (!(p3.equals(""))) {
+                auftrag=auftrag.concat("Gehalt='"+p3+"', ");
+            }
+            if (!(p4.equals(""))) {
+                auftrag=auftrag.concat("Nationalität='"+p4+"', ");
+            }
+            if (!(p5.equals(""))) {
+                String verein_id="select VID from Verein where Name like '"+p5+"'";
+                meinConnector.executeStatement(verein_id);
+                aktuelleFehlermeldung();
+                p5=meinConnector.getCurrentQueryResult().getData()[0][0];
+                auftrag=auftrag.concat("VID='"+p5+"', ");
+            }
+            if (!(p6.equals(""))) {
+                String sportart_id="select SpID from Sportart where Name like '"+p6+"'";
+                meinConnector.executeStatement(sportart_id);
+                aktuelleFehlermeldung();
+                p6=meinConnector.getCurrentQueryResult().getData()[0][0];
+                auftrag=auftrag.concat("SpID='"+p10+"', ");
+            }
+            auftrag=auftrag.concat("TID="+id+" Where TID="+id);
+            System.out.println(auftrag);
+            meinConnector.executeStatement(auftrag);
+        }
+        else if (art.equals("Verein")) {
+            String auftrag="Update Verein Set ";
+            if (!(p1.equals(""))) {
+                auftrag=auftrag.concat("Name='"+p1+"', ");
+            }
+            if (!(p2.equals(""))) {
+                auftrag=auftrag.concat("Budget='"+p2+"', ");
+            }
+            auftrag=auftrag.concat("VID="+id+" Where VID="+id);
+            System.out.println(auftrag);
+            meinConnector.executeStatement(auftrag);
+        }
+        else if (art.equals("Sportart")) {
+            String auftrag="Update Sportart Set ";
+            if (!(p1.equals(""))) {
+                auftrag=auftrag.concat("Popularität='"+p1+"', ");
+            }
+            if (!(p2.equals(""))) {
+                auftrag=auftrag.concat("Ballgröße='"+p2+"', ");
+            }
+            auftrag=auftrag.concat("SpID="+id+" Where SpID="+id);
+            System.out.println(auftrag);
+            meinConnector.executeStatement(auftrag);
+        }
+    }
     
     
     public void loeschen(){
