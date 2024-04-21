@@ -63,7 +63,7 @@ public class GUIVorlage extends JFrame {
     
     private JButton b_start = new JButton();
     private JButton b_name = new JButton();
-    private JButton b_suchen = new JButton();    //Schüler
+    private JButton b_suchen = new JButton();   
     private JButton b_einfuegen = new JButton();
     private JButton b_loeschen = new JButton();
     private JButton b_aendern = new JButton();
