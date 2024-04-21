@@ -1179,6 +1179,11 @@ public class GUIVorlage extends JFrame {
             cp.repaint();
             z=1;
         }
+        
+    }
+    
+    public void deinVatter(){
+        
     }
     
     private void maskeLeeren() {
