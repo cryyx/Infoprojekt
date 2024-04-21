@@ -7,6 +7,7 @@ import javax.swing.border.LineBorder;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.JMenuBar;
 
 /**
  * Eine GUI fuer die Schulverwaltung
@@ -97,11 +98,14 @@ public class GUIVorlage extends JFrame {
     private boolean ein_spieler9=true;
     private boolean ein_spieler10=true;
     private int l=1;
+    private int z=0;
     private String art;
     
     Container cp;
     
     private Verwaltung v1 = new Verwaltung();
+    
+    
     
     public GUIVorlage() {
 
@@ -120,7 +124,24 @@ public class GUIVorlage extends JFrame {
 
         //Verwaltung/Datenbank
         schule=new Verwaltung();
-
+        
+        JMenuBar menu_Bar = new JMenuBar();
+    
+        JMenu menu = new JMenu("Optionen");
+        JMenuItem zurueck = new JMenuItem("zurück");
+        
+        menu.setMnemonic(KeyEvent.VK_A);
+        menu.getAccessibleContext().setAccessibleDescription("The only menu in this program that has menu items");
+        menu_Bar.add(menu);
+        menu.add(zurueck);
+        setJMenuBar(menu_Bar);
+        
+        zurueck.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    zurueck_ActionPerformed(evt);
+                }
+            });
+        
         // /* Erzeugung eines neuen Menü-Dialoges (EXPERIMENTELL) */
         // JDialog meinJDialog = new JDialog();
         // meinJDialog.setTitle("Schulverwaltung - Menü");
@@ -136,23 +157,23 @@ public class GUIVorlage extends JFrame {
         // JMenu menu = new JMenu("Schüler einfügen");
         // // Menü wird der Menüleiste hinzugefügt
         // bar.add(menu);
-        // JMenu menu2 = new JMenu("Lehrer einfügen");
-        // // Menü wird der Menüleiste hinzugefügt
-        // bar.add(menu2);
-        // menu2.addActionListener(new ActionListener() {
-        // public void actionPerformed(ActionEvent evt) {
-        // menu2_ActionPerformed(evt);
-        // }
-        // });
-        // JMenu menu3 = new JMenu("Kurs anlegen");
-        // // Menü wird der Menüleiste hinzugefügt
-        // bar.add(menu3);
-        // JMenu menu4 = new JMenu("Kurs zuweisen");
-        // // Menü wird der Menüleiste hinzugefügt
-        // bar.add(menu4);
-        // JMenu menu5 = new JMenu("Kursinfo");
-        // // Menü wird der Menüleiste hinzugefügt
-        // bar.add(menu5);
+        // // JMenu menu2 = new JMenu("Lehrer einfügen");
+        // // // Menü wird der Menüleiste hinzugefügt
+        // // bar.add(menu2);
+        // // menu2.addActionListener(new ActionListener() {
+        // // public void actionPerformed(ActionEvent evt) {
+        // // menu2_ActionPerformed(evt);
+        // // }
+        // // });
+        // // JMenu menu3 = new JMenu("Kurs anlegen");
+        // // // Menü wird der Menüleiste hinzugefügt
+        // // bar.add(menu3);
+        // // JMenu menu4 = new JMenu("Kurs zuweisen");
+        // // // Menü wird der Menüleiste hinzugefügt
+        // // bar.add(menu4);
+        // // JMenu menu5 = new JMenu("Kursinfo");
+        // // // Menü wird der Menüleiste hinzugefügt
+        // // bar.add(menu5);
         // // Menüleiste wird für den Dialog gesetzt
         // meinJDialog.setJMenuBar(bar);
         // // Wir lassen unseren Dialog anzeigen
@@ -638,6 +659,7 @@ public class GUIVorlage extends JFrame {
         cp.repaint();
         cp.add(t_name);
         cp.add(b_name);
+        z=1;
     }
     
     public void b_name_ActionPerformed(ActionEvent evt) {
@@ -652,6 +674,7 @@ public class GUIVorlage extends JFrame {
         cp.add(b_einfuegen);
         cp.add(b_loeschen);
         cp.add(b_aendern);
+        z=2;
     }
     
     public void b_suchen_ActionPerformed(ActionEvent evt) {
@@ -667,6 +690,7 @@ public class GUIVorlage extends JFrame {
         cp.add(b_all_suche);
         cp.add(b_erw_suche);
         cp.add(b_spe_suche);
+        z=3;
     }
     
     public void b_all_suche_ActionPerformed(ActionEvent evt) {
@@ -682,6 +706,7 @@ public class GUIVorlage extends JFrame {
         cp.add(b_su_all2);
         cp.add(b_su_all3);
         cp.add(b_su_all4);
+        z=4;
     }
     
     public void b_su_all1_ActionPerformed(ActionEvent evt) {
@@ -694,6 +719,7 @@ public class GUIVorlage extends JFrame {
         System.out.println("test");
         l_su_all.setText("Hier sind deine Ergebnisse:");
         cp.add(l_su_all);
+        z=5;
     }
     
     public void b_su_all2_ActionPerformed(ActionEvent evt) {
@@ -704,6 +730,7 @@ public class GUIVorlage extends JFrame {
         l_su_all.setText("Hier sind deine Ergebnisse:");
         cp.revalidate();
         cp.repaint();
+        z=6;
     }
     
     public void b_su_all3_ActionPerformed(ActionEvent evt) {
@@ -714,6 +741,7 @@ public class GUIVorlage extends JFrame {
         l_su_all.setText("Hier sind deine Ergebnisse:");
         cp.revalidate();
         cp.repaint();
+        z=7;
     }
     
     public void b_su_all4_ActionPerformed(ActionEvent evt) {
@@ -724,6 +752,7 @@ public class GUIVorlage extends JFrame {
         l_su_all.setText("Hier sind deine Ergebnisse:");
         cp.revalidate();
         cp.repaint();
+        z=8;
     }
     
     public void b_erw_suche_ActionPerformed(ActionEvent evt) {
@@ -736,6 +765,7 @@ public class GUIVorlage extends JFrame {
         cp.add(b_einfuegen);
         cp.add(b_loeschen);
         cp.add(b_aendern);
+        z=9;
     }
     
     public void b_spe_suche_ActionPerformed(ActionEvent evt) {
@@ -748,6 +778,7 @@ public class GUIVorlage extends JFrame {
         cp.add(b_einfuegen);
         cp.add(b_loeschen);
         cp.add(b_aendern);
+        z=10;
     }
     
     public void b_einfuegen_ActionPerformed(ActionEvent evt) {
@@ -764,6 +795,7 @@ public class GUIVorlage extends JFrame {
         cp.add(b_ein_sportart);
         cp.add(b_ein_verein);
         cp.add(b_ver_verein);
+        z=11;
     }
     
     public void b_ein_spieler_ActionPerformed(ActionEvent evt) {
@@ -803,6 +835,7 @@ public class GUIVorlage extends JFrame {
         cp.add(b_ein_spieler9);
         cp.add(b_ein_spieler10);
         cp.add(b_ein_spielerges);
+        z=12;
     }
     
     public void b_ein_spieler9_ActionPerformed(ActionEvent evt) {
@@ -866,6 +899,7 @@ public class GUIVorlage extends JFrame {
         cp.add(t_ein_spieler1);
         cp.add(t_ein_spieler2);
         cp.add(b_ein_vereinges);
+        z=13;
     }
     
     public void b_ein_sportart_ActionPerformed(ActionEvent evt) {
@@ -888,6 +922,7 @@ public class GUIVorlage extends JFrame {
         cp.add(t_ein_spieler2);
         cp.add(t_ein_spieler3);
         cp.add(b_ein_sportartges);
+        z=14;
     }
     
     public void b_ein_trainer_ActionPerformed(ActionEvent evt) {
@@ -919,6 +954,7 @@ public class GUIVorlage extends JFrame {
         cp.add(t_ein_spieler5);
         cp.add(t_ein_spieler6);
         cp.add(b_ein_trainerges);
+        z=15;
     }
     
     public void b_ein_trainerges_ActionPerformed(ActionEvent evt) {
@@ -942,6 +978,7 @@ public class GUIVorlage extends JFrame {
         cp.add(b_ein_verein_sportart);
         v1.einfuegen_gui("Verein", t_ein_spieler1.getText(), t_ein_spieler2.getText(), t_ein_spieler3.getText(), t_ein_spieler4.getText(), t_ein_spieler5.getText(), t_ein_spieler6.getText(), t_ein_spieler7.getText(), t_ein_spieler8.getText(), t_ein_spieler9.getText(), t_ein_spieler10.getText());
         t_ein_spieler2.setText("");
+        z=16;
     }
     
     public void b_ein_verein_sportart_ActionPerformed(ActionEvent evt) {
@@ -971,6 +1008,7 @@ public class GUIVorlage extends JFrame {
         cp.add(t_ein_spieler1);
         cp.add(t_ein_spieler2);
         cp.add(b_ver_vereinges);
+        z=17;
     }
     
     public void b_ver_vereinges_ActionPerformed(ActionEvent evt) {
@@ -992,6 +1030,7 @@ public class GUIVorlage extends JFrame {
         cp.add(l_loeschen5);
         cp.add(l_loeschen6);
         cp.add(b_loeschen_bestaetigen);
+        z=18;
     }
     
     public void b_loeschen_bestaetigen_ActionPerformed(ActionEvent evt) {
@@ -999,11 +1038,13 @@ public class GUIVorlage extends JFrame {
             l_loeschen.setText("Bist du wirklich ganz sicher?");
             l_loeschen2.setText("");
             l++;
+            z=19;
         }
         else if (l==2) {
             l_loeschen.setText("Also wirklich sehr sicher?");
             l_loeschen2.setText("Deine Daten gehen sonst für immer verloren (oder werden von uns ins Darknet gestellt)");
             l++;
+            z=20;
         }
         else if (l==3) {
             l_loeschen.setText("Da du dir sehr sicher zu sein scheinst, kannst du nun deine Daten löschen!");
@@ -1014,6 +1055,7 @@ public class GUIVorlage extends JFrame {
             b_loeschen_bestaetigen.setBounds(350, 160, 115, 33);
             b_loeschen_bestaetigen.setText("Bestätigen!");
             l++;
+            z=21;
         }
         else if (l==4) {
             l_loeschen4.setText("Bitte bestätige die Art des zu löschenden Objektes:");
@@ -1021,6 +1063,7 @@ public class GUIVorlage extends JFrame {
             t_loeschen2.setBounds(350, 200, 115, 33);
             b_loeschen_bestaetigen.setBounds(350, 240, 115, 33);
             l++;
+            z=22;
         }
         else if (l==5) {
             if(t_loeschen1.getText().equals(t_loeschen2.getText())) {
@@ -1036,6 +1079,7 @@ public class GUIVorlage extends JFrame {
                     l_loeschen4.setText("");
                     l_loeschen3.setText("Gebe die ID des zu löschenden Spielers an:");
                     l=6;
+                    z=24;
                 }
                 else if (t_loeschen1.getText().equals("Trainer")) {
                     art=t_loeschen1.getText();
@@ -1047,6 +1091,7 @@ public class GUIVorlage extends JFrame {
                     l_loeschen4.setText("");
                     l_loeschen3.setText("Gebe die ID des zu löschenden Trainers an:");
                     l=6;
+                    z=25;
                 }
                 else if (t_loeschen1.getText().equals("Verein")) {
                     art=t_loeschen1.getText();
@@ -1058,15 +1103,18 @@ public class GUIVorlage extends JFrame {
                     l_loeschen4.setText("");
                     l_loeschen3.setText("Gebe die ID des zu löschenden Vereins an:");
                     l=6;
+                    z=26;
                 }
                 else {
                     l_loeschen5.setText("Leider gibt es diese Art von Objekt nicht oder du hast versucht eine Sportart zu löschen,");
                     l_loeschen6.setText("was in dieser Datenbank grundsätzlich untersagt ist!");
+                    z=27;
                 }
             }
             
             else {
                 l_loeschen5.setText("Deine beiden angegebenen Objektarten stimmen nicht überein! Bitte versuche es erneut.");
+                z=23;
             }
         }
         else if(l==6) {
@@ -1077,16 +1125,19 @@ public class GUIVorlage extends JFrame {
                 t_loeschen2.setBounds(350, 240, 115, 33);
                 b_loeschen_bestaetigen.setBounds(350, 280, 115, 33);
                 l=7;
+                z=28;
             }
         else if(l==7) {
             if (t_loeschen1.getText().equals(t_loeschen2.getText())) {
                 v1.loeschen_gui(art, t_loeschen1.getText());
                 l_loeschen6.setBounds(30, 320, 1000, 23);
                 l_loeschen6.setText("Das Löschen des Objekts war erfolgreich!");
+                z=29;
             }
             else {
                 l_loeschen6.setBounds(30, 320, 1000, 23);
                 l_loeschen6.setText("Der eingegebene Code ist falsch, bitte versuche es erneut!");
+                z=30;
             }
         }
     }
@@ -1104,7 +1155,32 @@ public class GUIVorlage extends JFrame {
     public void b5_ActionPerformed(ActionEvent evt) {
 
     }
-
+    
+    public void zurueck_ActionPerformed(ActionEvent evt) {
+        if (z==1) {
+            l_start.setText("Willkommen in unserer Transfermarkt-Datenbank");
+            cp.remove(t_name);
+            cp.remove(b_name);
+            cp.add(b_start);
+            cp.revalidate();
+            cp.repaint();
+            z=0;
+        }
+        else if (z==2) {
+            cp.remove(l_optionen);
+            cp.remove(b_suchen);
+            cp.remove(b_einfuegen);
+            cp.remove(b_loeschen);
+            cp.remove(b_aendern);
+            cp.add(l_start);
+            cp.add(b_name);
+            cp.add(t_name);
+            cp.revalidate();
+            cp.repaint();
+            z=1;
+        }
+    }
+    
     private void maskeLeeren() {
         t_name.setText("");
     }
