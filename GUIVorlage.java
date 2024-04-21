@@ -1183,12 +1183,161 @@ public class GUIVorlage extends JFrame {
             cp.repaint();
             z=1;
         }
-        
+        else if (z==3){
+            cp.remove(l_suchen1);
+            cp.remove(l_suchen2);
+            cp.remove(b_all_suche);
+            cp.remove(b_erw_suche);
+            cp.remove(b_spe_suche);
+            cp.revalidate();
+            cp.repaint();
+            cp.add(l_optionen);
+            cp.add(b_suchen);
+            cp.add(b_einfuegen);
+            cp.add(b_loeschen);
+            cp.add(b_aendern);
+            z=2;
+        }
+        else if (z==4){
+            cp.remove(l_su_all);
+            cp.remove(b_su_all1);
+            cp.remove(b_su_all2);
+            cp.remove(b_su_all3);
+            cp.remove(b_su_all4);
+            cp.revalidate();
+            cp.repaint();
+            cp.add(l_suchen1);
+            cp.add(l_suchen2);
+            cp.add(b_all_suche);
+            cp.add(b_erw_suche);
+            cp.add(b_spe_suche);
+            z=3;    
+        }
+        else if (z==5){
+            cp.add(b_su_all1);
+            cp.add(b_su_all2);
+            cp.add(b_su_all3);
+            cp.add(b_su_all4);
+            cp.revalidate();
+            cp.repaint();
+            l_su_all.setText("Wähle die Tabelle aus, die du ausgeben lassen möchtest");
+            cp.add(l_su_all);
+            z=4;    
+        }
+        else if (z==6){
+            cp.add(b_su_all1);
+            cp.add(b_su_all2);
+            cp.add(b_su_all3);
+            cp.add(b_su_all4);
+            cp.revalidate();
+            cp.repaint();
+            l_su_all.setText("Wähle die Tabelle aus, die du ausgeben lassen möchtest");
+            cp.add(l_su_all);
+            z=4;   
+        }
+        else if (z==7){
+            cp.add(b_su_all1);
+            cp.add(b_su_all2);
+            cp.add(b_su_all3);
+            cp.add(b_su_all4);
+            cp.revalidate();
+            cp.repaint();
+            l_su_all.setText("Wähle die Tabelle aus, die du ausgeben lassen möchtest");
+            cp.add(l_su_all);
+            z=4;
+        }
+        else if (z==8){
+            cp.add(b_su_all1);
+            cp.add(b_su_all2);
+            cp.add(b_su_all3);
+            cp.add(b_su_all4);
+            cp.revalidate();
+            cp.repaint();
+            l_su_all.setText("Wähle die Tabelle aus, die du ausgeben lassen möchtest");
+            cp.add(l_su_all);
+            z=4;
+        }
+        else if (z==9){
+            
+        }
+        else if (z==10){
+            
+        }
+        else if (z==11){
+            cp.add(l_optionen);
+            cp.add(b_suchen);
+            cp.add(b_einfuegen);
+            cp.add(b_loeschen);
+            cp.add(b_aendern);
+            cp.revalidate();
+            cp.repaint();
+            l_optionen.setText("Herzlich willkommen "+t_name.getText()+"! Wähle bitte aus, was du in unserer Datenbank machen möchtest:");
+            cp.remove(b_ein_trainer);
+            cp.remove(b_ein_sportart);
+            cp.remove(b_ein_verein);
+            cp.remove(b_ver_verein);
+            cp.remove(l_einfuegen);
+            z=2;    
+        }
+        else if (z==12){
+            
+        }
+        else if (z==13){
+            
+        }
+        else if (z==14){
+            
+        }
+        else if (z==15){
+            
+        }
+        else if (z==16){
+            
+        }
+        else if (z==17){
+            
+        }
+        else if (z==18){
+            
+        }
+        else if (z==19){
+            
+        }
+        else if (z==20){
+            
+        }
+        else if (z==21){
+            
+        }
+        else if (z==22){
+            
+        }
+        else if (z==23){
+            
+        }
+        else if (z==24){
+            
+        }
+        else if (z==25){
+            
+        }
+        else if (z==26){
+            
+        }
+        else if (z==27){
+            
+        }
+        else if (z==28){
+            
+        }
+        else if (z==29){
+            
+        }
+        else if (z==30){
+            
+        }
     }
-    
-    public void deinVatter(){
-        
-    }
+
     
     private void maskeLeeren() {
         t_name.setText("");
