@@ -925,9 +925,6 @@ public class Verwaltung {
     
     
     public void aendern_gui(String id, String art, String p1, String p2, String p3, String p4, String p5, String p6, String p7, String p8, String p9, String p10) {
-        System.out.println("Test");
-        System.out.println(id);
-        System.out.println(art);
         if (art.equals("Spieler")) {
             String auftrag="Update Spieler Set ";
             if (!(p1.equals(""))) {
