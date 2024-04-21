@@ -1156,6 +1156,10 @@ public class GUIVorlage extends JFrame {
 
     }
     
+    public void deine_mom() {
+        System.out.println("5");
+    }
+    
     public void zurueck_ActionPerformed(ActionEvent evt) {
         if (z==1) {
             l_start.setText("Willkommen in unserer Transfermarkt-Datenbank");
