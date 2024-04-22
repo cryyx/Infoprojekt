@@ -36,7 +36,7 @@ public class Verwaltung {
     
     public void sqlBefehlAusfuehren(String sqlBefehl){
         meinConnector.executeStatement(sqlBefehl);  //Die Methode executeStatement der Klasse DatabaseConnector wird ausgeführt. Der sql-Befehl wird als String übergeben.
-
+        aktuelleFehlermeldung();
         for (int i=0; i<meinConnector.getCurrentQueryResult().getRowCount(); i=i+1) {               //verschachtelte for-Schleifen, die das 'QueryResult' auslesen.
 
             for (int j=0; j<meinConnector.getCurrentQueryResult().getColumnCount(); j=j+1) {

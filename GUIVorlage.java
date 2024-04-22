@@ -127,10 +127,26 @@ public class GUIVorlage extends JFrame {
     private JButton b_aendern9 = new JButton();
     private JButton b_aendern10 = new JButton();
     
+    private JTable ergebnisse;
+    private JScrollPane scrollpane;
+    
+    
+    
+    
+    
     private JButton bMaskeLeeren = new JButton();
     private JTextArea textfeld;
     // Ende Attribute
-        
+    
+    String[][] arr1=new String[][]{{"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}};
+    String[] arr_spieler=new String[]{"ID", "Vorname", "Name", "Gehalt", "Preis", "Position", "Nationalität", "Verein", "Leihverein", "Gerüchtsverein", "Sportart"};
+    String[] arr_trainer=new String[]{"ID", "Vorname", "Name", "Gehalt", "Nationalität", "Verein", "Sportart"};
+    String[] arr_verein=new String[]{"ID", "Name", "Budget"};
+    String[] arr_sportart=new String[]{"ID", "Name", "Popularität", "Ballgröße"};
+    
+    
+    
+    
     private boolean ein_spieler9=true;
     private boolean ein_spieler10=true;
     private boolean aendern1=true;
@@ -184,6 +200,11 @@ public class GUIVorlage extends JFrame {
         menu.add(zurueck);
         setJMenuBar(menu_Bar);
         
+
+        
+        
+        
+        
         zurueck.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent evt) {
                     zurueck_ActionPerformed(evt);
@@ -229,18 +250,25 @@ public class GUIVorlage extends JFrame {
 
         // Anfang Komponenten
         
-         JTextArea textfeld = new JTextArea(5, 30);
-         textfeld.setText("Lorem ipsum dolor sit amet");
-        //Zeilenumbruch wird eingeschaltet
-        textfeld.setLineWrap(true);
-        //Zeilenumbrüche erfolgen nur nach ganzen Wörtern
-        textfeld.setWrapStyleWord(true);
+         // JTextArea textfeld = new JTextArea(5, 30);
+         // textfeld.setText("Lorem ipsum dolor sit amet");
+        // //Zeilenumbruch wird eingeschaltet
+        // textfeld.setLineWrap(true);
+        // //Zeilenumbrüche erfolgen nur nach ganzen Wörtern
+        // textfeld.setWrapStyleWord(true);
         
-        //Ein JScrollPane, der das Textfeld beinhaltet, wird erzeugt
-        JScrollPane scrollpane = new JScrollPane(textfeld); 
-        cp.add(scrollpane);
-        cp.add(textfeld);
-        textfeld.paste();
+        
+        
+        
+        
+        // //Ein JScrollPane, der das Textfeld beinhaltet, wird erzeugt
+        // JScrollPane scrollpane = new JScrollPane(textfeld); 
+        // cp.add(scrollpane);
+        // cp.add(textfeld);
+        // textfeld.paste();
+        
+        
+        
         
         
         
@@ -912,7 +940,10 @@ public class GUIVorlage extends JFrame {
             });
         bMaskeLeeren.setFont(new Font("Arial", Font.PLAIN, 14));
         // Ende Komponenten
-
+        
+        
+        revalidate();
+        repaint();
         setResizable(false);
         setVisible(true);
 
@@ -987,11 +1018,22 @@ public class GUIVorlage extends JFrame {
         cp.remove(b_su_all2);
         cp.remove(b_su_all3);
         cp.remove(b_su_all4);
+        
+        String sqlBefehl="Select * From Spieler";
+        v1.meinConnector.executeStatement(sqlBefehl);
+        String [][] ergebnis=v1.meinConnector.getCurrentQueryResult().getData();
+        
+        ergebnisse = new JTable(ergebnis, arr_spieler);
+        scrollpane = new JScrollPane(ergebnisse);
+        
+        scrollpane.setBounds(200, 100, 600, 100);
+        
+        cp.add(scrollpane);
+        
         cp.revalidate();
         cp.repaint();
-        System.out.println("test");
         l_su_all.setText("Hier sind deine Ergebnisse:");
-        cp.add(l_su_all);
+        
         z=5;
     }
     
@@ -1000,9 +1042,21 @@ public class GUIVorlage extends JFrame {
         cp.remove(b_su_all2);
         cp.remove(b_su_all3);
         cp.remove(b_su_all4);
-        l_su_all.setText("Hier sind deine Ergebnisse:");
+        
+        String sqlBefehl="Select * From Trainer";
+        v1.meinConnector.executeStatement(sqlBefehl);
+        String [][] ergebnis=v1.meinConnector.getCurrentQueryResult().getData();
+        
+        ergebnisse = new JTable(ergebnis, arr_trainer);
+        scrollpane = new JScrollPane(ergebnisse);
+        
+        scrollpane.setBounds(200, 100, 600, 100);
+        
+        cp.add(scrollpane);
+        
         cp.revalidate();
         cp.repaint();
+        l_su_all.setText("Hier sind deine Ergebnisse:");
         z=6;
     }
     
@@ -1011,9 +1065,21 @@ public class GUIVorlage extends JFrame {
         cp.remove(b_su_all2);
         cp.remove(b_su_all3);
         cp.remove(b_su_all4);
-        l_su_all.setText("Hier sind deine Ergebnisse:");
+        
+        String sqlBefehl="Select * From Sportart";
+        v1.meinConnector.executeStatement(sqlBefehl);
+        String [][] ergebnis=v1.meinConnector.getCurrentQueryResult().getData();
+        
+        ergebnisse = new JTable(ergebnis, arr_sportart);
+        scrollpane = new JScrollPane(ergebnisse);
+        
+        scrollpane.setBounds(200, 100, 600, 100);
+        
+        cp.add(scrollpane);
+        
         cp.revalidate();
         cp.repaint();
+        l_su_all.setText("Hier sind deine Ergebnisse:");
         z=7;
     }
     
@@ -1022,9 +1088,21 @@ public class GUIVorlage extends JFrame {
         cp.remove(b_su_all2);
         cp.remove(b_su_all3);
         cp.remove(b_su_all4);
-        l_su_all.setText("Hier sind deine Ergebnisse:");
+        
+        String sqlBefehl="Select * From Verein";
+        v1.meinConnector.executeStatement(sqlBefehl);
+        String [][] ergebnis=v1.meinConnector.getCurrentQueryResult().getData();
+        
+        ergebnisse = new JTable(ergebnis, arr_verein);
+        scrollpane = new JScrollPane(ergebnisse);
+        
+        scrollpane.setBounds(200, 100, 600, 100);
+        
+        cp.add(scrollpane);
+        
         cp.revalidate();
         cp.repaint();
+        l_su_all.setText("Hier sind deine Ergebnisse:");
         z=8;
     }
     
@@ -1871,6 +1949,7 @@ public class GUIVorlage extends JFrame {
             cp.add(b_su_all2);
             cp.add(b_su_all3);
             cp.add(b_su_all4);
+            cp.remove(scrollpane);
             cp.revalidate();
             cp.repaint();
             l_su_all.setText("Wähle die Tabelle aus, die du ausgeben lassen möchtest");
@@ -1882,6 +1961,7 @@ public class GUIVorlage extends JFrame {
             cp.add(b_su_all2);
             cp.add(b_su_all3);
             cp.add(b_su_all4);
+            cp.remove(scrollpane);
             cp.revalidate();
             cp.repaint();
             l_su_all.setText("Wähle die Tabelle aus, die du ausgeben lassen möchtest");
@@ -1893,6 +1973,7 @@ public class GUIVorlage extends JFrame {
             cp.add(b_su_all2);
             cp.add(b_su_all3);
             cp.add(b_su_all4);
+            cp.remove(scrollpane);
             cp.revalidate();
             cp.repaint();
             l_su_all.setText("Wähle die Tabelle aus, die du ausgeben lassen möchtest");
@@ -1904,6 +1985,7 @@ public class GUIVorlage extends JFrame {
             cp.add(b_su_all2);
             cp.add(b_su_all3);
             cp.add(b_su_all4);
+            cp.remove(scrollpane);
             cp.revalidate();
             cp.repaint();
             l_su_all.setText("Wähle die Tabelle aus, die du ausgeben lassen möchtest");
