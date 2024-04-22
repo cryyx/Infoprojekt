@@ -1932,23 +1932,119 @@ public class GUIVorlage extends JFrame {
             cp.remove(l_einfuegen);
             z=2;    
         }
-        else if (z==12){
-            
+        else if (z==12){ //Spielerhinzu zurück
+            cp.add(b_ein_spieler);
+            cp.add(b_ein_trainer);
+            cp.add(b_ein_sportart);
+            cp.add(b_ein_verein);
+            cp.add(b_ver_verein);
+            l_einfuegen.setText("Du möchtest also etwas neues einfügen bzw. registrieren? Wähle bitte die Art des Objekts aus!");
+            cp.revalidate();
+            cp.repaint();
+            cp.remove(l_einfuegen2);
+            cp.remove(l_ein_spieler1);
+            cp.remove(l_ein_spieler2);
+            cp.remove(l_ein_spieler3);
+            cp.remove(l_ein_spieler4);
+            cp.remove(l_ein_spieler5);
+            cp.remove(l_ein_spieler6);
+            cp.remove(l_ein_spieler7);
+            cp.remove(l_ein_spieler8);
+            cp.remove(l_ein_spieler8);
+            cp.remove(t_ein_spieler1);
+            cp.remove(t_ein_spieler2);
+            cp.remove(t_ein_spieler3);
+            cp.remove(t_ein_spieler4);
+            cp.remove(t_ein_spieler5);
+            cp.remove(t_ein_spieler6);
+            cp.remove(t_ein_spieler7);
+            cp.remove(t_ein_spieler8);
+            cp.remove(b_ein_spieler9);
+            cp.remove(b_ein_spieler10);
+            cp.remove(b_ein_spielerges);
+            z=2;
         }
-        else if (z==13){
-            
+        else if (z==13){ //Vereinhinzu zurück
+            cp.add(b_ein_spieler);
+            cp.add(b_ein_trainer);
+            cp.add(b_ein_sportart);
+            cp.add(b_ein_verein);
+            cp.add(b_ver_verein);
+            cp.revalidate();
+            cp.repaint();
+            l_einfuegen.setText("Du möchtest also etwas neues einfügen bzw. registrieren? Wähle bitte die Art des Objekts aus!");
+            cp.remove(l_einfuegen2);
+            cp.remove(l_ein_spieler1);
+            cp.remove(l_ein_spieler2);
+            cp.remove(t_ein_spieler1);
+            cp.remove(t_ein_spieler2);
+            cp.remove(b_ein_vereinges);
+            z=2;
         }
-        else if (z==14){
-            
+        else if (z==14){ //Sportarthinzu zurück 
+            cp.add(b_ein_spieler);
+            cp.add(b_ein_trainer);
+            cp.add(b_ein_sportart);
+            cp.add(b_ein_verein);
+            cp.add(b_ver_verein);
+            cp.revalidate();
+            cp.repaint(); 
+            l_einfuegen.setText("Du möchtest also etwas neues einfügen bzw. registrieren? Wähle bitte die Art des Objekts aus!");
+            cp.remove(l_ein_spieler1);
+            cp.remove(l_einfuegen2);
+            cp.remove(l_ein_spieler2);
+            cp.remove(l_ein_spieler3);
+            cp.remove(t_ein_spieler1);
+            cp.remove(t_ein_spieler2);
+            cp.remove(t_ein_spieler3);
+            cp.remove(b_ein_sportartges);
+            z=2;
         }
-        else if (z==15){
-            
+        else if (z==15){ //Trainerhinzu zurück
+            cp.add(b_ein_spieler);
+            cp.add(b_ein_trainer);
+            cp.add(b_ein_sportart);
+            cp.add(b_ein_verein);
+            cp.add(b_ver_verein);
+            cp.revalidate();
+            cp.repaint();
+            l_einfuegen.setText("Du möchtest also etwas neues einfügen bzw. registrieren? Wähle bitte die Art des Objekts aus!");
+            cp.remove(l_einfuegen2);
+            cp.remove(l_ein_spieler1);
+            cp.remove(l_ein_spieler2);
+            cp.remove(l_ein_spieler3);
+            cp.remove(l_ein_spieler4);
+            cp.remove(l_ein_spieler5);
+            cp.remove(l_ein_spieler6);
+            cp.remove(t_ein_spieler1);
+            cp.remove(t_ein_spieler2);
+            cp.remove(t_ein_spieler3);
+            cp.remove(t_ein_spieler4);
+            cp.remove(t_ein_spieler5);
+            cp.remove(t_ein_spieler6);
+            cp.remove(b_ein_trainerges);
+            z=2;
         }
         else if (z==16){
-            
+            l_einfuegen.setText("Bitte fülle alle Felder aus!");
+            cp.remove(b_ein_spieler);
+            cp.remove(b_ein_trainer);
+            cp.remove(b_ein_sportart);
+            cp.remove(b_ein_verein);
+            cp.remove(b_ver_verein);
+            cp.remove(b_ein_verein_sportart);
+            cp.add(l_einfuegen2);
+            l_ein_spieler2.setText("Budget:");
+            cp.add(l_ein_spieler2);
+            cp.add(t_ein_spieler1);
+            cp.add(t_ein_spieler2);
+            cp.add(b_ein_vereinges);
+            cp.revalidate();
+            cp.repaint();
+            z=13;
         }
         else if (z==17){
-            
+        
         }
         else if (z==18){
             
