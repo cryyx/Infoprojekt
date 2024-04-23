@@ -23,7 +23,7 @@ public class Verwaltung {
     }
     
     public void test(){
-        String auftrag="Select VID, SpID from hat where VID=1 OR VID=4 OR VID=4";
+        String auftrag="Select SpID From hat Where VID=1 Or VID=12 Or VID=-20 Order By SpID Desc Limit 10";
         aktuelleFehlermeldung();
         sqlBefehlAusfuehren(auftrag);
         String auftrag1="Hello";

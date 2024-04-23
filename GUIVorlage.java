@@ -22,11 +22,22 @@ public class GUIVorlage extends JFrame {
     private int m=1;
     private JLabel l_start = new JLabel();
     private JLabel l_optionen = new JLabel();
+    
+    
     private JLabel l_suchen1 = new JLabel();
     private JLabel l_suchen2 = new JLabel();
     private JLabel l_su_all = new JLabel();
+    private JLabel l_su_spe1 = new JLabel();
+    private JLabel l_su_spe2 = new JLabel();
+    private JLabel l_su_spe3 = new JLabel();
+    private JLabel l_su_spe4 = new JLabel();
+    private JLabel l_su_spe5 = new JLabel();
+    private JLabel l_su_spe6 = new JLabel();
+    private JLabel l_su_spe7 = new JLabel();
+    
     private JLabel l_einfuegen = new JLabel();
     private JLabel l_einfuegen2 = new JLabel();
+    
     private JLabel l_ein_spieler1 = new JLabel();
     private JLabel l_ein_spieler2 = new JLabel();
     private JLabel l_ein_spieler3 = new JLabel();
@@ -37,12 +48,16 @@ public class GUIVorlage extends JFrame {
     private JLabel l_ein_spieler8 = new JLabel();
     private JLabel l_ein_spieler9 = new JLabel();
     private JLabel l_ein_spieler10 = new JLabel();
+    
+    
     private JLabel l_loeschen = new JLabel();
     private JLabel l_loeschen2 = new JLabel();
     private JLabel l_loeschen3 = new JLabel();
     private JLabel l_loeschen4 = new JLabel();
     private JLabel l_loeschen5 = new JLabel();
     private JLabel l_loeschen6 = new JLabel();
+    
+    
     private JLabel l_aendern1 = new JLabel();
     private JLabel l_aendern2 = new JLabel();
     private JLabel l_aendern3 = new JLabel();
@@ -62,6 +77,10 @@ public class GUIVorlage extends JFrame {
     
     
     private JTextField t_name = new JTextField();
+    
+    private JTextField t_su_spe1 = new JTextField();
+    private JTextField t_su_spe2 = new JTextField();
+    
     private JTextField t_ein_spieler1 = new JTextField();
     private JTextField t_ein_spieler2 = new JTextField();
     private JTextField t_ein_spieler3 = new JTextField();
@@ -72,8 +91,12 @@ public class GUIVorlage extends JFrame {
     private JTextField t_ein_spieler8 = new JTextField();
     private JTextField t_ein_spieler9 = new JTextField();
     private JTextField t_ein_spieler10 = new JTextField();
+    
+    
     private JTextField t_loeschen1 = new JTextField();
     private JTextField t_loeschen2 = new JTextField();
+
+    
     private JTextField t_aendern1 = new JTextField();
     private JTextField t_aendern2 = new JTextField();
     private JTextField t_aendern3 = new JTextField();
@@ -90,10 +113,13 @@ public class GUIVorlage extends JFrame {
     
     private JButton b_start = new JButton();
     private JButton b_name = new JButton();
+    
+    
     private JButton b_suchen = new JButton();   
     private JButton b_einfuegen = new JButton();
     private JButton b_loeschen = new JButton();
     private JButton b_aendern = new JButton();
+    
     private JButton b_all_suche = new JButton();
     private JButton b_erw_suche = new JButton();
     private JButton b_spe_suche = new JButton();
@@ -101,6 +127,17 @@ public class GUIVorlage extends JFrame {
     private JButton b_su_all2 = new JButton();
     private JButton b_su_all3 = new JButton();
     private JButton b_su_all4 = new JButton();
+    private JButton b_su_spe1 = new JButton();
+    private JButton b_su_spe2 = new JButton();
+    private JButton b_su_spe3 = new JButton();
+    private JButton b_su_spe4 = new JButton();
+    private JButton b_su_spe5 = new JButton();
+    private JButton b_su_spe6 = new JButton();
+    private JButton b_su_spe_weiter = new JButton();
+    private JButton b_su_spe_best= new JButton();
+    private JButton b_su_spe_sort= new JButton();
+    
+    
     private JButton b_ein_spieler = new JButton();
     private JButton b_ein_verein = new JButton();
     private JButton b_ein_sportart = new JButton();
@@ -114,7 +151,11 @@ public class GUIVorlage extends JFrame {
     private JButton b_ein_verein_sportart = new JButton();
     private JButton b_ein_sportartges = new JButton();
     private JButton b_ein_trainerges = new JButton();
+    
+    
     private JButton b_loeschen_bestaetigen = new JButton();
+    
+    
     private JButton b_aendern_bestaetigen = new JButton();
     private JButton b_aendern1 = new JButton();
     private JButton b_aendern2 = new JButton();
@@ -143,6 +184,8 @@ public class GUIVorlage extends JFrame {
     String[] arr_trainer=new String[]{"ID", "Vorname", "Name", "Gehalt", "Nationalität", "Verein", "Sportart"};
     String[] arr_verein=new String[]{"ID", "Name", "Budget"};
     String[] arr_sportart=new String[]{"ID", "Name", "Popularität", "Ballgröße"};
+    String[] arr_hat=new String[]{"Verein", "Sportart"};
+    String[] arr_custom;
     
     
     
@@ -162,8 +205,12 @@ public class GUIVorlage extends JFrame {
     private int l=1;
     private int a=1;
     private int z=0;
+    private int s=1;
+    private int zaehler=0;
+    private int zaehler1=2;
     private String id;
     private String art;
+    private String auftrag;
     
     Container cp;
     
@@ -293,6 +340,34 @@ public class GUIVorlage extends JFrame {
         l_su_all.setBounds(200, 17, 800, 23);
         l_su_all.setText("Wähle die Tabelle aus, die du ausgeben lassen möchtest");
         l_su_all.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_spe1.setBounds(200, 10, 800, 23);
+        l_su_spe1.setText("Möchtest du dir die gesamte Liste mit Vereinen und Sportarten angucken");
+        l_su_spe1.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_spe2.setBounds(200, 25, 800, 23);
+        l_su_spe2.setText("oder möchtest du nach einem der Attribute filtern?");
+        l_su_spe2.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_spe3.setBounds(230, 70, 800, 33);
+        l_su_spe3.setText("wird ausgegeben");
+        l_su_spe3.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_spe4.setBounds(230, 120, 800, 33);
+        l_su_spe4.setText("wird ausgegeben");
+        l_su_spe4.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_spe5.setBounds(230, 120, 800, 33);
+        l_su_spe5.setText("");
+        l_su_spe5.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_spe6.setBounds(100, 70, 800, 33);
+        l_su_spe6.setText("Sortieren nach:");
+        l_su_spe6.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_spe7.setBounds(100, 120, 800, 33);
+        l_su_spe7.setText("Limit:");
+        l_su_spe7.setFont(new Font("Arial", Font.PLAIN, 17));
         
         l_einfuegen.setBounds(50, 17, 1000, 23);
         l_einfuegen.setText("Du möchtest also etwas neues einfügen bzw. registrieren? Wähle bitte die Art des Objekts aus!");
@@ -434,6 +509,15 @@ public class GUIVorlage extends JFrame {
         t_name.setBounds(300, 40, 230, 30);
         t_name.setText("");
         t_name.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_su_spe1.setBounds(230, 70, 230, 33);
+        t_su_spe1.setText("");
+        t_su_spe1.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_su_spe2.setBounds(230, 120, 230, 33);
+        t_su_spe2.setText("");
+        t_su_spe2.setFont(new Font("Arial", Font.PLAIN, 17));
+        
         
         t_ein_spieler1.setBounds(170, 80, 230, 30);
         t_ein_spieler1.setText("");
@@ -650,6 +734,98 @@ public class GUIVorlage extends JFrame {
                 }
             });
         b_su_all4.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_spe1.setBounds(300, 180, 150, 33);
+        b_su_spe1.setText("ganze Tabelle");
+        b_su_spe1.setMargin(new Insets(2, 2, 2, 2));
+        b_su_spe1.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_spe1_ActionPerformed(evt);
+                }
+            });
+        b_su_spe1.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_spe2.setBounds(600, 180, 150, 33);
+        b_su_spe2.setText("Suche filtern");
+        b_su_spe2.setMargin(new Insets(2, 2, 2, 2));
+        b_su_spe2.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_spe2_ActionPerformed(evt);
+                }
+            });
+        b_su_spe2.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_spe3.setBounds(50, 70, 150, 33);
+        b_su_spe3.setText("Verein");
+        b_su_spe3.setMargin(new Insets(2, 2, 2, 2));
+        b_su_spe3.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_spe3_ActionPerformed(evt);
+                }
+            });
+        b_su_spe3.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_spe4.setBounds(50, 120, 150, 33);
+        b_su_spe4.setText("Sportart");
+        b_su_spe4.setMargin(new Insets(2, 2, 2, 2));
+        b_su_spe4.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_spe4_ActionPerformed(evt);
+                }
+            });
+        b_su_spe4.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_spe5.setBounds(300, 180, 150, 33);
+        b_su_spe5.setText("Verein");
+        b_su_spe5.setMargin(new Insets(2, 2, 2, 2));
+        b_su_spe5.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_spe5_ActionPerformed(evt);
+                }
+            });
+        b_su_spe5.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_spe6.setBounds(600, 180, 150, 33);
+        b_su_spe6.setText("Sportart");
+        b_su_spe6.setMargin(new Insets(2, 2, 2, 2));
+        b_su_spe6.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_spe6_ActionPerformed(evt);
+                }
+            });
+        b_su_spe6.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_spe_weiter.setBounds(50, 200, 150, 33);
+        b_su_spe_weiter.setText("weiter");
+        b_su_spe_weiter.setMargin(new Insets(2, 2, 2, 2));
+        b_su_spe_weiter.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_spe_weiter_ActionPerformed(evt);
+                }
+            });
+        b_su_spe_weiter.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_spe_best.setBounds(50, 250, 150, 33);
+        b_su_spe_best.setText("bestätigen");
+        b_su_spe_best.setMargin(new Insets(2, 2, 2, 2));
+        b_su_spe_best.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_spe_best_ActionPerformed(evt);
+                }
+            });
+        b_su_spe_best.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_spe_sort.setBounds(500, 70, 150, 33);
+        b_su_spe_sort.setText("aufsteigend");
+        b_su_spe_sort.setMargin(new Insets(2, 2, 2, 2));
+        b_su_spe_sort.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_spe_sort_ActionPerformed(evt);
+                }
+            });
+        b_su_spe_sort.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        
         
         b_ein_spieler.setBounds(730, 180, 150, 33);
         b_ein_spieler.setText("Spieler registrieren");
@@ -1106,29 +1282,267 @@ public class GUIVorlage extends JFrame {
         z=8;
     }
     
-    public void b_erw_suche_ActionPerformed(ActionEvent evt) {
-        l_start.setText("Wir bieten in unserer Datenbank verschiedene Such-Optionen an!");
-        cp.remove(b_name);
-        cp.remove(t_name);
+    public void b_su_spe1_ActionPerformed(ActionEvent evt) {
+        cp.remove(b_su_spe1);
+        cp.remove(b_su_spe2);
+        cp.remove(l_su_spe2);
+        
+        String sqlBefehl="Select * From hat";
+        v1.meinConnector.executeStatement(sqlBefehl);
+        String [][] ergebnis=v1.meinConnector.getCurrentQueryResult().getData();
+        
+        ergebnisse = new JTable(ergebnis, arr_hat);
+        scrollpane = new JScrollPane(ergebnisse);
+        
+        scrollpane.setBounds(200, 100, 600, 100);
+        
+        cp.add(scrollpane);
+        
         cp.revalidate();
         cp.repaint();
-        cp.add(b_suchen);
-        cp.add(b_einfuegen);
-        cp.add(b_loeschen);
-        cp.add(b_aendern);
+        l_su_spe1.setText("Hier sind deine Ergebnisse:");
+        
+        z=5;
+    }
+    
+    public void b_su_spe2_ActionPerformed(ActionEvent evt) {
+        cp.remove(b_su_spe1);
+        cp.remove(b_su_spe2);
+        cp.remove(l_su_spe2);
+        
+        cp.revalidate();
+        cp.repaint();
+        l_su_spe1.setText("Bitte wähle aus, was du ausgegeben haben möchtest:");
+        cp.add(b_su_spe3);
+        cp.add(b_su_spe4);
+        cp.add(l_su_spe3);
+        cp.add(l_su_spe4);
+        cp.add(b_su_spe_weiter);
+        z=5;
+    }
+    
+    public void b_su_spe3_ActionPerformed(ActionEvent evt) {
+        if (l_su_spe3.getText().equals("wird nicht ausgegeben")) {
+            l_su_spe3.setText("wird ausgegeben");
+            zaehler1++;
+        }
+        else {
+            l_su_spe3.setText("wird nicht ausgegeben");
+            zaehler1--;
+        }
+        z=5;
+    }
+    
+    public void b_su_spe4_ActionPerformed(ActionEvent evt) {
+        if (l_su_spe4.getText().equals("wird nicht ausgegeben")) {
+            l_su_spe4.setText("wird ausgegeben");
+            zaehler1++;
+        }
+        else {
+            l_su_spe4.setText("wird nicht ausgegeben");
+            zaehler1--;
+        }
+        z=5;
+    }
+    
+    public void b_su_spe5_ActionPerformed(ActionEvent evt) {
+        l_su_spe1.setText("Wie heißt der Verein nach dem du filtern möchtest?");
+        cp.remove(b_su_spe5);
+        cp.remove(b_su_spe6);
+        cp.revalidate();
+        cp.repaint();
+        cp.add(t_su_spe1);
+        l_su_spe5.setText("Wenn du noch einen weiteren Verein hinzufügen willst, klicke auf 'weiter'");
+        cp.add(l_su_spe5);
+        cp.add(b_su_spe_weiter);
+        cp.add(b_su_spe_best);
+        z=5;
+        s=2;
+    }
+    
+    public void b_su_spe6_ActionPerformed(ActionEvent evt) {
+        l_su_spe1.setText("Wie heißt die Sportart nach der du filtern möchtest?");
+        cp.remove(b_su_spe5);
+        cp.remove(b_su_spe6);
+        cp.revalidate();
+        cp.repaint();
+        cp.add(t_su_spe1);
+        l_su_spe5.setText("Wenn du noch eine weitere Sportart hinzufügen willst, klicke auf 'weiter'");
+        cp.add(l_su_spe5);
+        cp.add(b_su_spe_weiter);
+        cp.add(b_su_spe_best);
+        z=5;
+        s=3;
+    }
+    
+    
+    public void b_su_spe_weiter_ActionPerformed(ActionEvent evt) {
+        if (s==1) {
+            arr_custom=new String[zaehler1];
+            zaehler=0;
+            auftrag="Select ";
+            if (l_su_spe3.getText().equals("wird ausgegeben")) {
+                arr_custom[zaehler]="Verein";
+                zaehler++;
+            }
+            if (l_su_spe4.getText().equals("wird ausgegeben")) {
+                arr_custom[zaehler]="Sportart";
+                zaehler++;
+            }
+            if (l_su_spe3.getText().equals("wird ausgegeben") ) {
+                    if(l_su_spe4.getText().equals("wird ausgegeben")) {
+                        auftrag=auftrag.concat("VID, SpID From hat Where ");
+                    }
+                    else {
+                        auftrag=auftrag.concat("VID From hat Where ");
+                    }
+            }
+            else if (l_su_spe4.getText().equals("wird ausgegeben")) {
+                auftrag=auftrag.concat("SpID From hat Where ");
+            }
+            l_su_spe1.setText("Nach welchem Attribut möchtest du filtern?");
+            cp.remove(l_su_spe3);
+            cp.remove(b_su_spe3);
+            cp.remove(l_su_spe4);
+            cp.remove(b_su_spe4);
+            cp.remove(b_su_spe_weiter);
+            cp.revalidate();
+            cp.repaint();
+            cp.add(b_su_spe5);
+            cp.add(b_su_spe6);
+        }
+        else if (s==2) {
+            String verein_id="select VID from Verein where Name like '"+t_su_spe1.getText()+"'";
+            v1.meinConnector.executeStatement(verein_id);
+            v1.aktuelleFehlermeldung();
+            verein_id=v1.meinConnector.getCurrentQueryResult().getData()[0][0];
+            auftrag=auftrag.concat("VID="+verein_id+" Or ");
+            t_su_spe1.setText("");
+            cp.revalidate();
+            cp.repaint();
+            System.out.println(auftrag);
+        }
+        else if (s==3) {
+            String sportart_id="select SpID from Sportart where Name like '"+t_su_spe1.getText()+"'";
+            v1.meinConnector.executeStatement(sportart_id);
+            v1.aktuelleFehlermeldung();
+            sportart_id=v1.meinConnector.getCurrentQueryResult().getData()[0][0];
+            auftrag=auftrag.concat("SpID="+sportart_id+" Or ");
+            t_su_spe1.setText("");
+        }
+        else if (s==4) {
+            l_su_spe1.setText("Bitte fülle die unten stehenden Felder bei Bedarf aus! (optional)");
+            cp.remove(l_su_spe5);
+            cp.revalidate();
+            cp.repaint();
+            cp.add(l_su_spe6);
+            cp.add(b_su_spe_sort);
+            cp.add(l_su_spe7);
+            cp.add(t_su_spe2);
+            s++;
+        }
+        else if (s==5) {
+            cp.remove(l_su_spe6);
+            cp.remove(b_su_spe_sort);
+            cp.remove(l_su_spe7);
+            cp.remove(t_su_spe1);
+            cp.remove(t_su_spe2);
+            cp.remove(b_su_spe_weiter);
+            cp.revalidate();
+            cp.repaint();
+            if(!(t_su_spe1.getText().equals(""))) {
+                if (b_su_spe_sort.getText().equals("absteigend")) {
+                    auftrag=auftrag.concat(" Order By "+t_su_spe1.getText()+" Desc ");
+                }
+                else {
+                    auftrag=auftrag.concat(" Order By "+t_su_spe1.getText()+" Asc ");
+                }
+            }
+            if (!(t_su_spe2.getText().equals(""))) {
+                auftrag=auftrag.concat("Limit "+t_su_spe2.getText());
+            }
+            System.out.println(auftrag);
+            System.out.println(arr_custom[0]);
+            
+            v1.meinConnector.executeStatement(auftrag);
+            v1.aktuelleFehlermeldung();
+            
+            String [][] ergebnis=v1.meinConnector.getCurrentQueryResult().getData();
+            
+            ergebnisse = new JTable(ergebnis, arr_custom);
+            
+            scrollpane = new JScrollPane(ergebnisse);
+            
+            scrollpane.setBounds(200, 100, 600, 100);
+            
+            cp.add(scrollpane);
+            
+            cp.revalidate();
+            
+            cp.repaint();
+            
+            l_su_spe1.setText("Hier sind deine Ergebnisse:");
+        }
+    }
+    
+    public void b_su_spe_best_ActionPerformed(ActionEvent evt) {
+        if (s==2&&!(t_su_spe1.getText().equals(""))) {
+            String verein_id="select VID from Verein where Name like '"+t_su_spe1.getText()+"'";
+            v1.meinConnector.executeStatement(verein_id);
+            v1.aktuelleFehlermeldung();
+            verein_id=v1.meinConnector.getCurrentQueryResult().getData()[0][0];
+            auftrag=auftrag.concat("VID="+verein_id+" Or ");
+            t_su_spe1.setText("");
+            cp.revalidate();
+            cp.repaint();
+            System.out.println(auftrag);
+        }
+        else if (s==3&&!(t_su_spe1.getText().equals(""))) {
+            String sportart_id="select SpID from Sportart where Name like '"+t_su_spe1.getText()+"'";
+            v1.meinConnector.executeStatement(sportart_id);
+            v1.aktuelleFehlermeldung();
+            sportart_id=v1.meinConnector.getCurrentQueryResult().getData()[0][0];
+            auftrag=auftrag.concat("SpID="+sportart_id+" Or ");
+            t_su_spe1.setText("");
+        }
+        auftrag=auftrag.concat("VID=-20");
+        cp.remove(b_su_spe_best);
+        s=4;
+        b_su_spe_weiter_ActionPerformed(evt);
+    }
+    
+    public void b_su_spe_sort_ActionPerformed(ActionEvent evt) {
+        if (b_su_spe_sort.getText().equals("aufsteigend")) {
+            b_su_spe_sort.setText("absteigend");
+        }
+        else {
+            b_su_spe_sort.setText("aufsteigend");
+        }
+    }
+    
+    public void b_erw_suche_ActionPerformed(ActionEvent evt) {
+        cp.remove(l_suchen1);
+        cp.remove(l_suchen2);
+        cp.remove(b_all_suche);
+        cp.remove(b_erw_suche);
+        cp.remove(b_spe_suche);
+        cp.revalidate();
+        cp.repaint();
         z=9;
     }
     
     public void b_spe_suche_ActionPerformed(ActionEvent evt) {
-        l_start.setText("Wir bieten in unserer Datenbank verschiedene Such-Optionen an!");
-        cp.remove(b_name);
-        cp.remove(t_name);
+        cp.remove(l_suchen1);
+        cp.remove(l_suchen2);
+        cp.remove(b_all_suche);
+        cp.remove(b_erw_suche);
+        cp.remove(b_spe_suche);
         cp.revalidate();
         cp.repaint();
-        cp.add(b_suchen);
-        cp.add(b_einfuegen);
-        cp.add(b_loeschen);
-        cp.add(b_aendern);
+        cp.add(l_su_spe1);
+        cp.add(l_su_spe2);
+        cp.add(b_su_spe1);
+        cp.add(b_su_spe2);
         z=10;
     }
     
@@ -2325,7 +2739,7 @@ public class GUIVorlage extends JFrame {
         }
         
     }
-
+    
     
     
     private void maskeLeeren() {
