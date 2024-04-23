@@ -1388,13 +1388,19 @@ public class GUIVorlage extends JFrame {
         if (l==1) {
             l_loeschen.setText("Bist du wirklich ganz sicher?");
             l_loeschen2.setText("");
-            l++;
+            l=2;
             z=19;
         }
         else if (l==2) {
             l_loeschen.setText("Also wirklich sehr sicher?");
             l_loeschen2.setText("Deine Daten gehen sonst für immer verloren (oder werden von uns ins Darknet gestellt)");
-            l++;
+            cp.add(b_loeschen_bestaetigen);
+            b_loeschen_bestaetigen.setBounds(350, 90, 115, 33);
+            b_loeschen_bestaetigen.setText("Ich bin sicher!");
+            cp.remove(t_loeschen2);
+            l_loeschen4.setText("");
+            
+            l=3;
             z=20;
         }
         else if (l==3) {
@@ -1405,7 +1411,7 @@ public class GUIVorlage extends JFrame {
             t_loeschen1.setBounds(350, 120, 115, 33);
             b_loeschen_bestaetigen.setBounds(350, 160, 115, 33);
             b_loeschen_bestaetigen.setText("Bestätigen!");
-            l++;
+            l=4;
             z=21;
         }
         else if (l==4) {
@@ -1413,7 +1419,7 @@ public class GUIVorlage extends JFrame {
             cp.add(t_loeschen2);
             t_loeschen2.setBounds(350, 200, 115, 33);
             b_loeschen_bestaetigen.setBounds(350, 240, 115, 33);
-            l++;
+            l=5;
             z=22;
         }
         else if (l==5) {
@@ -1465,6 +1471,7 @@ public class GUIVorlage extends JFrame {
             
             else {
                 l_loeschen5.setText("Deine beiden angegebenen Objektarten stimmen nicht überein! Bitte versuche es erneut.");
+                l_loeschen6.setText("");
                 z=23;
             }
         }
@@ -2190,63 +2197,133 @@ public class GUIVorlage extends JFrame {
         else if (z==21){
             l_loeschen.setText("Also wirklich sehr sicher?");
             l_loeschen2.setText("Deine Daten gehen sonst für immer verloren (oder werden von uns ins Darknet gestellt)");
-            
+            l_loeschen3.setText("");
             cp.remove(t_loeschen1);
             t_loeschen1.setBounds(350, 90, 230, 30);
             b_loeschen_bestaetigen.setBounds(350, 90, 115, 33);
             b_loeschen_bestaetigen.setText("Ich bin sicher!");
+            l_loeschen4.setText("");
+            cp.remove(t_loeschen2);
             
             cp.revalidate();
             cp.repaint();
-            l--;
+            l=l-2;
             z=20;
         }
         else if (z==22){
             l_loeschen4.setText("");
             cp.remove(t_loeschen2);
             t_loeschen2.setBounds(430, 530, 230, 30);
-            b_loeschen_bestaetigen.setBounds(350, 90, 115, 33);
+            b_loeschen_bestaetigen.setBounds(350, 160, 115, 33);
             cp.revalidate();
             cp.repaint();
-            l--;
+            l=3;
             z=21;
         }
         else if (z==23){
-
+            l_loeschen5.setText("");
+            cp.revalidate();
+            cp.repaint();
+            l=5;
+            z=21;
         }
         else if (z==24){
             t_loeschen1.setText("");
             t_loeschen2.setText("");
-            b_loeschen_bestaetigen.setBounds(350, 90, 115, 33);
-            b_loeschen_bestaetigen.setText("Ich bin sicher!");
+            b_loeschen_bestaetigen.setBounds(350, 240, 115, 33);
+            b_loeschen_bestaetigen.setText("Bestätigen");
             cp.add(t_loeschen2);
-            l_loeschen4.setText("");
+            l_loeschen4.setText("Bitte bestätige die Art des zu löschenden Objektes:");
             l_loeschen3.setText("Nenne bitte zu erst deine Art des Objektes, welches du löschen möchtest:");
-            
             
             cp.revalidate();
             cp.repaint();
-            l=4;
+            l=5;
             z=21;
         }
         else if (z==25){
+            t_loeschen1.setText("");
+            t_loeschen2.setText("");
+            b_loeschen_bestaetigen.setBounds(350, 240, 115, 33);
+            b_loeschen_bestaetigen.setText("Bestätigen");
+            cp.add(t_loeschen2);
+            l_loeschen4.setText("Bitte bestätige die Art des zu löschenden Objektes:");
+            l_loeschen3.setText("Nenne bitte zu erst deine Art des Objektes, welches du löschen möchtest:");
             
+            cp.revalidate();
+            cp.repaint();
+            l=5;
+            z=21;
         }
         else if (z==26){
+            t_loeschen1.setText("");
+            t_loeschen2.setText("");
+            b_loeschen_bestaetigen.setBounds(350, 240, 115, 33);
+            b_loeschen_bestaetigen.setText("Bestätigen");
+            cp.add(t_loeschen2);
+            l_loeschen4.setText("Bitte bestätige die Art des zu löschenden Objektes:");
+            l_loeschen3.setText("Nenne bitte zu erst deine Art des Objektes, welches du löschen möchtest:");
             
+            cp.revalidate();
+            cp.repaint();
+            l=5;
+            z=21;
         }
         else if (z==27){
+            l_loeschen5.setText("");
+            l_loeschen6.setText("");
             
+            cp.revalidate();
+            cp.repaint();
+            l=5;
+            z=21;
         }
         else if (z==28){
+            l_loeschen4.setText("");
+            l_loeschen5.setBounds(30, 280, 1000, 23);
+            l_loeschen5.setText("");
+            l_loeschen6.setText("");
+            cp.remove(t_loeschen2);
+            t_loeschen2.setBounds(350, 200, 115, 33);
+            b_loeschen_bestaetigen.setBounds(350, 160, 115, 33);
             
+            cp.revalidate();
+            cp.repaint();
+            l=6;
+            z=21;
         }
         else if (z==29){
-            
+            l_loeschen4.setText("Bitte gebe den Bestätigungscode ein, den wir dir per E-Mail geschickt haben");
+            l_loeschen5.setBounds(30, 200, 1000, 23);
+            l_loeschen5.setText("(da die Datenbank keine E-Mails unterstützt ist der Bestätigungscode deine ID)");
+            cp.add(t_loeschen2);
+            t_loeschen2.setBounds(350, 240, 115, 33);
+            b_loeschen_bestaetigen.setBounds(350, 280, 115, 33);
+            l=7;
+            z=28;
         }
         else if (z==30){
+            v1.loeschen_gui(art, t_loeschen1.getText());
+            l_loeschen6.setBounds(30, 320, 1000, 23);
+            l_loeschen6.setText("Das Löschen des Objekts war erfolgreich!");
+            z=29;
+        }
+        else if (z==31) {
             
         }
+        else if (z==32) {
+            
+        }
+        else if (z==33) {
+            
+        }
+        else if (z==34) {
+            
+        }
+        else if (z==35) {
+            
+        }
+        
     }
 
     
