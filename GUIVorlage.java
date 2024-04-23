@@ -1890,6 +1890,11 @@ public class GUIVorlage extends JFrame {
     }
     
     
+    /**
+     * Methode zurueck_ActionPerformed
+     *
+     * @param evt Ein Parameter
+     */
     public void zurueck_ActionPerformed(ActionEvent evt) {
         if (z==1) {
             l_start.setText("Willkommen in unserer Transfermarkt-Datenbank");
@@ -2148,25 +2153,81 @@ public class GUIVorlage extends JFrame {
             z=11;
         }
         else if (z==18){
-            
+            cp.add(l_optionen);
+            cp.add(b_suchen);
+            cp.add(b_einfuegen);
+            cp.add(b_loeschen);
+            cp.add(b_aendern);
+            cp.remove(l_loeschen);
+            cp.remove(l_loeschen2);
+            cp.remove(l_loeschen3);
+            cp.remove(l_loeschen4);
+            cp.remove(l_loeschen5);
+            cp.remove(l_loeschen6);
+            cp.remove(b_loeschen_bestaetigen);
+            cp.revalidate();
+            cp.repaint();
+            z=2;
         }
         else if (z==19){
+            l_loeschen.setText("Herzlich willkommen im Lösch-Menü unserer Datenbank. Ein Warnhinweis vorab: das Löschen deiner Daten ist permanent");
+            l_loeschen2.setText("und Sie sind nicht wiederherstellbar, überlege es dir also gut! Bist du sicher, dass du fortfahren möchtest?");
             
+            cp.revalidate();
+            cp.repaint();
+            l--;
+            z=18;
         }
         else if (z==20){
+            l_loeschen.setText("Bist du wirklich ganz sicher?");
+            l_loeschen2.setText("");
             
+            cp.revalidate();
+            cp.repaint();
+            l--;
+            z=19;
         }
         else if (z==21){
+            l_loeschen.setText("Also wirklich sehr sicher?");
+            l_loeschen2.setText("Deine Daten gehen sonst für immer verloren (oder werden von uns ins Darknet gestellt)");
             
+            cp.remove(t_loeschen1);
+            t_loeschen1.setBounds(350, 90, 230, 30);
+            b_loeschen_bestaetigen.setBounds(350, 90, 115, 33);
+            b_loeschen_bestaetigen.setText("Ich bin sicher!");
+            
+            cp.revalidate();
+            cp.repaint();
+            l--;
+            z=20;
         }
         else if (z==22){
-            
+            l_loeschen4.setText("");
+            cp.remove(t_loeschen2);
+            t_loeschen2.setBounds(430, 530, 230, 30);
+            b_loeschen_bestaetigen.setBounds(350, 90, 115, 33);
+            cp.revalidate();
+            cp.repaint();
+            l--;
+            z=21;
         }
         else if (z==23){
-            
+
         }
         else if (z==24){
+            t_loeschen1.setText("");
+            t_loeschen2.setText("");
+            b_loeschen_bestaetigen.setBounds(350, 90, 115, 33);
+            b_loeschen_bestaetigen.setText("Ich bin sicher!");
+            cp.add(t_loeschen2);
+            l_loeschen4.setText("");
+            l_loeschen3.setText("Nenne bitte zu erst deine Art des Objektes, welches du löschen möchtest:");
             
+            
+            cp.revalidate();
+            cp.repaint();
+            l=4;
+            z=21;
         }
         else if (z==25){
             
