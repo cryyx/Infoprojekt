@@ -1997,6 +1997,7 @@ public class GUIVorlage extends JFrame {
                     z=38;
                 }
                 else {
+                    cp.add(l_aendern5);
                     l_aendern5.setText("Bitte gebe ein gültiges Objekt ein!");
                     z=39;
                 }
@@ -2723,21 +2724,139 @@ public class GUIVorlage extends JFrame {
             z=29;
         }
         else if (z==31) {
+            cp.add(l_optionen);
+            cp.add(b_suchen);
+            cp.add(b_einfuegen);
+            cp.add(b_loeschen);
+            cp.add(b_aendern);
+            cp.remove(l_aendern1);
+            cp.remove(l_aendern2);
+            cp.remove(b_aendern_bestaetigen);
             
+            cp.revalidate();
+            cp.repaint();
+            a=0;
+            z=30;
         }
         else if (z==32) {
-            
+            cp.remove(l_aendern3);
+            cp.remove(t_aendern1);
+            b_aendern_bestaetigen.setBounds(350, 90, 115, 33);
+            cp.revalidate();
+            cp.repaint();
+            a=1;
+            z=31;
         }
         else if (z==33) {
-            
+            cp.remove(l_aendern4);
+            cp.remove(t_aendern2);
+            cp.revalidate();
+            cp.repaint();
+            b_aendern_bestaetigen.setBounds(350, 160, 115, 33);
+            z=32;
+            a=2;
         }
         else if (z==34) {
-            
+            cp.remove(l_aendern5);
+            cp.revalidate();
+            cp.repaint();
+            a=4;
+            z=33;
         }
         else if (z==35) {
+            t_aendern1.setBounds(350, 120, 230, 30);
+            cp.add(l_aendern4);
+            cp.add(t_aendern2);
+            b_aendern_bestaetigen.setBounds(350, 240, 115, 33);
+            l_aendern3.setText("Bitte gebe erst die Art des Objekts ein, von dem du einen Datensatz ändern möchtest:");
+            
+            cp.revalidate();
+            cp.repaint();
+            a=3;
+            z=33;
+        }
+        else if (z==36) {
+            t_aendern1.setBounds(350, 120, 230, 30);
+            cp.add(l_aendern4);
+            cp.add(t_aendern2);
+            b_aendern_bestaetigen.setBounds(350, 240, 115, 33);
+            l_aendern3.setText("Bitte gebe erst die Art des Objekts ein, von dem du einen Datensatz ändern möchtest:");
+            
+            cp.revalidate();
+            cp.repaint();
+            a=3;
+            z=33;
+        }
+        else if (z==37) {
+            t_aendern1.setBounds(350, 120, 230, 30);
+            cp.add(l_aendern4);
+            cp.add(t_aendern2);
+            b_aendern_bestaetigen.setBounds(350, 240, 115, 33);
+            l_aendern3.setText("Bitte gebe erst die Art des Objekts ein, von dem du einen Datensatz ändern möchtest:");
+            
+            cp.revalidate();
+            cp.repaint();
+            a=3;
+            z=33;
+        }
+        else if (z==38) {
+            t_aendern1.setBounds(350, 120, 230, 30);
+            cp.add(l_aendern4);
+            cp.add(t_aendern2);
+            b_aendern_bestaetigen.setBounds(350, 240, 115, 33);
+            l_aendern3.setText("Bitte gebe erst die Art des Objekts ein, von dem du einen Datensatz ändern möchtest:");
+            
+            cp.revalidate();
+            cp.repaint();
+            a=3;
+            z=33;
+        }
+        else if (z==39) {
+            l_aendern5.setText("");
+            a=3;
+            z=33;
+        }
+        else if (z==40) {
+            cp.add(t_aendern1);
+            l_aendern3.setText("Gebe aus Sicherheitsgründen bitte die ID deiner Sportart ein:");
+            cp.remove(b_aendern1);
+            cp.remove(b_aendern2);
+            cp.remove(b_aendern3);
+            cp.remove(b_aendern4);
+            cp.remove(b_aendern5);
+            cp.remove(b_aendern6);
+            cp.remove(b_aendern7);
+            cp.remove(b_aendern8);
+            cp.remove(b_aendern9);
+            cp.remove(b_aendern10);
+            b_aendern_bestaetigen.setBounds(350, 160, 115, 33);
+            
+            cp.revalidate();
+            cp.repaint();
+            a=3;
+            z=33;
+        }
+        else if (z==41) {
+            cp.add(t_aendern1);
+            l_aendern3.setText("Gebe aus Sicherheitsgründen bitte die ID deiner Sportart ein:");
+            
+            cp.revalidate();
+            cp.repaint();
+            a=3;
+            z=33;
+        }
+        else if (z==42) {
             
         }
-        
+        else if (z==43) {
+            
+        }
+        else if (z==44) {
+            
+        }
+        else if (z==45) {
+            
+        }
     }
     
     
