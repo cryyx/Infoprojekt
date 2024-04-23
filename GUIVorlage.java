@@ -2304,6 +2304,11 @@ public class GUIVorlage extends JFrame {
     }
     
     
+    /**
+     * Methode zurueck_ActionPerformed
+     *
+     * @param evt Ein Parameter
+     */
     public void zurueck_ActionPerformed(ActionEvent evt) {
         if (z==1) {
             l_start.setText("Willkommen in unserer Transfermarkt-Datenbank");
@@ -2334,13 +2339,13 @@ public class GUIVorlage extends JFrame {
             cp.remove(b_all_suche);
             cp.remove(b_erw_suche);
             cp.remove(b_spe_suche);
-            cp.revalidate();
-            cp.repaint();
             cp.add(l_optionen);
             cp.add(b_suchen);
             cp.add(b_einfuegen);
             cp.add(b_loeschen);
             cp.add(b_aendern);
+            cp.revalidate();
+            cp.repaint();
             z=2;
         }
         else if (z==4){
@@ -2349,13 +2354,13 @@ public class GUIVorlage extends JFrame {
             cp.remove(b_su_all2);
             cp.remove(b_su_all3);
             cp.remove(b_su_all4);
-            cp.revalidate();
-            cp.repaint();
             cp.add(l_suchen1);
             cp.add(l_suchen2);
             cp.add(b_all_suche);
             cp.add(b_erw_suche);
             cp.add(b_spe_suche);
+            cp.revalidate();
+            cp.repaint();
             z=3;    
         }
         else if (z==5){
@@ -2364,10 +2369,10 @@ public class GUIVorlage extends JFrame {
             cp.add(b_su_all3);
             cp.add(b_su_all4);
             cp.remove(scrollpane);
-            cp.revalidate();
-            cp.repaint();
             l_su_all.setText("Wähle die Tabelle aus, die du ausgeben lassen möchtest");
             cp.add(l_su_all);
+            cp.revalidate();
+            cp.repaint();
             z=4;    
         }
         else if (z==6){
@@ -2376,10 +2381,10 @@ public class GUIVorlage extends JFrame {
             cp.add(b_su_all3);
             cp.add(b_su_all4);
             cp.remove(scrollpane);
-            cp.revalidate();
-            cp.repaint();
             l_su_all.setText("Wähle die Tabelle aus, die du ausgeben lassen möchtest");
             cp.add(l_su_all);
+            cp.revalidate();
+            cp.repaint();
             z=4;   
         }
         else if (z==7){
@@ -2388,10 +2393,11 @@ public class GUIVorlage extends JFrame {
             cp.add(b_su_all3);
             cp.add(b_su_all4);
             cp.remove(scrollpane);
-            cp.revalidate();
-            cp.repaint();
+
             l_su_all.setText("Wähle die Tabelle aus, die du ausgeben lassen möchtest");
             cp.add(l_su_all);
+            cp.revalidate();
+            cp.repaint();
             z=4;
         }
         else if (z==8){
@@ -2400,10 +2406,10 @@ public class GUIVorlage extends JFrame {
             cp.add(b_su_all3);
             cp.add(b_su_all4);
             cp.remove(scrollpane);
-            cp.revalidate();
-            cp.repaint();
             l_su_all.setText("Wähle die Tabelle aus, die du ausgeben lassen möchtest");
             cp.add(l_su_all);
+            cp.revalidate();
+            cp.repaint();
             z=4;
         }
         else if (z==9){
@@ -2418,14 +2424,15 @@ public class GUIVorlage extends JFrame {
             cp.add(b_einfuegen);
             cp.add(b_loeschen);
             cp.add(b_aendern);
-            cp.revalidate();
-            cp.repaint();
             l_optionen.setText("Herzlich willkommen "+t_name.getText()+"! Wähle bitte aus, was du in unserer Datenbank machen möchtest:");
             cp.remove(b_ein_trainer);
             cp.remove(b_ein_sportart);
             cp.remove(b_ein_verein);
             cp.remove(b_ver_verein);
             cp.remove(l_einfuegen);
+            cp.remove(b_ein_spieler);
+            cp.revalidate();
+            cp.repaint();
             z=2;    
         }
         else if (z==12){ //Spielerhinzu zurück
@@ -2458,7 +2465,7 @@ public class GUIVorlage extends JFrame {
             cp.remove(b_ein_spieler9);
             cp.remove(b_ein_spieler10);
             cp.remove(b_ein_spielerges);
-            z=2;
+            z=11;
         }
         else if (z==13){ //Vereinhinzu zurück
             cp.add(b_ein_spieler);
@@ -2475,7 +2482,7 @@ public class GUIVorlage extends JFrame {
             cp.remove(t_ein_spieler1);
             cp.remove(t_ein_spieler2);
             cp.remove(b_ein_vereinges);
-            z=2;
+            z=11;
         }
         else if (z==14){ //Sportarthinzu zurück 
             cp.add(b_ein_spieler);
@@ -2494,7 +2501,7 @@ public class GUIVorlage extends JFrame {
             cp.remove(t_ein_spieler2);
             cp.remove(t_ein_spieler3);
             cp.remove(b_ein_sportartges);
-            z=2;
+            z=11;
         }
         else if (z==15){ //Trainerhinzu zurück
             cp.add(b_ein_spieler);
@@ -2519,7 +2526,7 @@ public class GUIVorlage extends JFrame {
             cp.remove(t_ein_spieler5);
             cp.remove(t_ein_spieler6);
             cp.remove(b_ein_trainerges);
-            z=2;
+            z=11;
         }
         else if (z==16){
             l_einfuegen.setText("Bitte fülle alle Felder aus!");
@@ -2540,28 +2547,101 @@ public class GUIVorlage extends JFrame {
             z=13;
         }
         else if (z==17){
-        
+            cp.add(b_ein_spieler);
+            cp.add(b_ein_trainer);
+            cp.add(b_ein_sportart);
+            cp.add(b_ein_verein);
+            cp.add(b_ver_verein);
+            t_ein_spieler1.setBounds(170, 80, 230, 30);
+            t_ein_spieler2.setBounds(170, 130, 230, 30);
+            l_einfuegen.setText("Du möchtest also etwas neues einfügen bzw. registrieren? Wähle bitte die Art des Objekts aus!");
+            l_ein_spieler1.setText("Nachname:");
+            cp.remove(l_ein_spieler1);
+            l_ein_spieler2.setText("Vorname:");
+            cp.remove(l_ein_spieler2);
+            cp.remove(t_ein_spieler1);
+            cp.remove(t_ein_spieler2);
+            cp.remove(b_ver_vereinges);
+            cp.revalidate();
+            cp.repaint();
+            z=11;
         }
         else if (z==18){
-            
+            cp.add(l_optionen);
+            cp.add(b_suchen);
+            cp.add(b_einfuegen);
+            cp.add(b_loeschen);
+            cp.add(b_aendern);
+            cp.remove(l_loeschen);
+            cp.remove(l_loeschen2);
+            cp.remove(l_loeschen3);
+            cp.remove(l_loeschen4);
+            cp.remove(l_loeschen5);
+            cp.remove(l_loeschen6);
+            cp.remove(b_loeschen_bestaetigen);
+            cp.revalidate();
+            cp.repaint();
+            z=2;
         }
         else if (z==19){
+            l_loeschen.setText("Herzlich willkommen im Lösch-Menü unserer Datenbank. Ein Warnhinweis vorab: das Löschen deiner Daten ist permanent");
+            l_loeschen2.setText("und Sie sind nicht wiederherstellbar, überlege es dir also gut! Bist du sicher, dass du fortfahren möchtest?");
             
+            cp.revalidate();
+            cp.repaint();
+            l--;
+            z=18;
         }
         else if (z==20){
+            l_loeschen.setText("Bist du wirklich ganz sicher?");
+            l_loeschen2.setText("");
             
+            cp.revalidate();
+            cp.repaint();
+            l--;
+            z=19;
         }
         else if (z==21){
+            l_loeschen.setText("Also wirklich sehr sicher?");
+            l_loeschen2.setText("Deine Daten gehen sonst für immer verloren (oder werden von uns ins Darknet gestellt)");
             
+            cp.remove(t_loeschen1);
+            t_loeschen1.setBounds(350, 90, 230, 30);
+            b_loeschen_bestaetigen.setBounds(350, 90, 115, 33);
+            b_loeschen_bestaetigen.setText("Ich bin sicher!");
+            
+            cp.revalidate();
+            cp.repaint();
+            l--;
+            z=20;
         }
         else if (z==22){
-            
+            l_loeschen4.setText("");
+            cp.remove(t_loeschen2);
+            t_loeschen2.setBounds(430, 530, 230, 30);
+            b_loeschen_bestaetigen.setBounds(350, 90, 115, 33);
+            cp.revalidate();
+            cp.repaint();
+            l--;
+            z=21;
         }
         else if (z==23){
-            
+
         }
         else if (z==24){
+            t_loeschen1.setText("");
+            t_loeschen2.setText("");
+            b_loeschen_bestaetigen.setBounds(350, 90, 115, 33);
+            b_loeschen_bestaetigen.setText("Ich bin sicher!");
+            cp.add(t_loeschen2);
+            l_loeschen4.setText("");
+            l_loeschen3.setText("Nenne bitte zu erst deine Art des Objektes, welches du löschen möchtest:");
             
+            
+            cp.revalidate();
+            cp.repaint();
+            l=4;
+            z=21;
         }
         else if (z==25){
             
