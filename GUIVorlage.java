@@ -2684,8 +2684,8 @@ public class GUIVorlage extends JFrame {
                 auftrag=auftrag.concat(") AND ");
                 mehrere=false;
             }
-            else if (a0) {
-                auftrag=auftrag.concat("AND ");
+            else if (!a1) {
+                auftrag=auftrag.concat("(");
                 mehrere=false;
             }
             if (!(t_su_erw1.getText().equals(""))) {
@@ -2741,11 +2741,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat("or 5=5 AND ");
+                auftrag=auftrag.concat(") AND ");
                 mehrere=false;
             }
-            else if (a0) {
-                auftrag=auftrag.concat("AND ");
+            else if (!a2) {
+                auftrag=auftrag.concat("(");
                 mehrere=false;
             }
             if (!(t_su_erw2.getText().equals(""))) {
@@ -2801,11 +2801,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat("or 5=5 AND ");
+                auftrag=auftrag.concat(") AND ");
                 mehrere=false;
             }
-            else if (a0) {
-                auftrag=auftrag.concat("AND ");
+            else if (!a3) {
+                auftrag=auftrag.concat("(");
                 mehrere=false;
             }
             if (!(t_su_erw3.getText().equals(""))) {
@@ -2861,11 +2861,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat("or 5=5 AND ");
+                auftrag=auftrag.concat(") AND ");
                 mehrere=false;
             }
-            else if (a0) {
-                auftrag=auftrag.concat("AND ");
+            else if (!a4) {
+                auftrag=auftrag.concat("(");
                 mehrere=false;
             }
             if (!(t_su_erw4.getText().equals(""))) {
@@ -2921,11 +2921,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat("or 5=5 AND ");
+                auftrag=auftrag.concat(") AND ");
                 mehrere=false;
             }
-            else if (a0) {
-                auftrag=auftrag.concat("AND ");
+            else if (!a5) {
+                auftrag=auftrag.concat("(");
                 mehrere=false;
             }
             if (!(t_su_erw5.getText().equals(""))) {
@@ -2969,11 +2969,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat("or 5=5 AND ");
+                auftrag=auftrag.concat(") AND ");
                 mehrere=false;
             }
-            else if (a0) {
-                auftrag=auftrag.concat("AND ");
+            else if (!a6) {
+                auftrag=auftrag.concat("(");
                 mehrere=false;
             }
             if (!(t_su_erw6.getText().equals(""))) {
@@ -3017,11 +3017,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat("or 5=5 AND ");
+                auftrag=auftrag.concat(") AND ");
                 mehrere=false;
             }
-            else if (a0) {
-                auftrag=auftrag.concat("AND ");
+            else if (!a7) {
+                auftrag=auftrag.concat("(");
                 mehrere=false;
             }
             if (!(t_su_erw7.getText().equals(""))) {
@@ -3391,6 +3391,7 @@ public class GUIVorlage extends JFrame {
             cp.remove(b_su_erw_best8);
             cp.remove(b_su_erw_best9);
             cp.remove(b_su_erw_best10);
+            auftrag=auftrag.concat(")");
             cp.revalidate();
             cp.repaint();
             
