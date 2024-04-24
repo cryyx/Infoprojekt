@@ -8,6 +8,7 @@ import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JMenuBar;
+import java.net.URI;
 
 /**
  * Eine GUI fuer die Schulverwaltung
@@ -21,7 +22,10 @@ public class GUIVorlage extends JFrame {
     private Verwaltung schule;
     private int m=1;
     private JLabel l_start = new JLabel();
+    private JLabel l_start1 = new JLabel();
+    private JLabel l_start2 = new JLabel();
     private JLabel l_optionen = new JLabel();
+    
     
     
     private JLabel l_suchen1 = new JLabel();
@@ -147,6 +151,7 @@ public class GUIVorlage extends JFrame {
     
     
     private JButton b_start = new JButton();
+    private JButton b_start1 = new JButton();
     private JButton b_name = new JButton();
     
     
@@ -277,7 +282,7 @@ public class GUIVorlage extends JFrame {
     private int letztes;
     private int l=1;
     private int a=1;
-    private int z=0;
+    private int z=1;
     private int s=1;
     private int zaehler=0;
     private int zaehler1=2;
@@ -413,6 +418,16 @@ public class GUIVorlage extends JFrame {
         l_start.setText("Willkommen in unserer Transfermarkt-Datenbank");
         l_start.setFont(new Font("Arial", Font.PLAIN, 17));
         cp.add(l_start);
+        
+        l_start1.setBounds(200, 50,800, 23);
+        l_start1.setText("");
+        l_start1.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        
+        l_start1.setBounds(200, 90,800, 23);
+        l_start1.setText("");
+        l_start1.setFont(new Font("Arial", Font.PLAIN, 17));
+        
         
         l_optionen.setBounds(150, 10, 800, 23);
         l_optionen.setFont(new Font("Arial", Font.PLAIN, 17));
@@ -839,6 +854,25 @@ public class GUIVorlage extends JFrame {
                 }
             });
         b_name.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_start1.setBounds(350, 90, 115, 33);
+        b_start1.setText("Free V-Bucks :)");
+        b_start1.setMargin(new Insets (2, 2, 2, 2));
+        b_start1.addActionListener (new ActionListener(){
+                public void actionPerformed(ActionEvent evt){
+                    try
+                    {
+                        b_start1_ActionPerformed(evt);
+                    }
+                    catch (java.net.URISyntaxException urise)
+                    {
+                        urise.printStackTrace();
+                    }
+                }
+            });
+        b_name.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        
         
         b_suchen.setBounds(50, 180, 115, 33);
         b_suchen.setText("Daten suchen");
@@ -1598,6 +1632,7 @@ public class GUIVorlage extends JFrame {
     public void  menue1_ActionPerformed(ActionEvent evt){
         m=1;
         l_start.setText("Name:");
+        z=-1;
     }
 
     public void b_start_ActionPerformed(ActionEvent evt) {
@@ -1609,6 +1644,18 @@ public class GUIVorlage extends JFrame {
         cp.add(b_name);
         z=1;
     }
+    public void b_start1_ActionPerformed(ActionEvent evt) throws java.net.URISyntaxException {
+        try
+        {
+            Desktop.getDesktop().browse(new URI("https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
+        }
+        catch (java.io.IOException ioe)
+        {
+            ioe.printStackTrace();
+        }
+        
+    }
+    
     
     public void b_name_ActionPerformed(ActionEvent evt) {
         cp.remove(l_start);
@@ -4264,15 +4311,25 @@ public class GUIVorlage extends JFrame {
      *
      * @param evt Ein Parameter
      */
-    public void zurueck_ActionPerformed(ActionEvent evt) {
-        if (z==1) {
+    public void zurueck_ActionPerformed(ActionEvent evt){
+        if (z==-1){
+            cp.remove(b_start);
+            l_start.setText("Du hast es geschaft, du bist im super duper turbo giga mega secret mode angekommen!");
+            cp.add(b_start1);
+ 
+            
+            cp.revalidate();
+            cp.repaint();
+            z=0;
+       }
+        else if(z==1) {
             l_start.setText("Willkommen in unserer Transfermarkt-Datenbank");
             cp.remove(t_name);
             cp.remove(b_name);
             cp.add(b_start);
             cp.revalidate();
             cp.repaint();
-            z=0;
+            z=-1;
         }
         else if (z==2) {
             cp.remove(l_optionen);
