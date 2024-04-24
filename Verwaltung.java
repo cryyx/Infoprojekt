@@ -23,7 +23,7 @@ public class Verwaltung {
     }
     
     public void test(){
-        String auftrag="Select Vorname, Name, Gehalt, Nationalität, VID, SpID, TID From Trainer Where Name = '%Kös%er%' OR Name = '%Turki%'  or 5=5 AND Gehalt>=10 AND VID = '1'";
+        String auftrag="Select * From Trainer Where (Name Like '%Kös%r%' or Name Like '%Turki%') AND Gehalt>=10 AND VID = '1'";
         aktuelleFehlermeldung();
         sqlBefehlAusfuehren(auftrag);
         String auftrag1="Hello";
