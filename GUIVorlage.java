@@ -3473,9 +3473,6 @@ public class GUIVorlage extends JFrame {
                 auftrag=auftrag.concat("Limit "+t_su_spe2.getText());
             }
             
-            v1.sqlBefehlAusfuehren(auftrag);
-            v1.meinConnector.executeStatement(auftrag);
-            v1.aktuelleFehlermeldung();
             
             String [][] ergebnis=v1.meinConnector.getCurrentQueryResult().getData();
             
@@ -4307,7 +4304,9 @@ public class GUIVorlage extends JFrame {
             cp.remove(b_start);
             l_start.setText("Du hast es geschaft, du bist im super duper turbo giga mega secret mode angekommen!");
             cp.add(b_start1);
- 
+            l_start1.setText("Leider gibt es von hier keinen Weg mehr zurück :(");
+            l_start1.setBounds(200, 150,800, 23);
+            cp.add(l_start1); 
             
             cp.revalidate();
             cp.repaint();
