@@ -2725,6 +2725,8 @@ public class GUIVorlage extends JFrame {
             a0=true;
             a1=true;
             letztes=1;
+            t_su_erw1.setText("");
+            t_su_erw11.setText("");
         }
         else {
             cp.add(l_su_erw17);
@@ -2783,6 +2785,8 @@ public class GUIVorlage extends JFrame {
             a0=true;
             a2=true;
             letztes=2;
+            t_su_erw2.setText("");
+            t_su_erw12.setText("");
         }
         else {
             cp.add(l_su_erw17);
@@ -2842,6 +2846,8 @@ public class GUIVorlage extends JFrame {
             a0=true;
             a3=true;
             letztes=3;
+            t_su_erw3.setText("");
+            t_su_erw13.setText("");
         }
         else {
             cp.add(l_su_erw17);
@@ -2900,6 +2906,8 @@ public class GUIVorlage extends JFrame {
             a0=true;
             a4=true;
             letztes=4;
+            t_su_erw4.setText("");
+            t_su_erw14.setText("");
         }
         else {
             cp.add(l_su_erw17);
@@ -2947,6 +2955,7 @@ public class GUIVorlage extends JFrame {
             a0=true;
             a5=true;
             letztes=5;
+            t_su_erw5.setText("");
         }
         else {
             cp.add(l_su_erw17);
@@ -2994,6 +3003,7 @@ public class GUIVorlage extends JFrame {
             a0=true;
             a6=true;
             letztes=6;
+            t_su_erw6.setText("");
         }
         else {
             cp.add(l_su_erw17);
@@ -3041,6 +3051,7 @@ public class GUIVorlage extends JFrame {
             a0=true;
             a7=true;
             letztes=7;
+            t_su_erw7.setText("");
         }
         else {
             cp.add(l_su_erw17);
@@ -3088,6 +3099,7 @@ public class GUIVorlage extends JFrame {
             a0=true;
             a8=true;
             letztes=8;
+            t_su_erw8.setText("");
         }
         else {
             cp.add(l_su_erw17);
@@ -3135,6 +3147,7 @@ public class GUIVorlage extends JFrame {
             a0=true;
             a9=true;
             letztes=9;
+            t_su_erw9.setText("");
         }
         else {
             cp.add(l_su_erw17);
@@ -3182,6 +3195,7 @@ public class GUIVorlage extends JFrame {
             a0=true;
             a10=true;
             letztes=10;
+            t_su_erw10.setText("");
         }
         else {
             cp.add(l_su_erw17);
@@ -3337,7 +3351,7 @@ public class GUIVorlage extends JFrame {
             cp.add(l_su_erw16);
             cp.revalidate();
             cp.repaint();
-            z=56;
+            z=55;
             s++;
             aus=2;
         }
@@ -3395,7 +3409,7 @@ public class GUIVorlage extends JFrame {
             cp.add(l_su_spe7);
             cp.add(t_su_spe1);
             cp.add(t_su_spe2);
-            z=57;
+            z=56;
             s++;
         }
         else if (s==3) {
@@ -5054,6 +5068,27 @@ public class GUIVorlage extends JFrame {
             cp.repaint();
             z=45;
             s=1;
+        }
+        else if (z==51) {
+            
+        }
+        else if (z==52) {
+            
+        }
+        else if (z==53) {
+            
+        }
+        else if (z==54) {
+            
+        }
+        else if (z==55) {
+            
+        }
+        else if (z==56) {
+            
+        }
+        else if (z==57) {
+            
         }
     }
     
