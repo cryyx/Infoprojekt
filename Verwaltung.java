@@ -23,7 +23,7 @@ public class Verwaltung {
     }
     
     public void test(){
-        String auftrag="Select SpID From hat Where VID=1 Or VID=12 Or VID=-20 Order By SpID Desc Limit 10";
+        String auftrag="Select Vorname, Name, Gehalt, Nationalität, VID, SpID, TID From Trainer Where Name = '%Kös%er%' OR Name = '%Turki%'  or 5=5 AND Gehalt>=10 AND VID = '1'";
         aktuelleFehlermeldung();
         sqlBefehlAusfuehren(auftrag);
         String auftrag1="Hello";
@@ -37,6 +37,7 @@ public class Verwaltung {
     public void sqlBefehlAusfuehren(String sqlBefehl){
         meinConnector.executeStatement(sqlBefehl);  //Die Methode executeStatement der Klasse DatabaseConnector wird ausgeführt. Der sql-Befehl wird als String übergeben.
         aktuelleFehlermeldung();
+        System.out.println(sqlBefehl);
         for (int i=0; i<meinConnector.getCurrentQueryResult().getRowCount(); i=i+1) {               //verschachtelte for-Schleifen, die das 'QueryResult' auslesen.
 
             for (int j=0; j<meinConnector.getCurrentQueryResult().getColumnCount(); j=j+1) {
@@ -94,7 +95,7 @@ public class Verwaltung {
                                 String anfang=sc.nextLine();
                                 System.out.println("Gebe bitte das Ende des Namens ein!");
                                 String ende=sc.nextLine();
-                                auftrag=auftrag.concat("Name Like '%"+anfang+"%"+ende+"%' Or ");
+                                auftrag=auftrag.concat("Name = '%"+anfang+"%"+ende+"%' Or ");
                                 System.out.println("Wenn du einen weiteren Namen zu deinem Filter hinzufügen möchtest, dann schreibe jetzt 'ja':");
                                 nam_weiter=sc.nextLine();
                             }
@@ -104,7 +105,7 @@ public class Verwaltung {
                                 nam_weiter=sc.nextLine();
                             }
                         }
-                        auftrag=auftrag.concat("0=5 AND ");
+                        auftrag=auftrag.concat("5=5 AND ");
                 }
                 auftrag=auftrag.concat("VID>-1");
                 System.out.println("Möchtest du deine Ergebnisse nach einem bestimmten Attribut sortieren lassen?");
@@ -163,17 +164,17 @@ public class Verwaltung {
                                 String anfang=sc.nextLine();
                                 System.out.println("Gebe bitte das Ende des Namens ein!");
                                 String ende=sc.nextLine();
-                                auftrag=auftrag.concat("Name Like '%"+anfang+"%"+ende+"%' Or ");
+                                auftrag=auftrag.concat("Name = '%"+anfang+"%"+ende+"%' Or ");
                                 System.out.println("Wenn du einen weiteren Namen zu deinem Filter hinzufügen möchtest, dann schreibe jetzt 'ja':");
                                 nam_weiter=sc.nextLine();
                             }
                             else {
-                                auftrag=auftrag.concat("Name Like '%"+name_filter+"%' Or ");
+                                auftrag=auftrag.concat("Name = '%"+name_filter+"%' Or ");
                                 System.out.println("Wenn du einen weiteren Namen zu deinem Filter hinzufügen möchtest, dann schreibe jetzt 'ja':");
                                 nam_weiter=sc.nextLine();
                             }
                         }
-                        auftrag=auftrag.concat("0=5 AND ");
+                        auftrag=auftrag.concat("5=5 AND ");
                 }
                 System.out.println("Möchtest du nach der Popularität filtern?");
                 String pop=sc.nextLine();
@@ -253,17 +254,17 @@ public class Verwaltung {
                                 String anfang=sc.nextLine();
                                 System.out.println("Gebe bitte das Ende des Namens ein!");
                                 String ende=sc.nextLine();
-                                auftrag=auftrag.concat("Name Like '%"+anfang+"%"+ende+"%' Or ");
+                                auftrag=auftrag.concat("Name = '%"+anfang+"%"+ende+"%' Or ");
                                 System.out.println("Wenn du einen weiteren Namen zu deinem Filter hinzufügen möchtest, dann schreibe jetzt 'ja':");
                                 nam_weiter=sc.nextLine();
                             }
                             else {
-                                auftrag=auftrag.concat("Name Like '%"+name_filter+"%' Or ");
+                                auftrag=auftrag.concat("Name = '%"+name_filter+"%' Or ");
                                 System.out.println("Wenn du einen weiteren Namen zu deinem Filter hinzufügen möchtest, dann schreibe jetzt 'ja':");
                                 nam_weiter=sc.nextLine();
                             }
                         }
-                        auftrag=auftrag.concat("0=5 AND ");
+                        auftrag=auftrag.concat("5=5 AND ");
                 }
                 System.out.println("Möchtest du nach dem Vornamen filtern?");
                 String vname=sc.nextLine();
@@ -277,17 +278,17 @@ public class Verwaltung {
                                 String anfang=sc.nextLine();
                                 System.out.println("Gebe bitte das Ende des Vornamens ein!");
                                 String ende=sc.nextLine();
-                                auftrag=auftrag.concat("Vorname Like '%"+anfang+"%"+ende+"%' Or ");
+                                auftrag=auftrag.concat("Vorname = '%"+anfang+"%"+ende+"%' Or ");
                                 System.out.println("Wenn du einen weiteren Vornamen zu deinem Filter hinzufügen möchtest, dann schreibe jetzt 'ja':");
                                 vnam_weiter=sc.nextLine();
                             }
                             else {
-                                auftrag=auftrag.concat("Vorname Like '%"+vname_filter+"%' Or ");
+                                auftrag=auftrag.concat("Vorname = '%"+vname_filter+"%' Or ");
                                 System.out.println("Wenn du einen weiteren Vornamen zu deinem Filter hinzufügen möchtest, dann schreibe jetzt 'ja':");
                                 vnam_weiter=sc.nextLine();
                             }
                         }
-                        auftrag=auftrag.concat("0=5 AND ");
+                        auftrag=auftrag.concat("5=5 AND ");
                 }
                 System.out.println("Möchtest du nach dem Gehalt filtern?");
                 String gehalt=sc.nextLine();
@@ -434,17 +435,17 @@ public class Verwaltung {
                                 String anfang=sc.nextLine();
                                 System.out.println("Gebe bitte das Ende des Namens ein!");
                                 String ende=sc.nextLine();
-                                auftrag=auftrag.concat("Name Like '%"+anfang+"%"+ende+"%' Or ");
+                                auftrag=auftrag.concat("Name = '%"+anfang+"%"+ende+"%' Or ");
                                 System.out.println("Wenn du einen weiteren Namen zu deinem Filter hinzufügen möchtest, dann schreibe jetzt 'ja':");
                                 nam_weiter=sc.nextLine();
                             }
                             else {
-                                auftrag=auftrag.concat("Name Like '%"+name_filter+"%' Or ");
+                                auftrag=auftrag.concat("Name = '%"+name_filter+"%' Or ");
                                 System.out.println("Wenn du einen weiteren Namen zu deinem Filter hinzufügen möchtest, dann schreibe jetzt 'ja':");
                                 nam_weiter=sc.nextLine();
                             }
                         }
-                        auftrag=auftrag.concat("0=5 AND ");
+                        auftrag=auftrag.concat("5=5 AND ");
                 }
                 System.out.println("Möchtest du nach dem Vornamen filtern?");
                 String vname=sc.nextLine();
@@ -458,17 +459,17 @@ public class Verwaltung {
                                 String anfang=sc.nextLine();
                                 System.out.println("Gebe bitte das Ende des Vornamens ein!");
                                 String ende=sc.nextLine();
-                                auftrag=auftrag.concat("Vorname Like '%"+anfang+"%"+ende+"%' Or ");
+                                auftrag=auftrag.concat("Vorname = '%"+anfang+"%"+ende+"%' Or ");
                                 System.out.println("Wenn du einen weiteren Vornamen zu deinem Filter hinzufügen möchtest, dann schreibe jetzt 'ja':");
                                 vnam_weiter=sc.nextLine();
                             }
                             else {
-                                auftrag=auftrag.concat("Vorname Like '%"+vname_filter+"%' Or ");
+                                auftrag=auftrag.concat("Vorname = '%"+vname_filter+"%' Or ");
                                 System.out.println("Wenn du einen weiteren Vornamen zu deinem Filter hinzufügen möchtest, dann schreibe jetzt 'ja':");
                                 vnam_weiter=sc.nextLine();
                             }
                         }
-                        auftrag=auftrag.concat("0=5 AND ");
+                        auftrag=auftrag.concat("5=5 AND ");
                 }
                 System.out.println("Möchtest du nach dem Gehalt filtern?");
                 String gehalt=sc.nextLine();

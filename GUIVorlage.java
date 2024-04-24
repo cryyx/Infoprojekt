@@ -35,6 +35,24 @@ public class GUIVorlage extends JFrame {
     private JLabel l_su_spe6 = new JLabel();
     private JLabel l_su_spe7 = new JLabel();
     
+    private JLabel l_su_erw1 = new JLabel();
+    private JLabel l_su_erw2 = new JLabel();
+    private JLabel l_su_erw3 = new JLabel();
+    private JLabel l_su_erw4 = new JLabel();
+    private JLabel l_su_erw5 = new JLabel();
+    private JLabel l_su_erw6 = new JLabel();
+    private JLabel l_su_erw7 = new JLabel();
+    private JLabel l_su_erw8 = new JLabel();
+    private JLabel l_su_erw9 = new JLabel();
+    private JLabel l_su_erw10 = new JLabel();
+    private JLabel l_su_erw11 = new JLabel();
+    private JLabel l_su_erw12 = new JLabel();
+    private JLabel l_su_erw13 = new JLabel();
+    private JLabel l_su_erw14 = new JLabel();
+    private JLabel l_su_erw15 = new JLabel();
+    private JLabel l_su_erw16 = new JLabel();
+    private JLabel l_su_erw17 = new JLabel();
+    
     private JLabel l_einfuegen = new JLabel();
     private JLabel l_einfuegen2 = new JLabel();
     
@@ -80,6 +98,23 @@ public class GUIVorlage extends JFrame {
     
     private JTextField t_su_spe1 = new JTextField();
     private JTextField t_su_spe2 = new JTextField();
+    
+    private JTextField t_su_erw1 = new JTextField();
+    private JTextField t_su_erw2 = new JTextField();
+    private JTextField t_su_erw3 = new JTextField();
+    private JTextField t_su_erw4 = new JTextField();
+    private JTextField t_su_erw5 = new JTextField();
+    private JTextField t_su_erw6 = new JTextField();
+    private JTextField t_su_erw7 = new JTextField();
+    private JTextField t_su_erw8 = new JTextField();
+    private JTextField t_su_erw9 = new JTextField();
+    private JTextField t_su_erw10 = new JTextField();
+    private JTextField t_su_erw11 = new JTextField();
+    private JTextField t_su_erw12 = new JTextField();
+    private JTextField t_su_erw13 = new JTextField();
+    private JTextField t_su_erw14 = new JTextField();
+    
+    
     
     private JTextField t_ein_spieler1 = new JTextField();
     private JTextField t_ein_spieler2 = new JTextField();
@@ -136,6 +171,31 @@ public class GUIVorlage extends JFrame {
     private JButton b_su_spe_weiter = new JButton();
     private JButton b_su_spe_best= new JButton();
     private JButton b_su_spe_sort= new JButton();
+    private JButton b_su_erw1 = new JButton();
+    private JButton b_su_erw2 = new JButton();
+    private JButton b_su_erw3 = new JButton();
+    private JButton b_su_erw4 = new JButton();
+    private JButton b_su_erw5 = new JButton();
+    private JButton b_su_erw6 = new JButton();
+    private JButton b_su_erw7 = new JButton();
+    private JButton b_su_erw8 = new JButton();
+    private JButton b_su_erw9 = new JButton();
+    private JButton b_su_erw10 = new JButton();
+    private JButton b_su_erw11 = new JButton();
+    private JButton b_su_erw12 = new JButton();
+    private JButton b_su_erw13 = new JButton();
+    private JButton b_su_erw14 = new JButton();
+    private JButton b_su_erw_weiter = new JButton();
+    private JButton b_su_erw_best1 = new JButton();
+    private JButton b_su_erw_best2 = new JButton();
+    private JButton b_su_erw_best3 = new JButton();
+    private JButton b_su_erw_best4 = new JButton();
+    private JButton b_su_erw_best5 = new JButton();
+    private JButton b_su_erw_best6 = new JButton();
+    private JButton b_su_erw_best7 = new JButton();
+    private JButton b_su_erw_best8 = new JButton();
+    private JButton b_su_erw_best9 = new JButton();
+    private JButton b_su_erw_best10 = new JButton();
     
     
     private JButton b_ein_spieler = new JButton();
@@ -202,12 +262,41 @@ public class GUIVorlage extends JFrame {
     private boolean aendern8=true;
     private boolean aendern9=true;
     private boolean aendern10=true;
+    private boolean a0=false;
+    private boolean a1=false;
+    private boolean a2=false;
+    private boolean a3=false;
+    private boolean a4=false;
+    private boolean a5=false;
+    private boolean a6=false;
+    private boolean a7=false;
+    private boolean a8=false;
+    private boolean a9=false;
+    private boolean a10=false;
+    private boolean mehrere=false;
+    private int letztes;
     private int l=1;
     private int a=1;
     private int z=0;
     private int s=1;
     private int zaehler=0;
     private int zaehler1=2;
+    private int zaehler2=11;
+    private int zaehler3=7;
+    private int zaehler4=4;
+    private int zaehler5=3;
+    private int artaus;
+    private int aus=1;
+    private int ü1=1;
+    private int ü2=1;
+    private int ü3=1;
+    private int ü4=1;
+    private int ü5=1;
+    private int ü6=1;
+    private int ü7=1;
+    private int ü8=1;
+    private int ü9=1;
+    private int ü10=1;
     private String id;
     private String art;
     private String auftrag;
@@ -369,6 +458,74 @@ public class GUIVorlage extends JFrame {
         l_su_spe7.setText("Limit:");
         l_su_spe7.setFont(new Font("Arial", Font.PLAIN, 17));
         
+        l_su_erw1.setBounds(230, 70, 800, 33);
+        l_su_erw1.setText("wird ausgegeben");
+        l_su_erw1.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_erw2.setBounds(230, 120, 800, 33);
+        l_su_erw2.setText("wird ausgegeben");
+        l_su_erw2.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_erw3.setBounds(230, 170, 800, 33);
+        l_su_erw3.setText("wird ausgegeben");
+        l_su_erw3.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_erw4.setBounds(230, 220, 800, 33);
+        l_su_erw4.setText("wird ausgegeben");
+        l_su_erw4.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_erw5.setBounds(230, 270, 800, 33);
+        l_su_erw5.setText("wird ausgegeben");
+        l_su_erw5.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_erw6.setBounds(230, 320, 800, 33);
+        l_su_erw6.setText("wird ausgegeben");
+        l_su_erw6.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_erw7.setBounds(230, 370, 800, 33);
+        l_su_erw7.setText("wird ausgegeben");
+        l_su_erw7.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_erw8.setBounds(230, 420, 800, 33);
+        l_su_erw8.setText("wird ausgegeben");
+        l_su_erw8.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_erw9.setBounds(230, 470, 800, 33);
+        l_su_erw9.setText("wird ausgegeben");
+        l_su_erw9.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_erw10.setBounds(230, 520, 800, 33);
+        l_su_erw10.setText("wird ausgegeben");
+        l_su_erw10.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_erw11.setBounds(410, 70, 800, 33);
+        l_su_erw11.setText("ggf. Ende:");
+        l_su_erw11.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_erw12.setBounds(410, 120, 800, 33);
+        l_su_erw12.setText("ggf. Ende:");
+        l_su_erw12.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_erw13.setBounds(410, 170, 800, 33);
+        l_su_erw13.setText("bis");
+        l_su_erw13.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_erw14.setBounds(410, 220, 800, 33);
+        l_su_erw14.setText("bis");
+        l_su_erw14.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_erw15.setBounds(200, 620, 800, 33);
+        l_su_erw15.setText("Bitte klicke für jedes Attribut einzeln auf weiter!");
+        l_su_erw15.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_erw16.setBounds(200, 650, 800, 33);
+        l_su_erw16.setText("Möchtest du ein Attribut mehrfach filtern, gebe es nach dem Klicken auf 'weiter' erneut ein!");
+        l_su_erw16.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        l_su_erw17.setBounds(200, 680, 800, 33);
+        l_su_erw17.setText("Bitte gebe nur Attribute ein, die du in der Vergangenheit nicht schon eingegeben hast!");
+        l_su_erw17.setFont(new Font("Arial", Font.PLAIN, 17));
+        
         l_einfuegen.setBounds(50, 17, 1000, 23);
         l_einfuegen.setText("Du möchtest also etwas neues einfügen bzw. registrieren? Wähle bitte die Art des Objekts aus!");
         l_einfuegen.setFont(new Font("Arial", Font.PLAIN, 17));
@@ -517,6 +674,63 @@ public class GUIVorlage extends JFrame {
         t_su_spe2.setBounds(230, 120, 230, 33);
         t_su_spe2.setText("");
         t_su_spe2.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        
+        t_su_erw1.setBounds(230, 70, 140, 33);
+        t_su_erw1.setText("");
+        t_su_erw1.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_su_erw2.setBounds(230, 120, 140, 33);
+        t_su_erw2.setText("");
+        t_su_erw2.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_su_erw3.setBounds(230, 170, 140, 33);
+        t_su_erw3.setText("");
+        t_su_erw3.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_su_erw4.setBounds(230, 220, 140, 33);
+        t_su_erw4.setText("");
+        t_su_erw4.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_su_erw5.setBounds(230, 270, 140, 33);
+        t_su_erw5.setText("");
+        t_su_erw5.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_su_erw6.setBounds(230, 320, 140, 33);
+        t_su_erw6.setText("");
+        t_su_erw6.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_su_erw7.setBounds(230, 370, 140, 33);
+        t_su_erw7.setText("");
+        t_su_erw7.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_su_erw8.setBounds(230, 420, 140, 33);
+        t_su_erw8.setText("");
+        t_su_erw8.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_su_erw9.setBounds(230, 470, 140, 33);
+        t_su_erw9.setText("");
+        t_su_erw9.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_su_erw10.setBounds(230, 520,140, 33);
+        t_su_erw10.setText("");
+        t_su_erw10.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_su_erw11.setBounds(510, 70, 140, 33);
+        t_su_erw11.setText("");
+        t_su_erw11.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_su_erw12.setBounds(510, 120, 140, 33);
+        t_su_erw12.setText("");
+        t_su_erw12.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_su_erw13.setBounds(510, 170, 140, 33);
+        t_su_erw13.setText("");
+        t_su_erw13.setFont(new Font("Arial", Font.PLAIN, 17));
+        
+        t_su_erw14.setBounds(510, 220, 140, 33);
+        t_su_erw14.setText("");
+        t_su_erw14.setFont(new Font("Arial", Font.PLAIN, 17));
         
         
         t_ein_spieler1.setBounds(170, 80, 230, 30);
@@ -825,6 +1039,259 @@ public class GUIVorlage extends JFrame {
             });
         b_su_spe_sort.setFont(new Font("Dialog", Font.PLAIN, 13));
         
+        b_su_erw1.setBounds(30, 180, 150, 33);
+        b_su_erw1.setText("Spieler");
+        b_su_erw1.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw1.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw1_ActionPerformed(evt);
+                }
+            });
+        b_su_erw1.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw2.setBounds(263, 180, 150, 33);
+        b_su_erw2.setText("Trainer");
+        b_su_erw2.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw2.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw2_ActionPerformed(evt);
+                }
+            });
+        b_su_erw2.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw3.setBounds(496, 180, 150, 33);
+        b_su_erw3.setText("Verein");
+        b_su_erw3.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw3.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw3_ActionPerformed(evt);
+                }
+            });
+        b_su_erw3.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw4.setBounds(730, 180, 150, 33);
+        b_su_erw4.setText("Sportart");
+        b_su_erw4.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw4.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw4_ActionPerformed(evt);
+                }
+            });
+        b_su_erw4.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw5.setBounds(50, 70, 150, 33);
+        b_su_erw5.setText("Vorname");
+        b_su_erw5.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw5.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw5_ActionPerformed(evt);
+                }
+            });
+        b_su_erw5.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw6.setBounds(50, 120, 150, 33);
+        b_su_erw6.setText("Name");
+        b_su_erw6.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw6.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw6_ActionPerformed(evt);
+                }
+            });
+        b_su_erw6.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        
+        
+        b_su_erw7.setBounds(50, 170, 150, 33);
+        b_su_erw7.setText("Gehalt");
+        b_su_erw7.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw7.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw7_ActionPerformed(evt);
+                }
+            });
+        b_su_erw7.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw8.setBounds(50, 220, 150, 33);
+        b_su_erw8.setText("Preis");
+        b_su_erw8.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw8.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw8_ActionPerformed(evt);
+                }
+            });
+        b_su_erw8.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw9.setBounds(50, 270, 150, 33);
+        b_su_erw9.setText("Position");
+        b_su_erw9.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw9.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw9_ActionPerformed(evt);
+                }
+            });
+        b_su_erw9.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw10.setBounds(50, 320, 150, 33);
+        b_su_erw10.setText("Nationalität");
+        b_su_erw10.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw10.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw10_ActionPerformed(evt);
+                }
+            });
+        b_su_erw10.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw11.setBounds(50, 370, 150, 33);
+        b_su_erw11.setText("Verein");
+        b_su_erw11.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw11.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw11_ActionPerformed(evt);
+                }
+            });
+        b_su_erw11.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw12.setBounds(50, 420, 150, 33);
+        b_su_erw12.setText("Leihverein");
+        b_su_erw12.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw12.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw12_ActionPerformed(evt);
+                }
+            });
+        b_su_erw12.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw13.setBounds(50, 470, 150, 33);
+        b_su_erw13.setText("Gerüchtsverein");
+        b_su_erw13.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw13.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw13_ActionPerformed(evt);
+                }
+            });
+        b_su_erw13.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw14.setBounds(50, 520, 150, 33);
+        b_su_erw14.setText("Sportart");
+        b_su_erw14.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw14.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw14_ActionPerformed(evt);
+                }
+            });
+        b_su_erw14.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw_best1.setBounds(680, 70, 150, 33);
+        b_su_erw_best1.setText("weiter");
+        b_su_erw_best1.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw_best1.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw_best1_ActionPerformed(evt);
+                }
+            });
+        b_su_erw_best1.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw_best2.setBounds(680, 120, 150, 33);
+        b_su_erw_best2.setText("weiter");
+        b_su_erw_best2.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw_best2.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw_best2_ActionPerformed(evt);
+                }
+            });
+        b_su_erw_best2.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        
+        
+        b_su_erw_best3.setBounds(680, 170, 150, 33);
+        b_su_erw_best3.setText("weiter");
+        b_su_erw_best3.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw_best3.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw_best3_ActionPerformed(evt);
+                }
+            });
+        b_su_erw_best3.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw_best4.setBounds(680, 220, 150, 33);
+        b_su_erw_best4.setText("weiter");
+        b_su_erw_best4.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw_best4.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw_best4_ActionPerformed(evt);
+                }
+            });
+        b_su_erw_best4.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw_best5.setBounds(680, 270, 150, 33);
+        b_su_erw_best5.setText("weiter");
+        b_su_erw_best5.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw_best5.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw_best5_ActionPerformed(evt);
+                }
+            });
+        b_su_erw_best5.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw_best6.setBounds(680, 320, 150, 33);
+        b_su_erw_best6.setText("weiter");
+        b_su_erw_best6.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw_best6.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw_best6_ActionPerformed(evt);
+                }
+            });
+        b_su_erw_best6.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw_best7.setBounds(680, 370, 150, 33);
+        b_su_erw_best7.setText("weiter");
+        b_su_erw_best7.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw_best7.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw_best7_ActionPerformed(evt);
+                }
+            });
+        b_su_erw_best7.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw_best8.setBounds(680, 420, 150, 33);
+        b_su_erw_best8.setText("weiter");
+        b_su_erw_best8.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw_best8.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw_best8_ActionPerformed(evt);
+                }
+            });
+        b_su_erw_best8.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw_best9.setBounds(680, 470, 150, 33);
+        b_su_erw_best9.setText("weiter");
+        b_su_erw_best9.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw_best9.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw_best9_ActionPerformed(evt);
+                }
+            });
+        b_su_erw_best9.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw_best10.setBounds(680, 520, 150, 33);
+        b_su_erw_best10.setText("weiter");
+        b_su_erw_best10.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw_best10.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw_best10_ActionPerformed(evt);
+                }
+            });
+        b_su_erw_best10.setFont(new Font("Dialog", Font.PLAIN, 13));
+        
+        b_su_erw_weiter.setBounds(50, 620, 150, 33);
+        b_su_erw_weiter.setText("weiter");
+        b_su_erw_weiter.setMargin(new Insets(2, 2, 2, 2));
+        b_su_erw_weiter.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent evt) {
+                    b_su_erw_weiter_ActionPerformed(evt);
+                }
+            });
+        b_su_erw_weiter.setFont(new Font("Dialog", Font.PLAIN, 13));
         
         
         b_ein_spieler.setBounds(730, 180, 150, 33);
@@ -1302,7 +1769,7 @@ public class GUIVorlage extends JFrame {
         cp.repaint();
         l_su_spe1.setText("Hier sind deine Ergebnisse:");
         
-        z=5;
+        z=44;
     }
     
     public void b_su_spe2_ActionPerformed(ActionEvent evt) {
@@ -1318,7 +1785,7 @@ public class GUIVorlage extends JFrame {
         cp.add(l_su_spe3);
         cp.add(l_su_spe4);
         cp.add(b_su_spe_weiter);
-        z=5;
+        z=45;
     }
     
     public void b_su_spe3_ActionPerformed(ActionEvent evt) {
@@ -1330,7 +1797,6 @@ public class GUIVorlage extends JFrame {
             l_su_spe3.setText("wird nicht ausgegeben");
             zaehler1--;
         }
-        z=5;
     }
     
     public void b_su_spe4_ActionPerformed(ActionEvent evt) {
@@ -1342,7 +1808,6 @@ public class GUIVorlage extends JFrame {
             l_su_spe4.setText("wird nicht ausgegeben");
             zaehler1--;
         }
-        z=5;
     }
     
     public void b_su_spe5_ActionPerformed(ActionEvent evt) {
@@ -1356,7 +1821,7 @@ public class GUIVorlage extends JFrame {
         cp.add(l_su_spe5);
         cp.add(b_su_spe_weiter);
         cp.add(b_su_spe_best);
-        z=5;
+        z=46;
         s=2;
     }
     
@@ -1371,7 +1836,7 @@ public class GUIVorlage extends JFrame {
         cp.add(l_su_spe5);
         cp.add(b_su_spe_weiter);
         cp.add(b_su_spe_best);
-        z=5;
+        z=47;
         s=3;
     }
     
@@ -1410,6 +1875,7 @@ public class GUIVorlage extends JFrame {
             cp.repaint();
             cp.add(b_su_spe5);
             cp.add(b_su_spe6);
+            z=48;
         }
         else if (s==2) {
             String verein_id="select VID from Verein where Name like '"+t_su_spe1.getText()+"'";
@@ -1433,6 +1899,7 @@ public class GUIVorlage extends JFrame {
         else if (s==4) {
             l_su_spe1.setText("Bitte fülle die unten stehenden Felder bei Bedarf aus! (optional)");
             cp.remove(l_su_spe5);
+            cp.remove(b_su_spe_best);
             cp.revalidate();
             cp.repaint();
             cp.add(l_su_spe6);
@@ -1440,6 +1907,7 @@ public class GUIVorlage extends JFrame {
             cp.add(l_su_spe7);
             cp.add(t_su_spe2);
             s++;
+            z=49;
         }
         else if (s==5) {
             cp.remove(l_su_spe6);
@@ -1482,6 +1950,7 @@ public class GUIVorlage extends JFrame {
             cp.repaint();
             
             l_su_spe1.setText("Hier sind deine Ergebnisse:");
+            z=51;
         }
     }
     
@@ -1506,7 +1975,6 @@ public class GUIVorlage extends JFrame {
             t_su_spe1.setText("");
         }
         auftrag=auftrag.concat("VID=-20");
-        cp.remove(b_su_spe_best);
         s=4;
         b_su_spe_weiter_ActionPerformed(evt);
     }
@@ -1520,6 +1988,1461 @@ public class GUIVorlage extends JFrame {
         }
     }
     
+    public void b_su_erw1_ActionPerformed(ActionEvent evt) {
+        artaus=1;
+        cp.remove(b_su_erw1);
+        cp.remove(b_su_erw2);
+        cp.remove(b_su_erw3);
+        cp.remove(b_su_erw4);
+        
+        cp.revalidate();
+        cp.repaint();
+        l_su_spe1.setText("Bitte wähle aus, was du ausgegeben haben möchtest:");
+        cp.add(b_su_erw5);
+        cp.add(b_su_erw6);
+        cp.add(b_su_erw7);
+        cp.add(b_su_erw8);
+        cp.add(b_su_erw9);
+        cp.add(b_su_erw10);
+        cp.add(b_su_erw11);
+        cp.add(b_su_erw12);
+        cp.add(b_su_erw13);
+        cp.add(b_su_erw14);
+        cp.add(l_su_erw1);
+        cp.add(l_su_erw2);
+        cp.add(l_su_erw3);
+        cp.add(l_su_erw4);
+        cp.add(l_su_erw5);
+        cp.add(l_su_erw6);
+        cp.add(l_su_erw7);
+        cp.add(l_su_erw8);
+        cp.add(l_su_erw9);
+        cp.add(l_su_erw10);
+        cp.add(b_su_erw_weiter);
+        z=45;
+    }
+    
+    public void b_su_erw2_ActionPerformed(ActionEvent evt) {
+        artaus=2;
+        cp.remove(b_su_erw1);
+        cp.remove(b_su_erw2);
+        cp.remove(b_su_erw3);
+        cp.remove(b_su_erw4);
+        
+        cp.revalidate();
+        cp.repaint();
+        l_su_spe1.setText("Bitte wähle aus, was du ausgegeben haben möchtest:");
+        cp.add(b_su_erw5);
+        cp.add(b_su_erw6);
+        cp.add(b_su_erw7);
+        b_su_erw8.setText("Nationalität");
+        cp.add(b_su_erw8);
+        b_su_erw9.setText("Verein");
+        cp.add(b_su_erw9);
+        b_su_erw10.setText("Sportart");
+        cp.add(b_su_erw10);
+        cp.add(l_su_erw1);
+        cp.add(l_su_erw2);
+        cp.add(l_su_erw3);
+        cp.add(l_su_erw4);
+        cp.add(l_su_erw5);
+        cp.add(l_su_erw6);
+        cp.add(b_su_erw_weiter);
+        z=45;
+    }
+    
+    public void b_su_erw3_ActionPerformed(ActionEvent evt) {
+        artaus=3;
+        cp.remove(b_su_erw1);
+        cp.remove(b_su_erw2);
+        cp.remove(b_su_erw3);
+        cp.remove(b_su_erw4);
+        
+        cp.revalidate();
+        cp.repaint();
+        l_su_spe1.setText("Bitte wähle aus, was du ausgegeben haben möchtest:");
+        b_su_erw5.setText("Name");
+        cp.add(b_su_erw5);
+        b_su_erw6.setText("Popularität");
+        cp.add(b_su_erw6);
+        b_su_erw7.setText("Ballgröße");
+        cp.add(b_su_erw7);
+        cp.add(l_su_erw1);
+        cp.add(l_su_erw2);
+        cp.add(l_su_erw3);
+        cp.add(b_su_erw_weiter);
+        z=45;
+    }
+    
+    public void b_su_erw4_ActionPerformed(ActionEvent evt) {
+        artaus=4;
+        cp.remove(b_su_erw1);
+        cp.remove(b_su_erw2);
+        cp.remove(b_su_erw3);
+        cp.remove(b_su_erw4);
+        
+        cp.revalidate();
+        cp.repaint();
+        l_su_spe1.setText("Bitte wähle aus, was du ausgegeben haben möchtest:");
+        b_su_erw5.setText("Name");
+        cp.add(b_su_erw5);
+        b_su_erw6.setText("Budget");
+        cp.add(b_su_erw6);
+        cp.add(l_su_erw1);
+        cp.add(l_su_erw2);
+        cp.add(b_su_erw_weiter);
+        z=45;
+    }
+    
+    public void b_su_erw5_ActionPerformed(ActionEvent evt) {
+        if (aus==1) {
+            if (l_su_erw1.getText().equals("wird nicht ausgegeben")) {
+                l_su_erw1.setText("wird ausgegeben");
+                if (artaus==1) {
+                    zaehler2++;
+                }
+                else if (artaus==2) {
+                    zaehler3++;
+                }
+                else if (artaus==3) {
+                    zaehler4++;
+                }
+                else if (artaus==4) {
+                    zaehler5++;
+                }
+            }
+            else {
+                l_su_erw1.setText("wird nicht ausgegeben");
+                if (artaus==1) {
+                    zaehler2--;
+                }
+                else if (artaus==2) {
+                    zaehler3--;
+                }
+                else if (artaus==3) {
+                    zaehler4--;
+                }
+                else if (artaus==4) {
+                    zaehler5--;
+                }
+            }
+        }
+        else {
+            if (ü1==1) {
+                cp.add(t_su_erw1);
+                cp.add(l_su_erw11);
+                cp.add(t_su_erw11);
+                cp.add(b_su_erw_best1);
+                cp.revalidate();
+                cp.repaint();
+                ü1--;
+            }
+            else {
+                cp.remove(t_su_erw1);
+                cp.remove(l_su_erw11);
+                cp.remove(t_su_erw11);
+                cp.remove(b_su_erw_best1);
+                cp.revalidate();
+                cp.repaint();
+                ü1++;
+            }
+        }
+    }
+    
+    public void b_su_erw6_ActionPerformed(ActionEvent evt) {
+        if (aus==1) {
+            if (l_su_erw2.getText().equals("wird nicht ausgegeben")) {
+                l_su_erw2.setText("wird ausgegeben");
+                if (artaus==1) {
+                    zaehler2++;
+                }
+                else if (artaus==2) {
+                    zaehler3++;
+                }
+                else if (artaus==3) {
+                    zaehler4++;
+                }
+                else if (artaus==4) {
+                    zaehler5++;
+                }
+            }
+            else {
+                l_su_erw2.setText("wird nicht ausgegeben");
+                if (artaus==1) {
+                    zaehler2--;
+                }
+                else if (artaus==2) {
+                    zaehler3--;
+                }
+                else if (artaus==3) {
+                    zaehler4--;
+                }
+                else if (artaus==4) {
+                    zaehler5--;
+                }
+            }
+        }
+        else {
+            if (ü2==1) {
+                cp.add(t_su_erw2);
+                cp.add(b_su_erw_best2);
+                cp.revalidate();
+                cp.repaint();
+                ü2--;
+            }
+            else {
+                cp.remove(t_su_erw2);
+                cp.remove(b_su_erw_best2);
+                cp.revalidate();
+                cp.repaint();
+                ü2++;
+            }
+            if (artaus==1) {
+                if (ü2==0) {
+                    l_su_erw12.setText("ggf. Ende:");
+                    cp.add(l_su_erw12);
+                    cp.add(t_su_erw12);
+                    cp.revalidate();
+                    cp.repaint();
+                }
+                else {
+                    l_su_erw12.setText("ggf. Ende:");
+                    cp.remove(l_su_erw12);
+                    cp.remove(t_su_erw12);
+                    cp.revalidate();
+                    cp.repaint();
+                }
+            }
+            else if (artaus==2) {
+                if (ü2==0) {
+                    l_su_erw12.setText("ggf. Ende:");
+                    cp.add(l_su_erw12);
+                    cp.add(t_su_erw12);
+                    cp.revalidate();
+                    cp.repaint();
+                }
+                else {
+                    l_su_erw12.setText("ggf. Ende:");
+                    cp.remove(l_su_erw12);
+                    cp.remove(t_su_erw12);
+                    cp.revalidate();
+                    cp.repaint();
+                }
+            }
+            else if (artaus==4) {
+                if (ü2==0) {
+                    l_su_erw12.setText("bis");
+                    cp.add(l_su_erw12);
+                    cp.add(t_su_erw12);
+                    cp.revalidate();
+                    cp.repaint();
+                }
+                else {
+                    l_su_erw12.setText("bis");
+                    cp.remove(l_su_erw12);
+                    cp.remove(t_su_erw12);
+                    cp.revalidate();
+                    cp.repaint();
+                }
+            }
+        }
+    }
+    
+    public void b_su_erw7_ActionPerformed(ActionEvent evt) {
+        if (aus==1) {
+            if (l_su_erw3.getText().equals("wird nicht ausgegeben")) {
+                l_su_erw3.setText("wird ausgegeben");
+                if (artaus==1) {
+                    zaehler2++;
+                }
+                else if (artaus==2) {
+                    zaehler3++;
+                }
+                else if (artaus==3) {
+                    zaehler4++;
+                }
+                else if (artaus==4) {
+                    zaehler5++;
+                }
+            }
+            else {
+                l_su_erw3.setText("wird nicht ausgegeben");
+                if (artaus==1) {
+                    zaehler2--;
+                }
+                else if (artaus==2) {
+                    zaehler3--;
+                }
+                else if (artaus==3) {
+                    zaehler4--;
+                }
+                else if (artaus==4) {
+                    zaehler5--;
+                }
+            }
+        }
+        else {
+            if (ü3==1) {
+                cp.add(t_su_erw3);
+                cp.add(l_su_erw13);
+                cp.add(t_su_erw13);
+                cp.add(b_su_erw_best3);
+                cp.revalidate();
+                cp.repaint();
+                ü3--;
+            }
+            else {
+                cp.remove(t_su_erw3);
+                cp.remove(l_su_erw13);
+                cp.remove(t_su_erw13);
+                cp.remove(b_su_erw_best3);
+                cp.revalidate();
+                cp.repaint();
+                ü3++;
+            }
+        }
+    }
+    
+    public void b_su_erw8_ActionPerformed(ActionEvent evt) {
+        if (aus==1) {
+            if (l_su_erw4.getText().equals("wird nicht ausgegeben")) {
+                l_su_erw4.setText("wird ausgegeben");
+                if (artaus==1) {
+                    zaehler2++;
+                }
+                else if (artaus==2) {
+                    zaehler3++;
+                }
+                else if (artaus==3) {
+                    zaehler4++;
+                }
+                else if (artaus==4) {
+                    zaehler5++;
+                }
+            }
+            else {
+                l_su_erw4.setText("wird nicht ausgegeben");
+                if (artaus==1) {
+                    zaehler2--;
+                }
+                else if (artaus==2) {
+                    zaehler3--;
+                }
+                else if (artaus==3) {
+                    zaehler4--;
+                }
+                else if (artaus==4) {
+                    zaehler5--;
+                }
+            }
+        }
+        else {
+            if (ü4==1) {
+                cp.add(t_su_erw4);
+                cp.add(b_su_erw_best4);
+                cp.revalidate();
+                cp.repaint();
+                ü4--;
+            }
+            else {
+                cp.remove(t_su_erw4);
+                cp.remove(b_su_erw_best4);
+                cp.revalidate();
+                cp.repaint();
+                ü4++;
+            }
+            if (artaus==1) {
+                if (ü4==0) {
+                    cp.add(l_su_erw14);
+                    cp.add(t_su_erw14);
+                    cp.revalidate();
+                    cp.repaint();
+                }
+                else {
+                    cp.remove(l_su_erw14);
+                    cp.remove(t_su_erw14);
+                    cp.revalidate();
+                    cp.repaint();
+                }
+            }
+        }
+    }
+    
+    public void b_su_erw9_ActionPerformed(ActionEvent evt) {
+        if (aus==1) {
+            if (l_su_erw5.getText().equals("wird nicht ausgegeben")) {
+                l_su_erw5.setText("wird ausgegeben");
+                if (artaus==1) {
+                    zaehler2++;
+                }
+                else if (artaus==2) {
+                    zaehler3++;
+                }
+                else if (artaus==3) {
+                    zaehler4++;
+                }
+                else if (artaus==4) {
+                    zaehler5++;
+                }
+            }
+            else {
+                l_su_erw5.setText("wird nicht ausgegeben");
+                if (artaus==1) {
+                    zaehler2--;
+                }
+                else if (artaus==2) {
+                    zaehler3--;
+                }
+                else if (artaus==3) {
+                    zaehler4--;
+                }
+                else if (artaus==4) {
+                    zaehler5--;
+                }
+            }
+        }
+        else {
+            if (ü5==1) {
+                cp.add(t_su_erw5);
+                cp.add(b_su_erw_best5);
+                cp.revalidate();
+                cp.repaint();
+                ü5--;
+            }
+            else {
+                cp.remove(t_su_erw5);
+                cp.remove(b_su_erw_best5);
+                cp.revalidate();
+                cp.repaint();
+                ü5++;
+            }
+        }
+    }
+    
+    public void b_su_erw10_ActionPerformed(ActionEvent evt) {
+        if (aus==1) {
+            if (l_su_erw6.getText().equals("wird nicht ausgegeben")) {
+                l_su_erw6.setText("wird ausgegeben");
+                if (artaus==1) {
+                    zaehler2++;
+                }
+                else if (artaus==2) {
+                    zaehler3++;
+                }
+                else if (artaus==3) {
+                    zaehler4++;
+                }
+                else if (artaus==4) {
+                    zaehler5++;
+                }
+            }
+            else {
+                l_su_erw6.setText("wird nicht ausgegeben");
+                if (artaus==1) {
+                    zaehler2--;
+                }
+                else if (artaus==2) {
+                    zaehler3--;
+                }
+                else if (artaus==3) {
+                    zaehler4--;
+                }
+                else if (artaus==4) {
+                    zaehler5--;
+                }
+            }
+        }
+        else {
+            if (ü6==1) {
+                cp.add(t_su_erw6);
+                cp.add(b_su_erw_best6);
+                cp.revalidate();
+                cp.repaint();
+                ü6--;
+            }
+            else {
+                cp.remove(t_su_erw6);
+                cp.remove(b_su_erw_best6);
+                cp.revalidate();
+                cp.repaint();
+                ü6++;
+            }
+        }
+    }
+    
+    public void b_su_erw11_ActionPerformed(ActionEvent evt) {
+        if (aus==1) {
+            if (l_su_erw7.getText().equals("wird nicht ausgegeben")) {
+                l_su_erw7.setText("wird ausgegeben");
+                if (artaus==1) {
+                    zaehler2++;
+                }
+                else if (artaus==2) {
+                    zaehler3++;
+                }
+                else if (artaus==3) {
+                    zaehler4++;
+                }
+                else if (artaus==4) {
+                    zaehler5++;
+                }
+            }
+            else {
+                l_su_erw7.setText("wird nicht ausgegeben");
+                if (artaus==1) {
+                    zaehler2--;
+                }
+                else if (artaus==2) {
+                    zaehler3--;
+                }
+                else if (artaus==3) {
+                    zaehler4--;
+                }
+                else if (artaus==4) {
+                    zaehler5--;
+                }
+            }
+        }
+        else {
+            if (ü7==1) {
+                cp.add(t_su_erw7);
+                cp.add(b_su_erw_best7);
+                cp.revalidate();
+                cp.repaint();
+                ü7--;
+            }
+            else {
+                cp.remove(t_su_erw7);
+                cp.remove(b_su_erw_best7);
+                cp.revalidate();
+                cp.repaint();
+                ü7++;
+            }
+        }
+    }
+    
+    public void b_su_erw12_ActionPerformed(ActionEvent evt) {
+        if (aus==1) {
+            if (l_su_erw8.getText().equals("wird nicht ausgegeben")) {
+                l_su_erw8.setText("wird ausgegeben");
+                if (artaus==1) {
+                    zaehler2++;
+                }
+                else if (artaus==2) {
+                    zaehler3++;
+                }
+                else if (artaus==3) {
+                    zaehler4++;
+                }
+                else if (artaus==4) {
+                    zaehler5++;
+                }
+            }
+            else {
+                l_su_erw8.setText("wird nicht ausgegeben");
+                if (artaus==1) {
+                    zaehler2--;
+                }
+                else if (artaus==2) {
+                    zaehler3--;
+                }
+                else if (artaus==3) {
+                    zaehler4--;
+                }
+                else if (artaus==4) {
+                    zaehler5--;
+                }
+            }
+        }
+        else {
+            if (ü8==1) {
+                cp.add(t_su_erw8);
+                cp.add(b_su_erw_best8);
+                cp.revalidate();
+                cp.repaint();
+                ü8--;
+            }
+            else {
+                cp.remove(t_su_erw8);
+                cp.remove(b_su_erw_best8);
+                cp.revalidate();
+                cp.repaint();
+                ü8++;
+            }
+        }
+    }
+    
+    public void b_su_erw13_ActionPerformed(ActionEvent evt) {
+        if (aus==1) {
+            if (l_su_erw9.getText().equals("wird nicht ausgegeben")) {
+                l_su_erw9.setText("wird ausgegeben");
+                if (artaus==1) {
+                    zaehler2++;
+                }
+                else if (artaus==2) {
+                    zaehler3++;
+                }
+                else if (artaus==3) {
+                    zaehler4++;
+                }
+                else if (artaus==4) {
+                    zaehler5++;
+                }
+            }
+            else {
+                l_su_erw9.setText("wird nicht ausgegeben");
+                if (artaus==1) {
+                    zaehler2--;
+                }
+                else if (artaus==2) {
+                    zaehler3--;
+                }
+                else if (artaus==3) {
+                    zaehler4--;
+                }
+                else if (artaus==4) {
+                    zaehler5--;
+                }
+            }
+        }
+        else {
+            if (ü9==1) {
+                cp.add(t_su_erw9);
+                cp.add(b_su_erw_best9);
+                cp.revalidate();
+                cp.repaint();
+                ü9--;
+            }
+            else {
+                cp.remove(t_su_erw9);
+                cp.remove(b_su_erw_best9);
+                cp.revalidate();
+                cp.repaint();
+                ü9++;
+            }
+        }
+    }
+    
+    public void b_su_erw14_ActionPerformed(ActionEvent evt) {
+        if (aus==1) {
+            if (l_su_erw10.getText().equals("wird nicht ausgegeben")) {
+                l_su_erw10.setText("wird ausgegeben");
+                if (artaus==1) {
+                    zaehler2++;
+                }
+                else if (artaus==2) {
+                    zaehler3++;
+                }
+                else if (artaus==3) {
+                    zaehler4++;
+                }
+                else if (artaus==4) {
+                    zaehler5++;
+                }
+            }
+            else {
+                l_su_erw10.setText("wird nicht ausgegeben");
+                if (artaus==1) {
+                    zaehler2--;
+                }
+                else if (artaus==2) {
+                    zaehler3--;
+                }
+                else if (artaus==3) {
+                    zaehler4--;
+                }
+                else if (artaus==4) {
+                    zaehler5--;
+                }
+            }
+        }
+        else {
+            if (ü10==1) {
+                cp.add(t_su_erw10);
+                cp.add(b_su_erw_best10);
+                cp.revalidate();
+                cp.repaint();
+                ü10--;
+            }
+            else {
+                cp.remove(t_su_erw10);
+                cp.remove(b_su_erw_best10);
+                cp.revalidate();
+                cp.repaint();
+                ü10++;
+            }
+        }
+    }
+    
+    public void b_su_erw_best1_ActionPerformed(ActionEvent evt) {
+        cp.remove(l_su_erw17);
+        cp.revalidate();
+        cp.repaint();
+        if ((!a1)||(a1&&letztes==1)) {
+            if (a0&&a1) {
+                auftrag=auftrag.concat("OR ");
+                mehrere=true;
+            }
+            else if (a0&&mehrere==true){
+                auftrag=auftrag.concat("or 5=5 AND ");
+                mehrere=false;
+            }
+            else if (a0) {
+                auftrag=auftrag.concat("AND ");
+                mehrere=false;
+            }
+            if (!(t_su_erw1.getText().equals(""))) {
+                if (!(t_su_erw11.getText().equals(""))) {    
+                    if (artaus==1) {
+                        auftrag=auftrag.concat("Vorname = '%"+t_su_erw1.getText()+"%"+t_su_erw11.getText()+"%' ");
+                    }
+                    else if (artaus==2) {
+                        auftrag=auftrag.concat("Vorname = '%"+t_su_erw1.getText()+"%"+t_su_erw11.getText()+"%' ");
+                    }
+                    else if (artaus==3) {
+                        auftrag=auftrag.concat("Name = '%"+t_su_erw1.getText()+"%"+t_su_erw11.getText()+"%' ");
+                    }
+                    else if (artaus==4) {
+                        auftrag=auftrag.concat("Name = '%"+t_su_erw1.getText()+"%"+t_su_erw11.getText()+"%' ");
+                    }
+                }
+                else {
+                    if (artaus==1) {
+                        auftrag=auftrag.concat("Vorname = '%"+t_su_erw1.getText()+"%' ");
+                    }
+                    else if (artaus==2) {
+                        auftrag=auftrag.concat("Vorname = '%"+t_su_erw1.getText()+"%' ");
+                    }
+                    else if (artaus==3) {
+                        auftrag=auftrag.concat("Name = '%"+t_su_erw1.getText()+"%' ");
+                    }
+                    else if (artaus==4) {
+                        auftrag=auftrag.concat("Name = '%"+t_su_erw1.getText()+"%' ");
+                    }
+                }
+            }
+            a0=true;
+            a1=true;
+            letztes=1;
+        }
+        else {
+            cp.add(l_su_erw17);
+            cp.revalidate();
+            cp.repaint();
+        }
+    }
+    
+    public void b_su_erw_best2_ActionPerformed(ActionEvent evt) {
+        cp.remove(l_su_erw17);
+        cp.revalidate();
+        cp.repaint();
+        if ((!a2)||(a2&&letztes==2)) {
+            if (a0&&a2) {
+                auftrag=auftrag.concat("OR ");
+                mehrere=true;
+            }
+            else if (a0&&mehrere==true){
+                auftrag=auftrag.concat("or 5=5 AND ");
+                mehrere=false;
+            }
+            else if (a0) {
+                auftrag=auftrag.concat("AND ");
+                mehrere=false;
+            }
+            if (!(t_su_erw2.getText().equals(""))) {
+                if (!(t_su_erw12.getText().equals(""))) {    
+                    if (artaus==1) {
+                        auftrag=auftrag.concat("Name = '%"+t_su_erw2.getText()+"%"+t_su_erw12.getText()+"%' ");
+                    }
+                    else if (artaus==2) {
+                        auftrag=auftrag.concat("Name = '%"+t_su_erw2.getText()+"%"+t_su_erw12.getText()+"%' ");
+                    }
+                    else if (artaus==3) {
+                        
+                    }
+                    else if (artaus==4) {
+                        auftrag=auftrag.concat("Budget >="+t_su_erw2.getText()+"AND Budget <="+t_su_erw12.getText()+" ");
+                    }
+                }
+                else {
+                    if (artaus==1) {
+                        auftrag=auftrag.concat("Name = '%"+t_su_erw2.getText()+"%' ");
+                    }
+                    else if (artaus==2) {
+                        auftrag=auftrag.concat("Name = '%"+t_su_erw2.getText()+"%'  ");
+                    }
+                    else if (artaus==3) {
+                        auftrag=auftrag.concat("Popularität = '"+t_su_erw2.getText()+"' ");
+                    }
+                    else if (artaus==4) {
+                        auftrag=auftrag.concat("Budget>="+t_su_erw2.getText()+" ");
+                    }
+                }
+            }
+            a0=true;
+            a2=true;
+            letztes=2;
+        }
+        else {
+            cp.add(l_su_erw17);
+            cp.revalidate();
+            cp.repaint();
+        }
+    }
+    
+    public void b_su_erw_best3_ActionPerformed(ActionEvent evt) {
+        cp.remove(l_su_erw17);
+        System.out.println(artaus);
+        cp.revalidate();
+        cp.repaint();
+        if ((!a3)||(a3&&letztes==3)) {
+            if (a0&&a3) {
+                auftrag=auftrag.concat("OR ");
+                mehrere=true;
+            }
+            else if (a0&&mehrere==true){
+                auftrag=auftrag.concat("or 5=5 AND ");
+                mehrere=false;
+            }
+            else if (a0) {
+                auftrag=auftrag.concat("AND ");
+                mehrere=false;
+            }
+            if (!(t_su_erw3.getText().equals(""))) {
+                if (!(t_su_erw13.getText().equals(""))) {    
+                    if (artaus==1) {
+                        auftrag=auftrag.concat("Gehalt>="+t_su_erw3.getText()+" And Gehalt<="+t_su_erw13.getText()+" ");
+                    }
+                    else if (artaus==2) {
+                        auftrag=auftrag.concat("Gehalt>="+t_su_erw3.getText()+" And Gehalt<="+t_su_erw13.getText()+" ");
+                    }
+                    else if (artaus==3) {
+                        auftrag=auftrag.concat("Ballgröße>="+t_su_erw3.getText()+" And Ballgröße<="+t_su_erw13.getText()+" ");
+                    }
+                    else if (artaus==4) {
+                        
+                    }
+                }
+                else {
+                    if (artaus==1) {
+                        auftrag=auftrag.concat("Gehalt>="+t_su_erw3.getText()+" ");
+                    }
+                    else if (artaus==2) {
+                        auftrag=auftrag.concat("Gehalt>="+t_su_erw3.getText()+" ");
+                    }
+                    else if (artaus==3) {
+                        auftrag=auftrag.concat("Ballgröße>= '"+t_su_erw3.getText()+"' ");
+                    }
+                    else if (artaus==4) {
+                        
+                    }
+                }
+            }
+            a0=true;
+            a3=true;
+            letztes=3;
+        }
+        else {
+            cp.add(l_su_erw17);
+            cp.revalidate();
+            cp.repaint();
+        }
+    }
+    
+    public void b_su_erw_best4_ActionPerformed(ActionEvent evt) {
+        cp.remove(l_su_erw17);
+        cp.revalidate();
+        cp.repaint();
+        if ((!a4)||(a4&&letztes==4)) {
+            if (a0&&a4) {
+                auftrag=auftrag.concat("OR ");
+                mehrere=true;
+            }
+            else if (a0&&mehrere==true){
+                auftrag=auftrag.concat("or 5=5 AND ");
+                mehrere=false;
+            }
+            else if (a0) {
+                auftrag=auftrag.concat("AND ");
+                mehrere=false;
+            }
+            if (!(t_su_erw4.getText().equals(""))) {
+                if (!(t_su_erw14.getText().equals(""))) {    
+                    if (artaus==1) {
+                        auftrag=auftrag.concat("Preis>="+t_su_erw4.getText()+" And Preis<="+t_su_erw14.getText()+" ");
+                    }
+                    else if (artaus==2) {
+                        
+                    }
+                    else if (artaus==3) {
+                        
+                    }
+                    else if (artaus==4) {
+                        
+                    }
+                }
+                else {
+                    if (artaus==1) {
+                        auftrag=auftrag.concat("Preis>="+t_su_erw4.getText()+" ");
+                    }
+                    else if (artaus==2) {
+                        auftrag=auftrag.concat("Nationalität = '%"+t_su_erw4.getText()+"%' ");
+                    }
+                    else if (artaus==3) {
+                        
+                    }
+                    else if (artaus==4) {
+                        
+                    }
+                }
+            }
+            a0=true;
+            a4=true;
+            letztes=4;
+        }
+        else {
+            cp.add(l_su_erw17);
+            cp.revalidate();
+            cp.repaint();
+        }
+    }
+    
+    public void b_su_erw_best5_ActionPerformed(ActionEvent evt) {
+        cp.remove(l_su_erw17);
+        cp.revalidate();
+        cp.repaint();
+        if ((!a5)||(a5&&letztes==5)) {
+            if (a0&&a5) {
+                auftrag=auftrag.concat("OR ");
+                mehrere=true;
+            }
+            else if (a0&&mehrere==true){
+                auftrag=auftrag.concat("or 5=5 AND ");
+                mehrere=false;
+            }
+            else if (a0) {
+                auftrag=auftrag.concat("AND ");
+                mehrere=false;
+            }
+            if (!(t_su_erw5.getText().equals(""))) {
+                if (artaus==1) {
+                    auftrag=auftrag.concat("Position = '%"+t_su_erw5.getText()+"%' ");
+                }
+                else if (artaus==2) {
+                    String verein_id="select VID from Verein where Name = '"+t_su_erw5.getText()+"'";
+                    v1.meinConnector.executeStatement(verein_id);
+                    v1.aktuelleFehlermeldung();
+                    String verein=v1.meinConnector.getCurrentQueryResult().getData()[0][0];
+                    
+                    auftrag=auftrag.concat("VID = '"+verein+"' ");
+                }
+                else if (artaus==3) {
+                    
+                }
+                else if (artaus==4) {
+                    
+                }
+            }
+            a0=true;
+            a5=true;
+            letztes=5;
+        }
+        else {
+            cp.add(l_su_erw17);
+            cp.revalidate();
+            cp.repaint();
+        }
+    }
+    
+    public void b_su_erw_best6_ActionPerformed(ActionEvent evt) {
+        cp.remove(l_su_erw17);
+        cp.revalidate();
+        cp.repaint();
+        if ((!a6)||(a6&&letztes==6)) {
+            if (a0&&a6) {
+                auftrag=auftrag.concat("OR ");
+                mehrere=true;
+            }
+            else if (a0&&mehrere==true){
+                auftrag=auftrag.concat("or 5=5 AND ");
+                mehrere=false;
+            }
+            else if (a0) {
+                auftrag=auftrag.concat("AND ");
+                mehrere=false;
+            }
+            if (!(t_su_erw6.getText().equals(""))) {
+                if (artaus==1) {
+                    auftrag=auftrag.concat("Nationalität = '%"+t_su_erw6.getText()+"%' ");
+                }
+                else if (artaus==2) {
+                    String sportart_id="select SpID from Sportart where Name = '"+t_su_erw6.getText()+"'";
+                    v1.meinConnector.executeStatement(sportart_id);
+                    v1.aktuelleFehlermeldung();
+                    String sportart=v1.meinConnector.getCurrentQueryResult().getData()[0][0];
+                    
+                    auftrag=auftrag.concat("SpID = '"+sportart+"' ");
+                }
+                else if (artaus==3) {
+                    
+                }
+                else if (artaus==4) {
+                    
+                }
+            }
+            a0=true;
+            a6=true;
+            letztes=6;
+        }
+        else {
+            cp.add(l_su_erw17);
+            cp.revalidate();
+            cp.repaint();
+        }
+    }
+    
+    public void b_su_erw_best7_ActionPerformed(ActionEvent evt) {
+        cp.remove(l_su_erw17);
+        cp.revalidate();
+        cp.repaint();
+        if ((!a7)||(a7&&letztes==7)) {
+            if (a0&&a7) {
+                auftrag=auftrag.concat("OR ");
+                mehrere=true;
+            }
+            else if (a0&&mehrere==true){
+                auftrag=auftrag.concat("or 5=5 AND ");
+                mehrere=false;
+            }
+            else if (a0) {
+                auftrag=auftrag.concat("AND ");
+                mehrere=false;
+            }
+            if (!(t_su_erw7.getText().equals(""))) {
+                if (artaus==1) {
+                    String verein_id="select VID from Verein where Name = '"+t_su_erw7.getText()+"'";
+                    v1.meinConnector.executeStatement(verein_id);
+                    v1.aktuelleFehlermeldung();
+                    String verein=v1.meinConnector.getCurrentQueryResult().getData()[0][0];
+                    
+                    auftrag=auftrag.concat("SVID = '"+verein+"' ");
+                }
+                else if (artaus==2) {
+                    
+                }
+                else if (artaus==3) {
+                    
+                }
+                else if (artaus==4) {
+                    
+                }
+            }
+            a0=true;
+            a7=true;
+            letztes=7;
+        }
+        else {
+            cp.add(l_su_erw17);
+            cp.revalidate();
+            cp.repaint();
+        }
+    }
+    
+    public void b_su_erw_best8_ActionPerformed(ActionEvent evt) {
+        cp.remove(l_su_erw17);
+        cp.revalidate();
+        cp.repaint();
+        if ((!a8)||(a8&&letztes==8)) {
+            if (a0&&a8) {
+                auftrag=auftrag.concat("OR ");
+                mehrere=true;
+            }
+            else if (a0&&mehrere==true){
+                auftrag=auftrag.concat("or 5=5 AND ");
+                mehrere=false;
+            }
+            else if (a0) {
+                auftrag=auftrag.concat("AND ");
+                mehrere=false;
+            }
+            if (!(t_su_erw8.getText().equals(""))) {
+                if (artaus==1) {
+                    String verein_id="select VID from Verein where Name = '"+t_su_erw8.getText()+"'";
+                    v1.meinConnector.executeStatement(verein_id);
+                    v1.aktuelleFehlermeldung();
+                    String verein=v1.meinConnector.getCurrentQueryResult().getData()[0][0];
+                    
+                    auftrag=auftrag.concat("LVID = '"+verein+"' ");
+                }
+                else if (artaus==2) {
+                    
+                }
+                else if (artaus==3) {
+                    
+                }
+                else if (artaus==4) {
+                    
+                }
+            }
+            a0=true;
+            a8=true;
+            letztes=8;
+        }
+        else {
+            cp.add(l_su_erw17);
+            cp.revalidate();
+            cp.repaint();
+        }
+    }
+    
+    public void b_su_erw_best9_ActionPerformed(ActionEvent evt) {
+        cp.remove(l_su_erw17);
+        cp.revalidate();
+        cp.repaint();
+        if ((!a9)||(a6&&letztes==9)) {
+            if (a0&&a9) {
+                auftrag=auftrag.concat("OR ");
+                mehrere=true;
+            }
+            else if (a0&&mehrere==true){
+                auftrag=auftrag.concat("or 5=5 AND ");
+                mehrere=false;
+            }
+            else if (a0) {
+                auftrag=auftrag.concat("AND ");
+                mehrere=false;
+            }
+            if (!(t_su_erw9.getText().equals(""))) {
+                if (artaus==1) {
+                    String verein_id="select VID from Verein where Name = '"+t_su_erw9.getText()+"'";
+                    v1.meinConnector.executeStatement(verein_id);
+                    v1.aktuelleFehlermeldung();
+                    String verein=v1.meinConnector.getCurrentQueryResult().getData()[0][0];
+                    
+                    auftrag=auftrag.concat("GVID = '"+verein+"' ");
+                }
+                else if (artaus==2) {
+                    
+                }
+                else if (artaus==3) {
+                    
+                }
+                else if (artaus==4) {
+                    
+                }
+            }
+            a0=true;
+            a9=true;
+            letztes=9;
+        }
+        else {
+            cp.add(l_su_erw17);
+            cp.revalidate();
+            cp.repaint();
+        }
+    }
+    
+    public void b_su_erw_best10_ActionPerformed(ActionEvent evt) {
+        cp.remove(l_su_erw17);
+        cp.revalidate();
+        cp.repaint();
+        if ((!a10)||(a10&&letztes==10)) {
+            if (a0&&a10) {
+                auftrag=auftrag.concat("OR ");
+                mehrere=true;
+            }
+            else if (a0&&mehrere==true){
+                auftrag=auftrag.concat("or 5=5 AND ");
+                mehrere=false;
+            }
+            else if (a0) {
+                auftrag=auftrag.concat("AND ");
+                mehrere=false;
+            }
+            if (!(t_su_erw10.getText().equals(""))) {
+                if (artaus==1) {
+                    String sportart_id="select SpID from Sportart where Name = '"+t_su_erw10.getText()+"'";
+                    v1.meinConnector.executeStatement(sportart_id);
+                    v1.aktuelleFehlermeldung();
+                    String sportart=v1.meinConnector.getCurrentQueryResult().getData()[0][0];
+                    
+                    auftrag=auftrag.concat("SpID = '"+sportart+"' ");
+                }
+                else if (artaus==2) {
+                    
+                }
+                else if (artaus==3) {
+                    
+                }
+                else if (artaus==4) {
+                    
+                }
+            }
+            a0=true;
+            a10=true;
+            letztes=10;
+        }
+        else {
+            cp.add(l_su_erw17);
+            cp.revalidate();
+            cp.repaint();
+        }
+    }
+    
+    
+    public void b_su_erw_weiter_ActionPerformed(ActionEvent evt) {
+        if (s==1) {
+            zaehler=0;
+            auftrag="Select ";
+            if (artaus==1) {
+                System.out.println(zaehler2);
+                arr_custom=new String[zaehler2];
+                if (l_su_erw1.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw5.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("Vorname, ");
+                }
+                if (l_su_erw2.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw6.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("Name, ");
+                }
+                if (l_su_erw3.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw7.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("Gehalt, ");
+                }
+                if (l_su_erw4.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw8.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("Preis, ");
+                }
+                if (l_su_erw5.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw9.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("Position, ");
+                }
+                if (l_su_erw6.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw10.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("Nationalität, ");
+                }
+                if (l_su_erw7.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw11.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("SVID, ");
+                }
+                if (l_su_erw8.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw12.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("LVID, ");
+                }
+                if (l_su_erw9.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw13.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("GVID, ");
+                }
+                if (l_su_erw10.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw14.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("SpID, ");
+                }
+                arr_custom[zaehler]="ID";
+                auftrag=auftrag.concat("SID From Spieler Where ");
+            }
+            else if (artaus==2) {
+                arr_custom=new String[zaehler3];
+                if (l_su_erw1.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw5.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("Vorname, ");
+                }
+                if (l_su_erw2.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw6.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("Name, ");
+                }
+                if (l_su_erw3.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw7.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("Gehalt, ");
+                }
+                if (l_su_erw4.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw8.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("Nationalität, ");
+                }
+                if (l_su_erw5.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw9.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("VID, ");
+                }
+                if (l_su_erw6.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw10.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("SpID, ");
+                }
+                auftrag=auftrag.concat("TID From Trainer Where ");
+                arr_custom[zaehler]="ID";
+            }
+            else if (artaus==3) {
+                arr_custom=new String[zaehler4];
+                if (l_su_erw1.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw5.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("Name, ");
+                }
+                if (l_su_erw2.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw6.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("Popularität, ");
+                }
+                if (l_su_erw3.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw7.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("Ballgröße, ");
+                }
+                auftrag=auftrag.concat("SpID From Sportart Where ");
+                arr_custom[zaehler]="ID";
+            }
+            else if (artaus==4) {
+                arr_custom=new String[zaehler5];
+                if (l_su_erw1.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw5.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("Name, ");
+                }
+                if (l_su_erw2.getText().equals("wird ausgegeben")) {
+                    arr_custom[zaehler]=b_su_erw6.getText();
+                    zaehler++;
+                    auftrag=auftrag.concat("Budget, ");
+                }
+                auftrag=auftrag.concat("VID From Verein Where ");
+                arr_custom[zaehler]="ID";
+            }
+            
+            l_su_spe1.setText("Nach welchem Attribut möchtest du filtern?");
+            cp.remove(l_su_erw1);
+            cp.remove(l_su_erw2);
+            cp.remove(l_su_erw3);
+            cp.remove(l_su_erw4);
+            cp.remove(l_su_erw5);
+            cp.remove(l_su_erw6);
+            cp.remove(l_su_erw7);
+            cp.remove(l_su_erw8);
+            cp.remove(l_su_erw9);
+            cp.remove(l_su_erw10);
+            cp.add(l_su_erw15);
+            cp.add(l_su_erw16);
+            cp.revalidate();
+            cp.repaint();
+            z=48;
+            s++;
+            aus=2;
+        }
+        else if (s==2) {
+            System.out.println(auftrag);
+            v1.sqlBefehlAusfuehren(auftrag);
+            cp.remove(b_su_erw5);
+            cp.remove(b_su_erw6);
+            cp.remove(b_su_erw7);
+            cp.remove(b_su_erw8);
+            cp.remove(b_su_erw9);
+            cp.remove(b_su_erw10);
+            cp.remove(b_su_erw11);
+            cp.remove(b_su_erw12);
+            cp.remove(b_su_erw13);
+            cp.remove(b_su_erw14);
+            cp.remove(t_su_erw1);
+            cp.remove(t_su_erw2);
+            cp.remove(t_su_erw3);
+            cp.remove(t_su_erw4);
+            cp.remove(t_su_erw5);
+            cp.remove(t_su_erw6);
+            cp.remove(t_su_erw7);
+            cp.remove(t_su_erw8);
+            cp.remove(t_su_erw9);
+            cp.remove(t_su_erw10);
+            cp.remove(t_su_erw11);
+            cp.remove(t_su_erw12);
+            cp.remove(t_su_erw13);
+            cp.remove(t_su_erw14);
+            cp.remove(l_su_erw11);
+            cp.remove(l_su_erw12);
+            cp.remove(l_su_erw13);
+            cp.remove(l_su_erw14);
+            cp.remove(l_su_erw15);
+            cp.remove(l_su_erw16);
+            cp.remove(l_su_erw17);
+            cp.remove(b_su_erw_best1);
+            cp.remove(b_su_erw_best2);
+            cp.remove(b_su_erw_best3);
+            cp.remove(b_su_erw_best4);
+            cp.remove(b_su_erw_best5);
+            cp.remove(b_su_erw_best6);
+            cp.remove(b_su_erw_best7);
+            cp.remove(b_su_erw_best8);
+            cp.remove(b_su_erw_best9);
+            cp.remove(b_su_erw_best10);
+            cp.revalidate();
+            cp.repaint();
+            
+            
+            l_su_spe1.setText("Bitte fülle die unten stehenden Felder bei Bedarf aus! (optional)");
+            cp.add(l_su_spe6);
+            cp.add(b_su_spe_sort);
+            cp.add(l_su_spe7);
+            cp.add(t_su_spe1);
+            cp.add(t_su_spe2);
+            s++;
+        }
+        else if (s==3) {
+            cp.remove(l_su_spe6);
+            cp.remove(b_su_spe_sort);
+            cp.remove(l_su_spe7);
+            cp.remove(t_su_spe1);
+            cp.remove(t_su_spe2);
+            cp.remove(b_su_erw_weiter);
+            cp.revalidate();
+            cp.repaint();
+            if(!(t_su_spe1.getText().equals(""))) {
+                if (b_su_spe_sort.getText().equals("absteigend")) {
+                    auftrag=auftrag.concat(" Order By "+t_su_spe1.getText()+" Desc ");
+                }
+                else {
+                    auftrag=auftrag.concat(" Order By "+t_su_spe1.getText()+" Asc ");
+                }
+            }
+            if (!(t_su_spe2.getText().equals(""))) {
+                auftrag=auftrag.concat("Limit "+t_su_spe2.getText());
+            }
+            System.out.println(auftrag);
+            System.out.println(arr_custom[0]);
+            
+            v1.sqlBefehlAusfuehren(auftrag);
+            v1.meinConnector.executeStatement(auftrag);
+            v1.aktuelleFehlermeldung();
+            
+            String [][] ergebnis=v1.meinConnector.getCurrentQueryResult().getData();
+            
+            ergebnisse = new JTable(ergebnis, arr_custom);
+            
+            scrollpane = new JScrollPane(ergebnisse);
+            
+            scrollpane.setBounds(200, 100, 600, 100);
+            
+            cp.add(scrollpane);
+            
+            cp.revalidate();
+            
+            cp.repaint();
+            
+            l_su_spe1.setText("Hier sind deine Ergebnisse:");
+        }
+    }
+    
+    
+    
     public void b_erw_suche_ActionPerformed(ActionEvent evt) {
         cp.remove(l_suchen1);
         cp.remove(l_suchen2);
@@ -1528,6 +3451,12 @@ public class GUIVorlage extends JFrame {
         cp.remove(b_spe_suche);
         cp.revalidate();
         cp.repaint();
+        l_su_spe1.setText("In welcher Tabelle möchtest du die erweiterte Suche verwenden?");
+        cp.add(l_su_spe1);
+        cp.add(b_su_erw1);
+        cp.add(b_su_erw2);
+        cp.add(b_su_erw3);
+        cp.add(b_su_erw4);
         z=9;
     }
     
