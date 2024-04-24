@@ -299,6 +299,7 @@ public class GUIVorlage extends JFrame {
     private int ü10=1;
     private String id;
     private String art;
+    private String art1="";
     private String auftrag;
     
     Container cp;
@@ -1950,7 +1951,7 @@ public class GUIVorlage extends JFrame {
             cp.repaint();
             
             l_su_spe1.setText("Hier sind deine Ergebnisse:");
-            z=51;
+            z=50;
         }
     }
     
@@ -2019,7 +2020,7 @@ public class GUIVorlage extends JFrame {
         cp.add(l_su_erw9);
         cp.add(l_su_erw10);
         cp.add(b_su_erw_weiter);
-        z=45;
+        z=51;
     }
     
     public void b_su_erw2_ActionPerformed(ActionEvent evt) {
@@ -2048,7 +2049,7 @@ public class GUIVorlage extends JFrame {
         cp.add(l_su_erw5);
         cp.add(l_su_erw6);
         cp.add(b_su_erw_weiter);
-        z=45;
+        z=52;
     }
     
     public void b_su_erw3_ActionPerformed(ActionEvent evt) {
@@ -2071,7 +2072,7 @@ public class GUIVorlage extends JFrame {
         cp.add(l_su_erw2);
         cp.add(l_su_erw3);
         cp.add(b_su_erw_weiter);
-        z=45;
+        z=53;
     }
     
     public void b_su_erw4_ActionPerformed(ActionEvent evt) {
@@ -2091,7 +2092,7 @@ public class GUIVorlage extends JFrame {
         cp.add(l_su_erw1);
         cp.add(l_su_erw2);
         cp.add(b_su_erw_weiter);
-        z=45;
+        z=54;
     }
     
     public void b_su_erw5_ActionPerformed(ActionEvent evt) {
@@ -3336,7 +3337,7 @@ public class GUIVorlage extends JFrame {
             cp.add(l_su_erw16);
             cp.revalidate();
             cp.repaint();
-            z=48;
+            z=56;
             s++;
             aus=2;
         }
@@ -3394,6 +3395,7 @@ public class GUIVorlage extends JFrame {
             cp.add(l_su_spe7);
             cp.add(t_su_spe1);
             cp.add(t_su_spe2);
+            z=57;
             s++;
         }
         else if (s==3) {
@@ -3438,6 +3440,7 @@ public class GUIVorlage extends JFrame {
             cp.repaint();
             
             l_su_spe1.setText("Hier sind deine Ergebnisse:");
+            z=57;
         }
     }
     
@@ -3878,10 +3881,10 @@ public class GUIVorlage extends JFrame {
             a++;
         }
         else if (a==3) {
-            if (t_aendern1.getText().equals(t_aendern2.getText())) {
+            if (t_aendern1.getText().equals(t_aendern2.getText())||!art1.equals("")) {
                 cp.remove(l_aendern5);
-                art=t_aendern1.getText();
-                if (t_aendern1.getText().equals("Spieler")) {
+                art1=t_aendern1.getText();
+                if (art1.equals("Spieler")) {
                     t_aendern1.setText("");
                     cp.remove(l_aendern4);
                     cp.remove(t_aendern2);
@@ -3892,7 +3895,7 @@ public class GUIVorlage extends JFrame {
                     a=4;
                     z=35;
                 }
-                else if (t_aendern1.getText().equals("Trainer")) {
+                else if (art1.equals("Trainer")) {
                     t_aendern1.setText("");
                     cp.remove(l_aendern4);
                     cp.remove(t_aendern2);
@@ -3903,7 +3906,7 @@ public class GUIVorlage extends JFrame {
                     a=5;
                     z=36;
                 }
-                else if (t_aendern1.getText().equals("Verein")) {
+                else if (art1.equals("Verein")) {
                     t_aendern1.setText("");
                     cp.remove(l_aendern4);
                     cp.remove(t_aendern2);
@@ -3914,7 +3917,7 @@ public class GUIVorlage extends JFrame {
                     a=6;
                     z=37;
                 }
-                else if (t_aendern1.getText().equals("Sportart")) {
+                else if (art1.equals("Sportart")) {
                     t_aendern1.setText("");
                     cp.remove(l_aendern4);
                     cp.remove(t_aendern2);
@@ -3932,6 +3935,7 @@ public class GUIVorlage extends JFrame {
                 }
             }
             else {
+                l_aendern5.setText("Deine beiden angegebenen Objektarten stimmen nicht überein! Bitte versuche es erneut.");
                 cp.add(l_aendern5);
                 cp.revalidate();
                 cp.repaint();
@@ -4350,9 +4354,33 @@ public class GUIVorlage extends JFrame {
             z=4;
         }
         else if (z==9){
+            cp.add(l_suchen1);
+            cp.add(l_suchen2);
+            cp.add(b_all_suche);
+            cp.add(b_erw_suche);
+            cp.add(b_spe_suche);
+            cp.remove(l_su_spe1);
+            cp.remove(b_su_erw1);
+            cp.remove(b_su_erw2);
+            cp.remove(b_su_erw3);
+            cp.remove(b_su_erw4);
+            cp.revalidate();
+            cp.repaint();
+            l_su_spe1.setText("Möchtest du dir die gesamte Liste mit Vereinen und Sportarten angucken");
             
         }
         else if (z==10){
+            cp.add(l_suchen1);
+            cp.add(l_suchen2);
+            cp.add(b_all_suche);
+            cp.add(b_erw_suche);
+            cp.add(b_spe_suche);
+            cp.remove(l_su_spe1);
+            cp.remove(l_su_spe2);
+            cp.remove(b_su_spe1);
+            cp.remove(b_su_spe2);
+            cp.revalidate();
+            cp.repaint();
             
         }
         else if (z==11){
@@ -4390,7 +4418,8 @@ public class GUIVorlage extends JFrame {
             cp.remove(l_ein_spieler6);
             cp.remove(l_ein_spieler7);
             cp.remove(l_ein_spieler8);
-            cp.remove(l_ein_spieler8);
+            cp.remove(l_ein_spieler9);
+            cp.remove(l_ein_spieler10);
             cp.remove(t_ein_spieler1);
             cp.remove(t_ein_spieler2);
             cp.remove(t_ein_spieler3);
@@ -4399,6 +4428,8 @@ public class GUIVorlage extends JFrame {
             cp.remove(t_ein_spieler6);
             cp.remove(t_ein_spieler7);
             cp.remove(t_ein_spieler8);
+            cp.remove(t_ein_spieler9);
+            cp.remove(t_ein_spieler10);
             cp.remove(b_ein_spieler9);
             cp.remove(b_ein_spieler10);
             cp.remove(b_ein_spielerges);
@@ -4689,10 +4720,13 @@ public class GUIVorlage extends JFrame {
             cp.remove(l_aendern5);
             cp.revalidate();
             cp.repaint();
-            a=4;
+            a=3;
             z=33;
         }
         else if (z==35) {
+            art1="";
+            t_aendern1.setText("");
+            t_aendern2.setText("");
             t_aendern1.setBounds(350, 120, 230, 30);
             cp.add(l_aendern4);
             cp.add(t_aendern2);
@@ -4705,6 +4739,9 @@ public class GUIVorlage extends JFrame {
             z=33;
         }
         else if (z==36) {
+            art1="";
+            t_aendern1.setText("");
+            t_aendern2.setText("");
             t_aendern1.setBounds(350, 120, 230, 30);
             cp.add(l_aendern4);
             cp.add(t_aendern2);
@@ -4717,6 +4754,9 @@ public class GUIVorlage extends JFrame {
             z=33;
         }
         else if (z==37) {
+            art1="";
+            t_aendern1.setText("");
+            t_aendern2.setText("");
             t_aendern1.setBounds(350, 120, 230, 30);
             cp.add(l_aendern4);
             cp.add(t_aendern2);
@@ -4729,6 +4769,9 @@ public class GUIVorlage extends JFrame {
             z=33;
         }
         else if (z==38) {
+            art1="";
+            t_aendern1.setText("");
+            t_aendern2.setText("");
             t_aendern1.setBounds(350, 120, 230, 30);
             cp.add(l_aendern4);
             cp.add(t_aendern2);
@@ -4747,7 +4790,9 @@ public class GUIVorlage extends JFrame {
         }
         else if (z==40) {
             cp.add(t_aendern1);
-            l_aendern3.setText("Gebe aus Sicherheitsgründen bitte die ID deiner Sportart ein:");
+            t_aendern1.setText("");
+            t_aendern2.setText("");
+            l_aendern3.setText("Gebe aus Sicherheitsgründen bitte deine Spieler-ID ein:");
             cp.remove(b_aendern1);
             cp.remove(b_aendern2);
             cp.remove(b_aendern3);
@@ -4758,33 +4803,257 @@ public class GUIVorlage extends JFrame {
             cp.remove(b_aendern8);
             cp.remove(b_aendern9);
             cp.remove(b_aendern10);
+            
+            cp.remove(l_aendern6);
+            cp.remove(t_aendern3);
+            cp.remove(l_aendern7);
+            cp.remove(t_aendern4);
+            cp.remove(l_aendern8);
+            cp.remove(t_aendern5);
+            cp.remove(l_aendern9);
+            cp.remove(t_aendern6);
+            cp.remove(l_aendern10);
+            cp.remove(t_aendern7);
+            cp.remove(l_aendern11);
+            cp.remove(t_aendern8);
+            cp.remove(l_aendern12);
+            cp.remove(t_aendern9);
+            cp.remove(l_aendern13);
+            cp.remove(t_aendern10);
+            cp.remove(l_aendern14);
+            cp.remove(t_aendern11);
+            cp.remove(l_aendern15);
+            cp.remove(t_aendern12);
             b_aendern_bestaetigen.setBounds(350, 160, 115, 33);
             
             cp.revalidate();
             cp.repaint();
-            a=3;
-            z=33;
+            a=4;
+            z=35;
         }
         else if (z==41) {
             cp.add(t_aendern1);
-            l_aendern3.setText("Gebe aus Sicherheitsgründen bitte die ID deiner Sportart ein:");
-            
+            t_aendern1.setText("");
+            t_aendern2.setText("");
+            l_aendern3.setText("Gebe aus Sicherheitsgründen bitte deine Trainer-ID ein:");
+            b_aendern4.setText("Preis");
+            b_aendern5.setText("Position");
+            b_aendern6.setText("Nationalität");
+            l_aendern9.setText("Preis:");
+            l_aendern10.setText("Position:");
+            l_aendern11.setText("Nationalität:");
+            cp.remove(b_aendern1);
+            cp.remove(b_aendern2);
+            cp.remove(b_aendern3);
+            cp.remove(b_aendern4);
+            cp.remove(b_aendern5);
+            cp.remove(b_aendern6);
+            cp.remove(l_aendern6);
+            cp.remove(t_aendern3);
+            cp.remove(l_aendern7);
+            cp.remove(t_aendern4);
+            cp.remove(l_aendern8);
+            cp.remove(t_aendern5);
+            cp.remove(l_aendern9);
+            cp.remove(t_aendern6);
+            cp.remove(l_aendern10);
+            cp.remove(t_aendern7);
+            cp.remove(l_aendern11);
+            cp.remove(t_aendern8);
+            cp.remove(l_aendern12);
+            cp.remove(t_aendern9);
+            cp.remove(l_aendern13);
+            cp.remove(t_aendern10);
+            cp.remove(l_aendern14);
+            cp.remove(t_aendern11);
+            cp.remove(l_aendern15);
+            cp.remove(t_aendern12);
+            b_aendern_bestaetigen.setBounds(350, 160, 115, 33);
             cp.revalidate();
             cp.repaint();
-            a=3;
-            z=33;
+            a=4;
+            z=36;
         }
         else if (z==42) {
-            
+            cp.add(t_aendern1);
+            t_aendern1.setText("");
+            t_aendern2.setText("");
+            l_aendern3.setText("Gebe aus Sicherheitsgründen bitte deine Vereins-ID ein:");
+            b_aendern1.setText("Vorname");
+            b_aendern2.setText("Name");
+            l_aendern6.setText("Vorname:");
+            l_aendern7.setText("Name");
+            cp.remove(b_aendern1);
+            cp.remove(b_aendern2);
+            cp.remove(l_aendern6);
+            cp.remove(t_aendern3);
+            cp.remove(l_aendern7);
+            cp.remove(t_aendern4);
+            cp.remove(l_aendern8);
+            cp.remove(t_aendern5);
+            cp.remove(l_aendern9);
+            cp.remove(t_aendern6);
+            cp.remove(l_aendern10);
+            cp.remove(t_aendern7);
+            cp.remove(l_aendern11);
+            cp.remove(t_aendern8);
+            cp.remove(l_aendern12);
+            cp.remove(t_aendern9);
+            cp.remove(l_aendern13);
+            cp.remove(t_aendern10);
+            cp.remove(l_aendern14);
+            cp.remove(t_aendern11);
+            cp.remove(l_aendern15);
+            cp.remove(t_aendern12);
+            b_aendern_bestaetigen.setBounds(350, 160, 115, 33);
+            cp.revalidate();
+            cp.repaint();
+            a=4;
+            z=37;
         }
         else if (z==43) {
-            
+            cp.add(t_aendern1);
+            t_aendern1.setText("");
+            t_aendern2.setText("");
+            l_aendern3.setText("Gebe aus Sicherheitsgründen bitte die ID deiner Sportart ein:");
+            b_aendern1.setText("Vorname");
+            b_aendern2.setText("Name");
+            l_aendern6.setText("Vorname:");
+            l_aendern7.setText("Name");
+            cp.remove(b_aendern1);
+            cp.remove(b_aendern2);
+            cp.remove(l_aendern6);
+            cp.remove(t_aendern3);
+            cp.remove(l_aendern7);
+            cp.remove(t_aendern4);
+            cp.remove(l_aendern8);
+            cp.remove(t_aendern5);
+            cp.remove(l_aendern9);
+            cp.remove(t_aendern6);
+            cp.remove(l_aendern10);
+            cp.remove(t_aendern7);
+            cp.remove(l_aendern11);
+            cp.remove(t_aendern8);
+            cp.remove(l_aendern12);
+            cp.remove(t_aendern9);
+            cp.remove(l_aendern13);
+            cp.remove(t_aendern10);
+            cp.remove(l_aendern14);
+            cp.remove(t_aendern11);
+            cp.remove(l_aendern15);
+            cp.remove(t_aendern12);
+            b_aendern_bestaetigen.setBounds(350, 160, 115, 33);
+            cp.revalidate();
+            cp.repaint();
+            a=4;
+            z=38;
         }
         else if (z==44) {
+            cp.add(b_su_spe1);
+            cp.add(b_su_spe2);
+            cp.add(l_su_spe2);
             
+            cp.remove(scrollpane);
+            cp.revalidate();
+            cp.repaint();
+            l_su_spe1.setText("Möchtest du dir die gesamte Liste mit Vereinen und Sportarten angucken");
+            z=10;
         }
         else if (z==45) {
+            cp.add(b_su_spe1);
+            cp.add(b_su_spe2);
+            cp.add(l_su_spe2);
             
+            
+            l_su_spe1.setText("Möchtest du dir die gesamte Liste mit Vereinen und Sportarten angucken");
+            cp.remove(b_su_spe3);
+            cp.remove(b_su_spe4);
+            cp.remove(l_su_spe3);
+            cp.remove(l_su_spe4);
+            cp.remove(b_su_spe_weiter);
+            cp.revalidate();
+            cp.repaint();
+            z=10;
+        }
+        else if (z==46) {
+            l_su_spe1.setText("Bitte wähle aus, was du ausgegeben haben möchtest:");
+            cp.add(l_su_spe3);
+            cp.add(b_su_spe3);
+            cp.add(l_su_spe4);
+            cp.add(b_su_spe4);
+            cp.add(b_su_spe_weiter);
+            
+            cp.remove(t_su_spe1);
+            l_su_spe5.setText("Wenn du noch einen weiteren Verein hinzufügen willst, klicke auf 'weiter'");
+            cp.remove(l_su_spe5);
+            cp.remove(b_su_spe_best);
+            cp.revalidate();
+            cp.repaint();
+            z=45;
+            s=1;
+        }
+        else if (z==47) {
+            l_su_spe1.setText("Bitte wähle aus, was du ausgegeben haben möchtest:");
+            cp.add(l_su_spe3);
+            cp.add(b_su_spe3);
+            cp.add(l_su_spe4);
+            cp.add(b_su_spe4);
+            cp.add(b_su_spe_weiter);
+            
+            cp.remove(t_su_spe1);
+            l_su_spe5.setText("Wenn du noch einen weiteren Verein hinzufügen willst, klicke auf 'weiter'");
+            cp.remove(l_su_spe5);
+            cp.remove(b_su_spe_best);
+            cp.revalidate();
+            cp.repaint();
+            z=45;
+            s=1;
+        }
+        else if (z==48) {
+            l_su_spe1.setText("Bitte wähle aus, was du ausgegeben haben möchtest:");
+            cp.add(l_su_spe3);
+            cp.add(b_su_spe3);
+            cp.add(l_su_spe4);
+            cp.add(b_su_spe4);
+            cp.add(b_su_spe_weiter);
+            
+            cp.remove(b_su_spe5);
+            cp.remove(b_su_spe6);
+            cp.revalidate();
+            cp.repaint();
+            z=45;
+            s=1;
+        }
+        else if (z==49) {
+            l_su_spe1.setText("Bitte wähle aus, was du ausgegeben haben möchtest:");
+            cp.add(l_su_spe3);
+            cp.add(b_su_spe3);
+            cp.add(l_su_spe4);
+            cp.add(b_su_spe4);
+            cp.add(b_su_spe_weiter);
+            cp.remove(b_su_spe_sort);
+            cp.remove(l_su_spe7);
+            cp.remove(l_su_spe6);
+            cp.remove(t_su_spe1);
+            cp.remove(t_su_spe2);
+            cp.revalidate();
+            cp.repaint();
+            
+            z=45;
+            s=1;
+        }
+        else if (z==50) {
+            l_su_spe1.setText("Bitte wähle aus, was du ausgegeben haben möchtest:");
+            cp.add(l_su_spe3);
+            cp.add(b_su_spe3);
+            cp.add(l_su_spe4);
+            cp.add(b_su_spe4);
+            cp.add(b_su_spe_weiter);
+            cp.remove(scrollpane);
+            cp.revalidate();
+            cp.repaint();
+            z=45;
+            s=1;
         }
     }
     
