@@ -1622,7 +1622,7 @@ public class GUIVorlage extends JFrame {
         
         revalidate();
         repaint();
-        setResizable(false);
+        setResizable(true);
         setVisible(true);
 
     }
@@ -1934,7 +1934,6 @@ public class GUIVorlage extends JFrame {
             t_su_spe1.setText("");
             cp.revalidate();
             cp.repaint();
-            System.out.println(auftrag);
         }
         else if (s==3) {
             String sportart_id="select SpID from Sportart where Name like '"+t_su_spe1.getText()+"'";
@@ -1977,8 +1976,6 @@ public class GUIVorlage extends JFrame {
             if (!(t_su_spe2.getText().equals(""))) {
                 auftrag=auftrag.concat("Limit "+t_su_spe2.getText());
             }
-            System.out.println(auftrag);
-            System.out.println(arr_custom[0]);
             
             v1.meinConnector.executeStatement(auftrag);
             v1.aktuelleFehlermeldung();
@@ -2012,7 +2009,6 @@ public class GUIVorlage extends JFrame {
             t_su_spe1.setText("");
             cp.revalidate();
             cp.repaint();
-            System.out.println(auftrag);
         }
         else if (s==3&&!(t_su_spe1.getText().equals(""))) {
             String sportart_id="select SpID from Sportart where Name like '"+t_su_spe1.getText()+"'";
@@ -2732,7 +2728,7 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat("or 5=5 AND ");
+                auftrag=auftrag.concat(") AND ");
                 mehrere=false;
             }
             else if (a0) {
@@ -2742,30 +2738,30 @@ public class GUIVorlage extends JFrame {
             if (!(t_su_erw1.getText().equals(""))) {
                 if (!(t_su_erw11.getText().equals(""))) {    
                     if (artaus==1) {
-                        auftrag=auftrag.concat("Vorname = '%"+t_su_erw1.getText()+"%"+t_su_erw11.getText()+"%' ");
+                        auftrag=auftrag.concat("Vorname Like '%"+t_su_erw1.getText()+"%"+t_su_erw11.getText()+"%' ");
                     }
                     else if (artaus==2) {
-                        auftrag=auftrag.concat("Vorname = '%"+t_su_erw1.getText()+"%"+t_su_erw11.getText()+"%' ");
+                        auftrag=auftrag.concat("Vorname Like '%"+t_su_erw1.getText()+"%"+t_su_erw11.getText()+"%' ");
                     }
                     else if (artaus==3) {
-                        auftrag=auftrag.concat("Name = '%"+t_su_erw1.getText()+"%"+t_su_erw11.getText()+"%' ");
+                        auftrag=auftrag.concat("Name Like '%"+t_su_erw1.getText()+"%"+t_su_erw11.getText()+"%' ");
                     }
                     else if (artaus==4) {
-                        auftrag=auftrag.concat("Name = '%"+t_su_erw1.getText()+"%"+t_su_erw11.getText()+"%' ");
+                        auftrag=auftrag.concat("Name Like '%"+t_su_erw1.getText()+"%"+t_su_erw11.getText()+"%' ");
                     }
                 }
                 else {
                     if (artaus==1) {
-                        auftrag=auftrag.concat("Vorname = '%"+t_su_erw1.getText()+"%' ");
+                        auftrag=auftrag.concat("Vorname Like '%"+t_su_erw1.getText()+"%' ");
                     }
                     else if (artaus==2) {
-                        auftrag=auftrag.concat("Vorname = '%"+t_su_erw1.getText()+"%' ");
+                        auftrag=auftrag.concat("Vorname Like '%"+t_su_erw1.getText()+"%' ");
                     }
                     else if (artaus==3) {
-                        auftrag=auftrag.concat("Name = '%"+t_su_erw1.getText()+"%' ");
+                        auftrag=auftrag.concat("Name Like '%"+t_su_erw1.getText()+"%' ");
                     }
                     else if (artaus==4) {
-                        auftrag=auftrag.concat("Name = '%"+t_su_erw1.getText()+"%' ");
+                        auftrag=auftrag.concat("Name Like '%"+t_su_erw1.getText()+"%' ");
                     }
                 }
             }
@@ -2802,10 +2798,10 @@ public class GUIVorlage extends JFrame {
             if (!(t_su_erw2.getText().equals(""))) {
                 if (!(t_su_erw12.getText().equals(""))) {    
                     if (artaus==1) {
-                        auftrag=auftrag.concat("Name = '%"+t_su_erw2.getText()+"%"+t_su_erw12.getText()+"%' ");
+                        auftrag=auftrag.concat("Name Like '%"+t_su_erw2.getText()+"%"+t_su_erw12.getText()+"%' ");
                     }
                     else if (artaus==2) {
-                        auftrag=auftrag.concat("Name = '%"+t_su_erw2.getText()+"%"+t_su_erw12.getText()+"%' ");
+                        auftrag=auftrag.concat("Name Like '%"+t_su_erw2.getText()+"%"+t_su_erw12.getText()+"%' ");
                     }
                     else if (artaus==3) {
                         
@@ -2816,13 +2812,13 @@ public class GUIVorlage extends JFrame {
                 }
                 else {
                     if (artaus==1) {
-                        auftrag=auftrag.concat("Name = '%"+t_su_erw2.getText()+"%' ");
+                        auftrag=auftrag.concat("Name Like '%"+t_su_erw2.getText()+"%' ");
                     }
                     else if (artaus==2) {
-                        auftrag=auftrag.concat("Name = '%"+t_su_erw2.getText()+"%'  ");
+                        auftrag=auftrag.concat("Name Like '%"+t_su_erw2.getText()+"%'  ");
                     }
                     else if (artaus==3) {
-                        auftrag=auftrag.concat("Popularität = '"+t_su_erw2.getText()+"' ");
+                        auftrag=auftrag.concat("Popularität Like '"+t_su_erw2.getText()+"' ");
                     }
                     else if (artaus==4) {
                         auftrag=auftrag.concat("Budget>="+t_su_erw2.getText()+" ");
@@ -2844,7 +2840,6 @@ public class GUIVorlage extends JFrame {
     
     public void b_su_erw_best3_ActionPerformed(ActionEvent evt) {
         cp.remove(l_su_erw17);
-        System.out.println(artaus);
         cp.revalidate();
         cp.repaint();
         if ((!a3)||(a3&&letztes==3)) {
@@ -2940,7 +2935,7 @@ public class GUIVorlage extends JFrame {
                         auftrag=auftrag.concat("Preis>="+t_su_erw4.getText()+" ");
                     }
                     else if (artaus==2) {
-                        auftrag=auftrag.concat("Nationalität = '%"+t_su_erw4.getText()+"%' ");
+                        auftrag=auftrag.concat("Nationalität Like '%"+t_su_erw4.getText()+"%' ");
                     }
                     else if (artaus==3) {
                         
@@ -2982,7 +2977,7 @@ public class GUIVorlage extends JFrame {
             }
             if (!(t_su_erw5.getText().equals(""))) {
                 if (artaus==1) {
-                    auftrag=auftrag.concat("Position = '%"+t_su_erw5.getText()+"%' ");
+                    auftrag=auftrag.concat("Position Like '%"+t_su_erw5.getText()+"%' ");
                 }
                 else if (artaus==2) {
                     String verein_id="select VID from Verein where Name = '"+t_su_erw5.getText()+"'";
@@ -2990,7 +2985,7 @@ public class GUIVorlage extends JFrame {
                     v1.aktuelleFehlermeldung();
                     String verein=v1.meinConnector.getCurrentQueryResult().getData()[0][0];
                     
-                    auftrag=auftrag.concat("VID = '"+verein+"' ");
+                    auftrag=auftrag.concat("VID Like '"+verein+"' ");
                 }
                 else if (artaus==3) {
                     
@@ -3030,7 +3025,7 @@ public class GUIVorlage extends JFrame {
             }
             if (!(t_su_erw6.getText().equals(""))) {
                 if (artaus==1) {
-                    auftrag=auftrag.concat("Nationalität = '%"+t_su_erw6.getText()+"%' ");
+                    auftrag=auftrag.concat("Nationalität Like '%"+t_su_erw6.getText()+"%' ");
                 }
                 else if (artaus==2) {
                     String sportart_id="select SpID from Sportart where Name = '"+t_su_erw6.getText()+"'";
@@ -3038,7 +3033,7 @@ public class GUIVorlage extends JFrame {
                     v1.aktuelleFehlermeldung();
                     String sportart=v1.meinConnector.getCurrentQueryResult().getData()[0][0];
                     
-                    auftrag=auftrag.concat("SpID = '"+sportart+"' ");
+                    auftrag=auftrag.concat("SpID Like '"+sportart+"' ");
                 }
                 else if (artaus==3) {
                     
@@ -3083,7 +3078,7 @@ public class GUIVorlage extends JFrame {
                     v1.aktuelleFehlermeldung();
                     String verein=v1.meinConnector.getCurrentQueryResult().getData()[0][0];
                     
-                    auftrag=auftrag.concat("SVID = '"+verein+"' ");
+                    auftrag=auftrag.concat("SVID Like '"+verein+"' ");
                 }
                 else if (artaus==2) {
                     
@@ -3117,11 +3112,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat("or 5=5 AND ");
+                auftrag=auftrag.concat(") AND ");
                 mehrere=false;
             }
-            else if (a0) {
-                auftrag=auftrag.concat("AND ");
+            else if (!a8) {
+                auftrag=auftrag.concat("(");
                 mehrere=false;
             }
             if (!(t_su_erw8.getText().equals(""))) {
@@ -3131,7 +3126,7 @@ public class GUIVorlage extends JFrame {
                     v1.aktuelleFehlermeldung();
                     String verein=v1.meinConnector.getCurrentQueryResult().getData()[0][0];
                     
-                    auftrag=auftrag.concat("LVID = '"+verein+"' ");
+                    auftrag=auftrag.concat("LVID Like '"+verein+"' ");
                 }
                 else if (artaus==2) {
                     
@@ -3165,11 +3160,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat("or 5=5 AND ");
+                auftrag=auftrag.concat(") AND ");
                 mehrere=false;
             }
-            else if (a0) {
-                auftrag=auftrag.concat("AND ");
+            else if (!a9) {
+                auftrag=auftrag.concat("(");
                 mehrere=false;
             }
             if (!(t_su_erw9.getText().equals(""))) {
@@ -3179,7 +3174,7 @@ public class GUIVorlage extends JFrame {
                     v1.aktuelleFehlermeldung();
                     String verein=v1.meinConnector.getCurrentQueryResult().getData()[0][0];
                     
-                    auftrag=auftrag.concat("GVID = '"+verein+"' ");
+                    auftrag=auftrag.concat("GVID Like '"+verein+"' ");
                 }
                 else if (artaus==2) {
                     
@@ -3213,11 +3208,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat("or 5=5 AND ");
+                auftrag=auftrag.concat(") AND ");
                 mehrere=false;
             }
-            else if (a0) {
-                auftrag=auftrag.concat("AND ");
+            else if (!a10) {
+                auftrag=auftrag.concat("(");
                 mehrere=false;
             }
             if (!(t_su_erw10.getText().equals(""))) {
@@ -3227,7 +3222,7 @@ public class GUIVorlage extends JFrame {
                     v1.aktuelleFehlermeldung();
                     String sportart=v1.meinConnector.getCurrentQueryResult().getData()[0][0];
                     
-                    auftrag=auftrag.concat("SpID = '"+sportart+"' ");
+                    auftrag=auftrag.concat("SpID Like '"+sportart+"' ");
                 }
                 else if (artaus==2) {
                     
@@ -3257,7 +3252,6 @@ public class GUIVorlage extends JFrame {
             zaehler=0;
             auftrag="Select ";
             if (artaus==1) {
-                System.out.println(zaehler2);
                 arr_custom=new String[zaehler2];
                 if (l_su_erw1.getText().equals("wird ausgegeben")) {
                     arr_custom[zaehler]=b_su_erw5.getText();
@@ -3403,8 +3397,6 @@ public class GUIVorlage extends JFrame {
             aus=2;
         }
         else if (s==2) {
-            System.out.println(auftrag);
-            v1.sqlBefehlAusfuehren(auftrag);
             cp.remove(b_su_erw5);
             cp.remove(b_su_erw6);
             cp.remove(b_su_erw7);
@@ -3479,8 +3471,6 @@ public class GUIVorlage extends JFrame {
             if (!(t_su_spe2.getText().equals(""))) {
                 auftrag=auftrag.concat("Limit "+t_su_spe2.getText());
             }
-            System.out.println(auftrag);
-            System.out.println(arr_custom[0]);
             
             v1.sqlBefehlAusfuehren(auftrag);
             v1.meinConnector.executeStatement(auftrag);
@@ -5127,25 +5117,424 @@ public class GUIVorlage extends JFrame {
             s=1;
         }
         else if (z==51) {
+            cp.add(b_su_erw1);
+            cp.add(b_su_erw2);
+            cp.add(b_su_erw3);
+            cp.add(b_su_erw4);
+            l_su_spe1.setText("In welcher Tabelle möchtest du die erweiterte Suche verwenden?");
+            cp.remove(b_su_erw5);
+            cp.remove(b_su_erw6);
+            cp.remove(b_su_erw7);
+            cp.remove(b_su_erw8);
+            cp.remove(b_su_erw9);
+            cp.remove(b_su_erw10);
+            cp.remove(b_su_erw11);
+            cp.remove(b_su_erw12);
+            cp.remove(b_su_erw13);
+            cp.remove(b_su_erw14);
+            cp.remove(l_su_erw1);
+            cp.remove(l_su_erw2);
+            cp.remove(l_su_erw3);
+            cp.remove(l_su_erw4);
+            cp.remove(l_su_erw5);
+            cp.remove(l_su_erw6);
+            cp.remove(l_su_erw7);
+            cp.remove(l_su_erw8);
+            cp.remove(l_su_erw9);
+            cp.remove(l_su_erw10);
+            cp.remove(b_su_erw_weiter);
+            cp.revalidate();
+            cp.repaint();
             
+            z=9;
         }
         else if (z==52) {
+            cp.add(b_su_erw1);
+            cp.add(b_su_erw2);
+            cp.add(b_su_erw3);
+            cp.add(b_su_erw4);
+            l_su_spe1.setText("In welcher Tabelle möchtest du die erweiterte Suche verwenden?");
+            cp.remove(b_su_erw5);
+            cp.remove(b_su_erw6);
+            cp.remove(b_su_erw7);
+            cp.remove(b_su_erw8);
+            cp.remove(b_su_erw9);
+            cp.remove(b_su_erw10);
+            cp.remove(b_su_erw11);
+            cp.remove(b_su_erw12);
+            cp.remove(b_su_erw13);
+            cp.remove(b_su_erw14);
+            cp.remove(l_su_erw1);
+            cp.remove(l_su_erw2);
+            cp.remove(l_su_erw3);
+            cp.remove(l_su_erw4);
+            cp.remove(l_su_erw5);
+            cp.remove(l_su_erw6);
+            cp.remove(l_su_erw7);
+            cp.remove(l_su_erw8);
+            cp.remove(l_su_erw9);
+            cp.remove(l_su_erw10);
+            cp.remove(b_su_erw_weiter);
+            cp.revalidate();
+            cp.repaint();
             
+            z=9;
         }
         else if (z==53) {
+            cp.add(b_su_erw1);
+            cp.add(b_su_erw2);
+            cp.add(b_su_erw3);
+            cp.add(b_su_erw4);
+            l_su_spe1.setText("In welcher Tabelle möchtest du die erweiterte Suche verwenden?");
+            cp.remove(b_su_erw5);
+            cp.remove(b_su_erw6);
+            cp.remove(b_su_erw7);
+            cp.remove(b_su_erw8);
+            cp.remove(b_su_erw9);
+            cp.remove(b_su_erw10);
+            cp.remove(b_su_erw11);
+            cp.remove(b_su_erw12);
+            cp.remove(b_su_erw13);
+            cp.remove(b_su_erw14);
+            cp.remove(l_su_erw1);
+            cp.remove(l_su_erw2);
+            cp.remove(l_su_erw3);
+            cp.remove(l_su_erw4);
+            cp.remove(l_su_erw5);
+            cp.remove(l_su_erw6);
+            cp.remove(l_su_erw7);
+            cp.remove(l_su_erw8);
+            cp.remove(l_su_erw9);
+            cp.remove(l_su_erw10);
+            cp.remove(b_su_erw_weiter);
+            cp.revalidate();
+            cp.repaint();
             
+            z=9;
         }
         else if (z==54) {
+            cp.add(b_su_erw1);
+            cp.add(b_su_erw2);
+            cp.add(b_su_erw3);
+            cp.add(b_su_erw4);
+            l_su_spe1.setText("In welcher Tabelle möchtest du die erweiterte Suche verwenden?");
+            cp.remove(b_su_erw5);
+            cp.remove(b_su_erw6);
+            cp.remove(b_su_erw7);
+            cp.remove(b_su_erw8);
+            cp.remove(b_su_erw9);
+            cp.remove(b_su_erw10);
+            cp.remove(b_su_erw11);
+            cp.remove(b_su_erw12);
+            cp.remove(b_su_erw13);
+            cp.remove(b_su_erw14);
+            cp.remove(l_su_erw1);
+            cp.remove(l_su_erw2);
+            cp.remove(l_su_erw3);
+            cp.remove(l_su_erw4);
+            cp.remove(l_su_erw5);
+            cp.remove(l_su_erw6);
+            cp.remove(l_su_erw7);
+            cp.remove(l_su_erw8);
+            cp.remove(l_su_erw9);
+            cp.remove(l_su_erw10);
+            
+            cp.remove(b_su_erw_weiter);
+            cp.revalidate();
+            cp.repaint();
+            
+            z=9;
             
         }
         else if (z==55) {
+            l_su_spe1.setText("Bitte wähle aus, was du ausgegeben haben möchtest:");
+            if(artaus==1) {
+                cp.add(l_su_erw1);
+                cp.add(l_su_erw2);
+                cp.add(l_su_erw3);
+                cp.add(l_su_erw4);
+                cp.add(l_su_erw5);
+                cp.add(l_su_erw6);
+                cp.add(l_su_erw7);
+                cp.add(l_su_erw8);
+                cp.add(l_su_erw9);
+                cp.add(l_su_erw10);
+            }
+            else if (artaus==2) {
+                cp.add(l_su_erw1);
+                cp.add(l_su_erw2);
+                cp.add(l_su_erw3);
+            }
+            else if (artaus==3) {
+                b_su_erw5.setText("Name");
+                cp.add(l_su_erw1);
+                cp.add(l_su_erw2);
+                cp.add(l_su_erw3);
+            }
+            else if (artaus==4) {
+                cp.add(l_su_erw1);
+                cp.add(l_su_erw2);
+            }
+            cp.remove(l_su_erw11);
+            cp.remove(l_su_erw12);
+            cp.remove(l_su_erw13);
+            cp.remove(l_su_erw14);
+            cp.remove(l_su_erw15);
+            cp.remove(l_su_erw16);
+            cp.remove(b_su_erw_best1);
+            cp.remove(b_su_erw_best2);
+            cp.remove(b_su_erw_best3);
+            cp.remove(b_su_erw_best4);
+            cp.remove(b_su_erw_best5);
+            cp.remove(b_su_erw_best6);
+            cp.remove(b_su_erw_best7);
+            cp.remove(b_su_erw_best8);
+            cp.remove(b_su_erw_best9);
+            cp.remove(b_su_erw_best10);
+            cp.remove(t_su_erw1);
+            cp.remove(t_su_erw2);
+            cp.remove(t_su_erw3);
+            cp.remove(t_su_erw4);
+            cp.remove(t_su_erw5);
+            cp.remove(t_su_erw6);
+            cp.remove(t_su_erw7);
+            cp.remove(t_su_erw8);
+            cp.remove(t_su_erw9);
+            cp.remove(t_su_erw10);
+            cp.remove(t_su_erw11);
+            cp.remove(t_su_erw12);
+            cp.remove(t_su_erw13);
+            cp.remove(t_su_erw14);
+            cp.revalidate();
+            cp.repaint();
             
+            ü1=1;
+            ü2=1;
+            ü3=1;
+            ü4=1;
+            ü5=1;
+            ü6=1;
+            ü7=1;
+            ü8=1;
+            ü9=1;
+            ü10=1;
+            a0=false;
+            a1=false;
+            a2=false;
+            a3=false;
+            a4=false;
+            a5=false;
+            a6=false;
+            a7=false;
+            a8=false;
+            a9=false;
+            a10=false;
+            mehrere=false;
+            letztes=0;
+            
+            aus=1;
+            s=1;
+            z=54;
         }
         else if (z==56) {
-            
+            l_su_spe1.setText("Bitte wähle aus, was du ausgegeben haben möchtest:");
+            if(artaus==1) {
+                cp.add(l_su_erw1);
+                cp.add(l_su_erw2);
+                cp.add(l_su_erw3);
+                cp.add(l_su_erw4);
+                cp.add(l_su_erw5);
+                cp.add(l_su_erw6);
+                cp.add(l_su_erw7);
+                cp.add(l_su_erw8);
+                cp.add(l_su_erw9);
+                cp.add(l_su_erw10);
+                b_su_erw5.setText("Vorname");
+                cp.add(b_su_erw5);
+                b_su_erw6.setText("Name");
+                cp.add(b_su_erw6);
+                b_su_erw7.setText("Gehalt");
+                cp.add(b_su_erw7);
+                b_su_erw5.setText("Preis");
+                cp.add(b_su_erw8);
+                b_su_erw5.setText("Position");
+                cp.add(b_su_erw9);
+                b_su_erw5.setText("Nationalität");
+                cp.add(b_su_erw10);
+                b_su_erw5.setText("Verein");
+                cp.add(b_su_erw11);
+                b_su_erw5.setText("Leihverein");
+                cp.add(b_su_erw12);
+                b_su_erw5.setText("Gerüchtsverein");
+                cp.add(b_su_erw13);
+                b_su_erw5.setText("Sportart");
+                cp.add(b_su_erw14);
+                cp.add(b_su_erw_weiter);
+            }
+            else if (artaus==2) {
+                b_su_erw5.setText("Name");
+                cp.add(b_su_erw5);
+                b_su_erw6.setText("Popularität");
+                cp.add(b_su_erw6);
+                b_su_erw7.setText("Ballgröße");
+                cp.add(b_su_erw7);
+                cp.add(l_su_erw1);
+                cp.add(l_su_erw2);
+                cp.add(l_su_erw3);
+                cp.add(b_su_erw_weiter);
+            }
+            else if (artaus==3) {
+                b_su_erw5.setText("Name");
+                cp.add(b_su_erw5);
+                b_su_erw6.setText("Popularität");
+                cp.add(b_su_erw6);
+                b_su_erw7.setText("Ballgröße");
+                cp.add(b_su_erw7);
+                cp.add(l_su_erw1);
+                cp.add(l_su_erw2);
+                cp.add(l_su_erw3);
+                cp.add(b_su_erw_weiter);
+            }
+            else if (artaus==4) {
+                b_su_erw5.setText("Name");
+                cp.add(b_su_erw5);
+                b_su_erw6.setText("Budget");
+                cp.add(b_su_erw6);
+                cp.add(l_su_erw1);
+                cp.add(l_su_erw2);
+                cp.add(b_su_erw_weiter);
+            }
+            cp.remove(l_su_spe6);
+            cp.remove(b_su_spe_sort);
+            cp.remove(l_su_spe7);
+            cp.remove(t_su_spe1);
+            cp.remove(t_su_spe2);
+            cp.revalidate();
+            cp.repaint();
+            ü1=1;
+            ü2=1;
+            ü3=1;
+            ü4=1;
+            ü5=1;
+            ü6=1;
+            ü7=1;
+            ü8=1;
+            ü9=1;
+            ü10=1;
+            a0=false;
+            a1=false;
+            a2=false;
+            a3=false;
+            a4=false;
+            a5=false;
+            a6=false;
+            a7=false;
+            a8=false;
+            a9=false;
+            a10=false;
+            mehrere=false;
+            letztes=0;
+            aus=1;
+            s=1;
+            z=54;
         }
         else if (z==57) {
-            
+            l_su_spe1.setText("Bitte wähle aus, was du ausgegeben haben möchtest:");
+            if(artaus==1) {
+                cp.add(l_su_erw1);
+                cp.add(l_su_erw2);
+                cp.add(l_su_erw3);
+                cp.add(l_su_erw4);
+                cp.add(l_su_erw5);
+                cp.add(l_su_erw6);
+                cp.add(l_su_erw7);
+                cp.add(l_su_erw8);
+                cp.add(l_su_erw9);
+                cp.add(l_su_erw10);
+                b_su_erw5.setText("Vorname");
+                cp.add(b_su_erw5);
+                b_su_erw6.setText("Name");
+                cp.add(b_su_erw6);
+                b_su_erw7.setText("Gehalt");
+                cp.add(b_su_erw7);
+                b_su_erw5.setText("Preis");
+                cp.add(b_su_erw8);
+                b_su_erw5.setText("Position");
+                cp.add(b_su_erw9);
+                b_su_erw5.setText("Nationalität");
+                cp.add(b_su_erw10);
+                b_su_erw5.setText("Verein");
+                cp.add(b_su_erw11);
+                b_su_erw5.setText("Leihverein");
+                cp.add(b_su_erw12);
+                b_su_erw5.setText("Gerüchtsverein");
+                cp.add(b_su_erw13);
+                b_su_erw5.setText("Sportart");
+                cp.add(b_su_erw14);
+                cp.add(b_su_erw_weiter);
+            }
+            else if (artaus==2) {
+                b_su_erw5.setText("Name");
+                cp.add(b_su_erw5);
+                b_su_erw6.setText("Popularität");
+                cp.add(b_su_erw6);
+                b_su_erw7.setText("Ballgröße");
+                cp.add(b_su_erw7);
+                cp.add(l_su_erw1);
+                cp.add(l_su_erw2);
+                cp.add(l_su_erw3);
+                cp.add(b_su_erw_weiter);
+            }
+            else if (artaus==3) {
+                b_su_erw5.setText("Name");
+                cp.add(b_su_erw5);
+                b_su_erw6.setText("Popularität");
+                cp.add(b_su_erw6);
+                b_su_erw7.setText("Ballgröße");
+                cp.add(b_su_erw7);
+                cp.add(l_su_erw1);
+                cp.add(l_su_erw2);
+                cp.add(l_su_erw3);
+                cp.add(b_su_erw_weiter);
+            }
+            else if (artaus==4) {
+                b_su_erw5.setText("Name");
+                cp.add(b_su_erw5);
+                b_su_erw6.setText("Budget");
+                cp.add(b_su_erw6);
+                cp.add(l_su_erw1);
+                cp.add(l_su_erw2);
+                cp.add(b_su_erw_weiter);
+            }
+            cp.remove(scrollpane);
+            cp.revalidate();
+            cp.repaint();
+            ü1=1;
+            ü2=1;
+            ü3=1;
+            ü4=1;
+            ü5=1;
+            ü6=1;
+            ü7=1;
+            ü8=1;
+            ü9=1;
+            ü10=1;
+            a0=false;
+            a1=false;
+            a2=false;
+            a3=false;
+            a4=false;
+            a5=false;
+            a6=false;
+            a7=false;
+            a8=false;
+            a9=false;
+            a10=false;
+            mehrere=false;
+            letztes=0;
+            s=1;
+            aus=1;
+            z=54;
         }
     }
     
