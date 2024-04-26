@@ -2728,11 +2728,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat(") AND ");
+                auftrag=auftrag.concat(") AND (");
                 mehrere=false;
             }
             else if (!a1) {
-                auftrag=auftrag.concat("(");
+                auftrag=auftrag.concat(" Where (");
                 mehrere=false;
             }
             if (!(t_su_erw1.getText().equals(""))) {
@@ -2788,11 +2788,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat(") AND ");
+                auftrag=auftrag.concat(") AND (");
                 mehrere=false;
             }
             else if (!a2) {
-                auftrag=auftrag.concat("(");
+                auftrag=auftrag.concat(" Where (");
                 mehrere=false;
             }
             if (!(t_su_erw2.getText().equals(""))) {
@@ -2848,11 +2848,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat(") AND ");
+                auftrag=auftrag.concat(") AND (");
                 mehrere=false;
             }
             else if (!a3) {
-                auftrag=auftrag.concat("(");
+                auftrag=auftrag.concat(" Where (");
                 mehrere=false;
             }
             if (!(t_su_erw3.getText().equals(""))) {
@@ -2908,11 +2908,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat(") AND ");
+                auftrag=auftrag.concat(") AND (");
                 mehrere=false;
             }
             else if (!a4) {
-                auftrag=auftrag.concat("(");
+                auftrag=auftrag.concat(" Where (");
                 mehrere=false;
             }
             if (!(t_su_erw4.getText().equals(""))) {
@@ -2968,11 +2968,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat(") AND ");
+                auftrag=auftrag.concat(") AND (");
                 mehrere=false;
             }
             else if (!a5) {
-                auftrag=auftrag.concat("(");
+                auftrag=auftrag.concat(" Where (");
                 mehrere=false;
             }
             if (!(t_su_erw5.getText().equals(""))) {
@@ -3016,11 +3016,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat(") AND ");
+                auftrag=auftrag.concat(") AND (");
                 mehrere=false;
             }
             else if (!a6) {
-                auftrag=auftrag.concat("(");
+                auftrag=auftrag.concat(" Where (");
                 mehrere=false;
             }
             if (!(t_su_erw6.getText().equals(""))) {
@@ -3064,11 +3064,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat(") AND ");
+                auftrag=auftrag.concat(") AND (");
                 mehrere=false;
             }
             else if (!a7) {
-                auftrag=auftrag.concat("(");
+                auftrag=auftrag.concat(" Where (");
                 mehrere=false;
             }
             if (!(t_su_erw7.getText().equals(""))) {
@@ -3112,11 +3112,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat(") AND ");
+                auftrag=auftrag.concat(") AND (");
                 mehrere=false;
             }
             else if (!a8) {
-                auftrag=auftrag.concat("(");
+                auftrag=auftrag.concat(" Where (");
                 mehrere=false;
             }
             if (!(t_su_erw8.getText().equals(""))) {
@@ -3160,11 +3160,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat(") AND ");
+                auftrag=auftrag.concat(") AND (");
                 mehrere=false;
             }
             else if (!a9) {
-                auftrag=auftrag.concat("(");
+                auftrag=auftrag.concat(" Where (");
                 mehrere=false;
             }
             if (!(t_su_erw9.getText().equals(""))) {
@@ -3208,11 +3208,11 @@ public class GUIVorlage extends JFrame {
                 mehrere=true;
             }
             else if (a0&&mehrere==true){
-                auftrag=auftrag.concat(") AND ");
+                auftrag=auftrag.concat(") AND (");
                 mehrere=false;
             }
             else if (!a10) {
-                auftrag=auftrag.concat("(");
+                auftrag=auftrag.concat(" Where (");
                 mehrere=false;
             }
             if (!(t_su_erw10.getText().equals(""))) {
@@ -3304,7 +3304,7 @@ public class GUIVorlage extends JFrame {
                     auftrag=auftrag.concat("SpID, ");
                 }
                 arr_custom[zaehler]="ID";
-                auftrag=auftrag.concat("SID From Spieler Where ");
+                auftrag=auftrag.concat("SID From Spieler");
             }
             else if (artaus==2) {
                 arr_custom=new String[zaehler3];
@@ -3338,7 +3338,7 @@ public class GUIVorlage extends JFrame {
                     zaehler++;
                     auftrag=auftrag.concat("SpID, ");
                 }
-                auftrag=auftrag.concat("TID From Trainer Where ");
+                auftrag=auftrag.concat("TID From Trainer");
                 arr_custom[zaehler]="ID";
             }
             else if (artaus==3) {
@@ -3358,7 +3358,7 @@ public class GUIVorlage extends JFrame {
                     zaehler++;
                     auftrag=auftrag.concat("Ballgröße, ");
                 }
-                auftrag=auftrag.concat("SpID From Sportart Where ");
+                auftrag=auftrag.concat("SpID From Sportart");
                 arr_custom[zaehler]="ID";
             }
             else if (artaus==4) {
@@ -3373,7 +3373,7 @@ public class GUIVorlage extends JFrame {
                     zaehler++;
                     auftrag=auftrag.concat("Budget, ");
                 }
-                auftrag=auftrag.concat("VID From Verein Where ");
+                auftrag=auftrag.concat("VID From Verein");
                 arr_custom[zaehler]="ID";
             }
             
@@ -3438,7 +3438,10 @@ public class GUIVorlage extends JFrame {
             cp.remove(b_su_erw_best8);
             cp.remove(b_su_erw_best9);
             cp.remove(b_su_erw_best10);
-            auftrag=auftrag.concat(")");
+            if (a0) {
+                auftrag=auftrag.concat(")");
+            }
+            
             cp.revalidate();
             cp.repaint();
             
@@ -3472,7 +3475,9 @@ public class GUIVorlage extends JFrame {
             if (!(t_su_spe2.getText().equals(""))) {
                 auftrag=auftrag.concat("Limit "+t_su_spe2.getText());
             }
-            
+            System.out.println(auftrag);
+            v1.meinConnector.executeStatement(auftrag);
+            v1.aktuelleFehlermeldung();
             
             String [][] ergebnis=v1.meinConnector.getCurrentQueryResult().getData();
             
@@ -5457,19 +5462,19 @@ public class GUIVorlage extends JFrame {
                 cp.add(b_su_erw6);
                 b_su_erw7.setText("Gehalt");
                 cp.add(b_su_erw7);
-                b_su_erw5.setText("Preis");
+                b_su_erw8.setText("Preis");
                 cp.add(b_su_erw8);
-                b_su_erw5.setText("Position");
+                b_su_erw9.setText("Position");
                 cp.add(b_su_erw9);
-                b_su_erw5.setText("Nationalität");
+                b_su_erw10.setText("Nationalität");
                 cp.add(b_su_erw10);
-                b_su_erw5.setText("Verein");
+                b_su_erw11.setText("Verein");
                 cp.add(b_su_erw11);
-                b_su_erw5.setText("Leihverein");
+                b_su_erw12.setText("Leihverein");
                 cp.add(b_su_erw12);
-                b_su_erw5.setText("Gerüchtsverein");
+                b_su_erw13.setText("Gerüchtsverein");
                 cp.add(b_su_erw13);
-                b_su_erw5.setText("Sportart");
+                b_su_erw14.setText("Sportart");
                 cp.add(b_su_erw14);
                 cp.add(b_su_erw_weiter);
             }
